@@ -1,0 +1,24 @@
+package create.characters;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class Authors_Panel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Authors_Panel() {
+		setLayout(null);
+		
+		JLabel lblAuthors = new JLabel("Authors: smoczy & orte");
+		lblAuthors.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAuthors.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblAuthors.setBounds(267, 214, 236, 136);
+		add(lblAuthors);
+
+	}
+
+}

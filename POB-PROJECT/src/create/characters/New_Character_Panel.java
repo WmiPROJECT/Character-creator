@@ -41,7 +41,7 @@ public class New_Character_Panel extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
 		lblNewJgoodiesLabel.setIcon(new ImageIcon(New_Character_Panel.class.getResource("/create/characters/img/background_WoW_8x6.jpg")));
-		lblNewJgoodiesLabel.setBounds(0, 0, 800, 578);
+		lblNewJgoodiesLabel.setBounds(0, 0, 800, 600);
 		add(lblNewJgoodiesLabel);
 
 	}

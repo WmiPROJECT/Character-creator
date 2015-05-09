@@ -20,10 +20,9 @@ import java.awt.Color;
 public class Main_menu extends JFrame {
 
 	private JPanel contentPane;
+	// OBIEKT CLASY ZAINICJOWAÆ NA POCZATKU
 	
-	//OBIEKT CLASY ZAINICJOWAÆ NA POCZATKU
-	Main_Menu_Panel main_panel_object = new  Main_Menu_Panel();
-	
+	Main_Menu_Panel main_panel_object = new Main_Menu_Panel();
 	/**
 	 * Launch the application.
 	 */
@@ -33,8 +32,7 @@ public class Main_menu extends JFrame {
 				try {
 					Main_menu frame = new Main_menu();
 					frame.setVisible(true);
-				
-					
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,38 +44,31 @@ public class Main_menu extends JFrame {
 	 * Create the frame.
 	 */
 	public Main_menu() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
-		//TUTAJ TRZEBA DODAC CONENT PANE
+		// TUTAJ TRZEBA DODAC CONENT PANE
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		//////////////////
+		// ////////////////
 		setContentPane(contentPane);
-		
-		JButton Start_Button = new JButton("CO\u015A W STYLU  KLIKNIJ ABY PRZEJSC DO TWORZENIA POSTACI");
+
+		JButton Start_Button = new JButton(
+				"COŒ W STYLU  KLIKNIJ ABY PRZEJSC DO TWORZENIA POSTACI");
 		Start_Button.setBounds(105, 179, 588, 163);
 		Start_Button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) 
-			{
-				
-			
-				
-			
+			public void actionPerformed(ActionEvent arg0) {
+
 				main_panel_object.setBounds(0, 0, 800, 600);
 				Start_Button.setVisible(false);
-				
-				
-				
+
 			}
 		});
 		contentPane.setLayout(null);
 		contentPane.add(Start_Button);
-	
-		
-		//WA¯NE  CONTENT PANE.ADD JPANEL
+
+		// WA¯NE CONTENT PANE.ADD JPANEL
 		contentPane.add(main_panel_object);
-		
-		
 		
 	}
 }

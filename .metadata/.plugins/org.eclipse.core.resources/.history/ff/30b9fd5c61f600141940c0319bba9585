@@ -1,0 +1,55 @@
+package create.characters;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+import java.awt.Font;
+
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Authors_Panel extends JPanel {
+	
+	New_Character_Panel New_Character_panel_object = new New_Character_Panel();
+	Authors_Panel Authors_Panel_object = new Authors_Panel();
+	JButton Edit_Character_button = new JButton("Edit Character");
+	JButton New_Character_button = new JButton("New Character");
+	JButton Load_Character_button = new JButton("Load Character");
+	JButton Exit_button = new JButton("EXIT");
+	JButton Author_button = new JButton("Author");
+
+	/**
+	 * Create the panel.
+	 */
+	public Authors_Panel() {
+		setLayout(null);
+		
+		
+		JLabel lblAuthors = new JLabel("Authors: smoczy & orte");
+		lblAuthors.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAuthors.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblAuthors.setBounds(267, 214, 236, 136);
+		add(lblAuthors);
+		
+		JButton btnMenu = new JButton("MENU");
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main_Menu_Panel Main_Menu_Panel_object = new Main_Menu_Panel();
+	//			Main_Menu_Panel_object.New_Character_button
+				lblAuthors.setVisible(false);
+				btnMenu.setVisible(false);
+				New_Character_button.setVisible(true);
+				Exit_button.setVisible(true);
+				Load_Character_button.setVisible(true);
+				Author_button.setVisible(true);
+				Edit_Character_button.setVisible(true);
+			}
+		});
+		btnMenu.setBounds(347, 500, 89, 23);
+		add(btnMenu);
+
+	}
+}
