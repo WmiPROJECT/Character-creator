@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
 public class Main_Menu_Panel extends JPanel {
 	
 	New_Character_Panel New_Character_panel_object = new New_Character_Panel();
@@ -39,6 +40,7 @@ public class Main_Menu_Panel extends JPanel {
 				New_Character_button.setVisible(false);
 				Exit_button.setVisible(false);
 				btnNewButton_1.setVisible(false);
+				
 				
 			}
 		});
