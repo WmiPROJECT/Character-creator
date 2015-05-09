@@ -61,8 +61,20 @@ public class Main_menu extends JFrame {
 			{
 				
 			
+				/*
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							New_Character_Menu frame = new New_Character_Menu();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 				
-			
+			*/	
+				//W BUTTONIE USTAWIC BOUNDS ORAZ USUNAC STARY BUTTON
 				main_panel_object.setBounds(0, 0, 800, 600);
 				Start_Button.setVisible(false);
 				

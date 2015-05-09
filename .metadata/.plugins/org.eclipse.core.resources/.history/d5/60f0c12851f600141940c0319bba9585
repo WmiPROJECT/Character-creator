@@ -52,8 +52,6 @@ public class Main_Menu_Panel extends JPanel {
 				New_Character_button.setVisible(false);
 				Exit_button.setVisible(false);
 				Load_Character_button.setVisible(false);
-				Author_button.setVisible(false);
-				Edit_Character_button.setVisible(false);
 				
 				
 			}
