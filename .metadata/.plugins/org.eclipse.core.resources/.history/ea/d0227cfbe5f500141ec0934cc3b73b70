@@ -19,7 +19,7 @@ public class Main_Menu_Panel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_1.setBounds(317, 216, 266, 102);
+		btnNewButton_1.setBounds(289, 87, 151, 47);
 		add(btnNewButton_1);
 		
 		JButton Exit_button = new JButton("EXIT");
@@ -28,7 +28,7 @@ public class Main_Menu_Panel extends JPanel {
 				System.exit(0);
 			}
 		});
-		Exit_button.setBounds(317, 358, 266, 102);
+		Exit_button.setBounds(289, 145, 151, 47);
 		add(Exit_button);
 		
 		JButton New_Character_button = new JButton("New Character");
@@ -42,7 +42,7 @@ public class Main_Menu_Panel extends JPanel {
 				
 			}
 		});
-		New_Character_button.setBounds(317, 76, 266, 102);
+		New_Character_button.setBounds(289, 33, 151, 47);
 		add(New_Character_button);
 		
 		

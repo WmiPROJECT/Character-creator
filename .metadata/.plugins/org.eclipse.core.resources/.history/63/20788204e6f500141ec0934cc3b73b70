@@ -29,7 +29,7 @@ public class New_Character_Panel extends JPanel {
 				System.exit(0);
 			}
 		});
-		Save_button.setBounds(151, 515, 565, 55);
+		Save_button.setBounds(151, 534, 565, 55);
 		add(Save_button);
 		
 		JLabel Name_label = new JLabel("Name:");

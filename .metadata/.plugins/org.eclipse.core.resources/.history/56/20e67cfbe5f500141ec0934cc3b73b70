@@ -19,7 +19,7 @@ public class New_Character_Panel extends JPanel {
 		setLayout(null);
 		
 		Name_textfiled = new JTextField();
-		Name_textfiled.setBounds(354, 52, 189, 42);
+		Name_textfiled.setBounds(107, 61, 189, 42);
 		add(Name_textfiled);
 		Name_textfiled.setColumns(10);
 		
@@ -29,13 +29,13 @@ public class New_Character_Panel extends JPanel {
 				System.exit(0);
 			}
 		});
-		Save_button.setBounds(151, 515, 565, 55);
+		Save_button.setBounds(65, 114, 134, 32);
 		add(Save_button);
 		
 		JLabel Name_label = new JLabel("Name:");
 		Name_label.setFont(new Font("Tahoma", Font.PLAIN, 19));
 		Name_label.setHorizontalAlignment(SwingConstants.RIGHT);
-		Name_label.setBounds(251, 55, 93, 28);
+		Name_label.setBounds(10, 64, 93, 28);
 		add(Name_label);
 
 	}

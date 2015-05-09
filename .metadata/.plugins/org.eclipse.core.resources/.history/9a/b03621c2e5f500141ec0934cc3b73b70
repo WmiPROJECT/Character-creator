@@ -75,7 +75,7 @@ public class Main_menu extends JFrame {
 				
 			*/	
 				//W BUTTONIE USTAWIC BOUNDS ORAZ USUNAC STARY BUTTON
-				main_panel_object.setBounds(0, 0, 800, 600);
+				main_panel_object.setBounds(0, 0, 792, 573);
 				Start_Button.setVisible(false);
 				
 				
@@ -84,7 +84,7 @@ public class Main_menu extends JFrame {
 		});
 		contentPane.setLayout(null);
 		contentPane.add(Start_Button);
-	
+		main_panel_object.setBounds(791, 572, -789, -572);
 		
 		//WA¯NE  CONTENT PANE.ADD JPANEL
 		contentPane.add(main_panel_object);
