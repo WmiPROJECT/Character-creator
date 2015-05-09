@@ -8,14 +8,22 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.SwingConstants;
+import javax.swing.JOptionPane;
+import java.awt.Panel;
+import java.awt.Color;
 
 public class Main_menu extends JFrame {
 
 	private JPanel contentPane;
-
+	
+	//OBIEKT CLASY ZAINICJOWAÆ NA POCZATKU
+	Main_Menu_Panel main_panel_object = new  Main_Menu_Panel();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -25,6 +33,8 @@ public class Main_menu extends JFrame {
 				try {
 					Main_menu frame = new Main_menu();
 					frame.setVisible(true);
+				
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,34 +47,49 @@ public class Main_menu extends JFrame {
 	 */
 	public Main_menu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 651, 463);
+		setBounds(100, 100, 800, 600);
+		//TUTAJ TRZEBA DODAC CONENT PANE
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		//////////////////
 		setContentPane(contentPane);
 		
-		JButton New_Character_Button = new JButton("New Character");
-		New_Character_Button.setBounds(200, 48, 220, 76);
-		New_Character_Button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton Start_Button = new JButton("CO\u015A W STYLU  KLIKNIJ ABY PRZEJSC DO TWORZENIA POSTACI");
+		Start_Button.setBounds(105, 179, 588, 163);
+		Start_Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				
+			
+				/*
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							New_Character_Menu frame = new New_Character_Menu();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				
+			*/	
+				//W BUTTONIE USTAWIC BOUNDS ORAZ USUNAC STARY BUTTON
+				main_panel_object.setBounds(0, 0, 792, 573);
+				Start_Button.setVisible(false);
+				
+				
+				
 			}
 		});
 		contentPane.setLayout(null);
-		contentPane.add(New_Character_Button);
+		contentPane.add(Start_Button);
+		main_panel_object.setBounds(791, 572, -789, -572);
 		
-		JButton Load_Character_Button = new JButton("Load Character");
-		Load_Character_Button.setBounds(200, 135, 220, 76);
-		contentPane.add(Load_Character_Button);
+		//WA¯NE  CONTENT PANE.ADD JPANEL
+		contentPane.add(main_panel_object);
 		
-		JButton Edit_Character_Button = new JButton("Edit Character");
-		Edit_Character_Button.setBounds(200, 222, 220, 76);
-		contentPane.add(Edit_Character_Button);
 		
-		JButton Exit_Button = new JButton("Exit");
-		Exit_Button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		Exit_Button.setBounds(200, 309, 220, 76);
-		contentPane.add(Exit_Button);
+		
 	}
 }

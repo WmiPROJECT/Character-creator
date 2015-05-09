@@ -1,0 +1,14 @@
+package create.characters;
+
+import javax.swing.JPanel;
+
+public class New_Character_Menu extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public New_Character_Menu() {
+
+	}
+
+}

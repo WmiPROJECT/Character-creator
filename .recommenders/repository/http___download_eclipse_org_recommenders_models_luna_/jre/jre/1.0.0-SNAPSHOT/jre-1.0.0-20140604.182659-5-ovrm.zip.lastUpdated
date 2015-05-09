@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sat May 09 02:10:46 CEST 2015
+@default-models-http\://download.eclipse.org/recommenders/models/luna/.lastUpdated=1431130246596
+http\://download.eclipse.org/recommenders/models/luna/.error=Could not transfer artifact jre\:jre\:zip\:ovrm\:1.0.0-20140604.182659-5 from/to models (http\://download.eclipse.org/recommenders/models/luna/)\: No buffer space available (maximum connections reached?)\: connect
