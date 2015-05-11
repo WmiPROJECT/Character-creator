@@ -50,5 +50,8 @@ public class Back_Panel extends JPanel {
 		
 
 	}
-
+	public Back_Panel(int x)
+	{
+		add(background_label);
+	}
 }

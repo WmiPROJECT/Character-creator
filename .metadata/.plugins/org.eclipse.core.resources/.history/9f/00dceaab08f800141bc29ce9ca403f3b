@@ -47,8 +47,6 @@ public class Back_Panel extends JPanel {
 		background_label.setIcon(new ImageIcon(Author_Panel.class
 				.getResource("/create/characters/img/background_mario.gif")));
 		background_label.setBounds(-6, 0, 800, 600);
-		
 
 	}
-
 }
