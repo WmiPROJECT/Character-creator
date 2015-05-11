@@ -1,0 +1,34 @@
+package create.characters;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JPanel;
+
+public class Author_Panel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Author_Panel() {
+		
+	//	super.background_mario_label.setBounds(-6, 0, 800, 600);
+		JLabel lblAuthorsSmoczy = new JLabel("Authors: SMOCZY & ORTE");
+		lblAuthorsSmoczy.setForeground(Color.MAGENTA);
+		lblAuthorsSmoczy.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblAuthorsSmoczy.setBounds(225, 199, 420, 71);
+		add(lblAuthorsSmoczy);
+
+
+	}
+	
+public class Background_Author extends Back_Panel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Background_Author() {
+		
+
+
+	}
+}

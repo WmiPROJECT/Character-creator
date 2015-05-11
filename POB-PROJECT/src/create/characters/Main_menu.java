@@ -24,9 +24,11 @@ public class Main_menu extends JFrame {
 
 	private JPanel contentPane;
 	// OBIEKT CLASY ZAINICJOWAÆ NA POCZATKU
-	JLabel background_mario_label = DefaultComponentFactory.getInstance().createTitle("New JGoodies title");
+	JLabel background_mario_label = DefaultComponentFactory.getInstance()
+			.createTitle("New JGoodies title");
 
 	Main_Menu_Panel main_panel_object = new Main_Menu_Panel();
+
 	/**
 	 * Launch the application.
 	 */
@@ -48,7 +50,7 @@ public class Main_menu extends JFrame {
 	 * Create the frame.
 	 */
 	public Main_menu() {
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		// TUTAJ TRZEBA DODAC CONENT PANE
@@ -62,23 +64,23 @@ public class Main_menu extends JFrame {
 		Start_Button.setBounds(105, 179, 588, 163);
 		Start_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				main_panel_object.setBounds(0, 0, 800, 600);
 				Start_Button.setVisible(false);
-				
 
 			}
 		});
 		contentPane.setLayout(null);
 		contentPane.add(Start_Button);
 		contentPane.add(main_panel_object);
-		
-		JLabel background_mario_label = DefaultComponentFactory.getInstance().createTitle("New JGoodies title");
-		background_mario_label.setIcon(new ImageIcon(Main_menu.class.getResource("/create/characters/img/background_mario.gif")));
+
+		JLabel background_mario_label = DefaultComponentFactory.getInstance()
+				.createTitle("New JGoodies title");
+		background_mario_label.setIcon(new ImageIcon(Main_menu.class
+				.getResource("/create/characters/img/background_mario.gif")));
 		background_mario_label.setBounds(-6, 0, 800, 600);
 		contentPane.add(background_mario_label);
 		// WA¯NE CONTENT PANE.ADD JPANEL
-		
-		
+
 	}
 }

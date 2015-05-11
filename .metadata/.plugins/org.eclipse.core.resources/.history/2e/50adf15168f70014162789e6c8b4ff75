@@ -1,0 +1,14 @@
+package create.characters;
+
+import javax.swing.JPanel;
+
+public class Edit_Character_Panel extends Authors_Panel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Edit_Character_Panel() {
+
+	}
+
+}

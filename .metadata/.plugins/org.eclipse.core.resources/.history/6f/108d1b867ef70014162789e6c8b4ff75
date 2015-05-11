@@ -1,0 +1,16 @@
+package create.characters;
+
+
+
+public class New_Character_Panel extends Back_Panel {
+	
+
+	/**
+	 * Create the panel.
+	 */
+	public New_Character_Panel() {
+		//super.lblAuthors.setVisible(false);
+
+	}
+
+}
