@@ -24,29 +24,29 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 
 public class Back_Panel extends JPanel {
-	JLabel background_label = new JLabel("New label");
+	JLabel background_u_smoczego = new JLabel("New label");
 
 	Main_Menu_Panel Main_Menu_Penel_object = new Main_Menu_Panel();
 
 	public Back_Panel() {
 		setLayout(null);
 
-		JButton Back_button = new JButton("MENU");
-		Back_button.addActionListener(new ActionListener() {
+		JButton btnMenu = new JButton("MENU");
+		btnMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Back_button.setVisible(false);
+				btnMenu.setVisible(false);
 				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 
 			}
 		});
 
-		Back_button.setBounds(543, 487, 225, 62);
-		add(Back_button);
+		btnMenu.setBounds(543, 487, 225, 62);
+		add(btnMenu);
 		add(Main_Menu_Penel_object);
 
-		background_label.setIcon(new ImageIcon(Author_Panel.class
+		background_u_smoczego.setIcon(new ImageIcon(Author_Panel.class
 				.getResource("/create/characters/img/background_mario.gif")));
-		background_label.setBounds(-6, 0, 800, 600);
+		background_u_smoczego.setBounds(-6, 0, 800, 600);
 
 	}
 }
