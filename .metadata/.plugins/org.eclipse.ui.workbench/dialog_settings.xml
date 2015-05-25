@@ -5,8 +5,8 @@
 		<item value="26" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="750" key="dialogHeight"/>
-		<item value="960" key="dialogWidth"/>
+		<item value="759" key="dialogHeight"/>
+		<item value="1440" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -14,6 +14,22 @@
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
+		<item value="0" key="sort"/>
+		<item value="false" key="allPersp"/>
+		<list key="columns">
+			<item value="252"/>
+			<item value="504"/>
+		</list>
+		<list key="bounds">
+			<item value="561"/>
+			<item value="152"/>
+			<item value="798"/>
+			<item value="553"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">

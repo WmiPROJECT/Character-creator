@@ -1,0 +1,192 @@
+//-------------------------------------------------------------------------------------New_Character interface
+interface New_Character {
+	public void SetNickname();
+	public void SetWeapon();
+	public void SetArmor();
+	public void SetSkill();
+	public void ShowInfo();
+	
+}
+//-------------------------------------------------------------------------------------ORC abstract class
+abstract class Orc implements New_Character{
+	protected String race;
+	protected String nickname;
+	protected String weapon;
+	protected String armor;
+	protected String skill;
+	protected int melee_attack;
+	protected int magic_attack;
+	protected int ranged_attack;
+	protected int vitality;
+	protected int attack_speed;
+	
+	
+	public Orc(){
+		race="Orc";
+		melee_attack=31;
+		magic_attack=24;
+		ranged_attack=27;
+		vitality=33;
+		attack_speed=19;
+	}
+	public void SetNickname() {
+		System.out.println(nickname);
+	}
+	public void SetWeapon(){
+		System.out.println(weapon);
+	}
+	public void SetArmor(){
+		System.out.println(armor);
+	}
+	public void SetSkill(){
+		System.out.println(skill);
+	}
+	public void ShowInfo(){
+		System.out.println(race);
+		System.out.println(nickname);
+		System.out.println(weapon);
+		System.out.println(armor);
+		System.out.println(skill);
+		System.out.println(melee_attack);
+		System.out.println(magic_attack);
+		System.out.println(ranged_attack);
+		System.out.println(vitality);
+		System.out.println(attack_speed);
+	}
+}
+//-------------------------------------------------------------------------------------HUMAN abstract class
+abstract class Human implements New_Character{
+	protected String race;
+	protected String nickname;
+	protected String weapon;
+	protected String armor;
+	protected String skill;
+	protected int melee_attack;
+	protected int magic_attack;
+	protected int ranged_attack;
+	protected int vitality;
+	protected int attack_speed;
+	
+	
+	public Human(){
+		race="Human";
+		melee_attack=30;
+		magic_attack=32;
+		ranged_attack=25;
+		vitality=26;
+		attack_speed=24;
+	}
+	public void SetNickname() {
+		System.out.println(nickname);
+	}
+	public void SetWeapon(){
+		System.out.println(weapon);
+	}
+	public void SetArmor(){
+		System.out.println(armor);
+	}
+	public void SetSkill(){
+		System.out.println(skill);
+	}
+	public void ShowInfo(){
+		System.out.println(race);
+		System.out.println(nickname);
+		System.out.println(weapon);
+		System.out.println(armor);
+		System.out.println(skill);
+		System.out.println(melee_attack);
+		System.out.println(magic_attack);
+		System.out.println(ranged_attack);
+		System.out.println(vitality);
+		System.out.println(attack_speed);
+	}
+}
+//-------------------------------------------------------------------------------------ORC Warrior class
+class Orc_Warrior extends Orc{
+	public Orc_Warrior(String n, String w, String a, String s){
+		nickname=n;
+		weapon=w;
+		armor=a;
+		skill=s;
+		melee_attack+=15;
+		vitality+=25;
+	}
+	
+}
+//-------------------------------------------------------------------------------------Human Warrior class
+class Human_Warrior extends Human{
+	public Human_Warrior(String n, String w, String a, String s){
+		nickname=n;
+		weapon=w;
+		armor=a;
+		skill=s;
+		melee_attack+=25;
+		vitality+=15;
+	}
+}
+//-------------------------------------------------------------------------------------ORC Warrior class
+class Orc_Mage extends Orc{
+	public Orc_Mage(String n, String w, String a, String s){
+		nickname=n;
+		weapon=w;
+		armor=a;
+		skill=s;
+		magic_attack+=20;
+	}
+	
+}
+//-------------------------------------------------------------------------------------Human Warrior class
+class Human_Mage extends Human{
+	public Human_Mage(String n, String w, String a, String s){
+		nickname=n;
+		weapon=w;
+		armor=a;
+		skill=s;
+		magic_attack+=25;
+	}
+}
+//-------------------------------------------------------------------------------------ORC Warrior class
+class Orc_Ranger extends Orc{
+	public Orc_Ranger(String n, String w, String a, String s){
+		nickname=n;
+		weapon=w;
+		armor=a;
+		skill=s;
+		ranged_attack+=15;
+		attack_speed+=15;
+	}
+	
+}
+//-------------------------------------------------------------------------------------Human Warrior class
+class Human_Ranger extends Human{
+	public Human_Ranger(String n, String w, String a, String s){
+		nickname=n;
+		weapon=w;
+		armor=a;
+		skill=s;
+		ranged_attack+=20;
+		attack_speed+=10;
+	}
+}
+
+//-----------------------------------------------------------------------------------------------MAIN
+public class Creator {
+	public static void main(String[]args){
+		Orc_Warrior darek_orc = new Orc_Warrior("Darek","Sword","Plate","Fire");
+		darek_orc.ShowInfo();
+//		System.out.println(darek_orc.race);
+//		darek_orc.SetNickname();
+//		System.out.println(darek_orc.attack_speed);
+//		System.out.println(darek_orc.melee_attack);
+//		
+//		System.out.println("\n");
+//		
+//		Human_Warrior darek_human = new Human_Warrior("Mietek","Axe","Golden","Iice");
+//		System.out.println(darek_human.race);
+//		darek_human.SetNickname();
+//		System.out.println(darek_human.vitality);
+//		darek_human.armor="shitty";
+//		darek_human.SetArmor();
+	}
+}
+	

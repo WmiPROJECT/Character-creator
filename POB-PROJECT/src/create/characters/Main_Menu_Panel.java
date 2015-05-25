@@ -43,6 +43,7 @@ public class Main_Menu_Panel extends JPanel {
 			}
 		});
 		add(Load_Character_button);
+		
 		Exit_button.setBounds(467, 486, 266, 60);
 
 		Exit_button.addActionListener(new ActionListener() {
