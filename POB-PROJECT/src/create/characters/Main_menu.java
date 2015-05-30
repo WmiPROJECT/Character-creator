@@ -52,7 +52,7 @@ public class Main_menu extends JFrame {
 	public Main_menu() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		setBounds(0, 0, 810, 638);
 		// TUTAJ TRZEBA DODAC CONENT PANE
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -83,4 +83,5 @@ public class Main_menu extends JFrame {
 		// WA¯NE CONTENT PANE.ADD JPANEL
 
 	}
+	
 }

@@ -104,6 +104,7 @@ public class Main_Menu_Panel extends JPanel {
 		background_mario_label.setIcon(new ImageIcon(Main_Menu_Panel.class
 				.getResource("/create/characters/img/background_mario.gif")));
 		background_mario_label.setBounds(0, 0, 800, 600);
+		
 		add(New_Character_button);
 
 		add(background_mario_label);

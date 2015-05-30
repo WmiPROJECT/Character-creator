@@ -1,0 +1,110 @@
+package create.characters;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+
+public class New_Orc_Panel extends Back_Panel {
+	private JTextField textField;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	public New_Orc_Panel() {
+		
+		JButton btnOrcWarrior = new JButton("Warrior");
+		btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcMage = new JButton("Mage");
+		btnOrcMage.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcRanger = new JButton("Ranger");
+		btnOrcRanger.setBackground(Color.LIGHT_GRAY);
+		JLabel lblClass = new JLabel("");
+
+
+		JButton Back_button = new JButton("Back to MENU");
+		Back_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				Back_button.setVisible(false);
+				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+
+			}
+		});
+		Back_button.setBounds(607, 494, 183, 62);
+		
+		
+		add(Main_Menu_Penel_object);
+		add(Back_button);
+		
+		textField = new JTextField();
+		textField.setBounds(299, 505, 167, 34);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblName = new JLabel("NAME");
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblName.setBounds(208, 507, 70, 24);
+		add(lblName);
+		
+		
+		btnOrcWarrior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnOrcWarrior.setBackground(Color.GREEN);
+				btnOrcMage.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
+				lblClass.setText("Warrior");
+			}
+		});
+		btnOrcWarrior.setBounds(13, 59, 81, 62);
+		add(btnOrcWarrior);
+		
+		
+		btnOrcMage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOrcMage.setBackground(Color.GREEN);
+				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
+				lblClass.setText("Mage");
+
+			}
+		});
+		btnOrcMage.setBounds(104, 59, 81, 62);
+		add(btnOrcMage);
+		
+		
+		btnOrcRanger.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOrcRanger.setBackground(Color.GREEN);
+				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+				btnOrcMage.setBackground(Color.LIGHT_GRAY);
+				lblClass.setText("Ranger");
+
+			}
+		});
+		btnOrcRanger.setBounds(195, 59, 83, 62);
+		add(btnOrcRanger);
+
+		add(super.background_label);
+		
+		lblClass.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblClass.setHorizontalAlignment(SwingConstants.CENTER);
+		lblClass.setBounds(453, 50, 271, 34);
+		add(lblClass);
+
+	}
+}

@@ -1,0 +1,44 @@
+package create.characters;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class New_Orc_Panel extends Back_Panel {
+	private JTextField textField;
+
+	public New_Orc_Panel() {
+	
+		JButton Back_button = new JButton("Back to MENU");
+		Back_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				Back_button.setVisible(false);
+				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+
+			}
+		});
+		Back_button.setBounds(607, 527, 183, 62);
+		
+		
+		add(Main_Menu_Penel_object);
+		add(Back_button);
+		add(super.background_label);
+		
+		textField = new JTextField();
+		textField.setBounds(284, 541, 167, 34);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblName = new JLabel("NAME");
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblName.setBounds(193, 543, 70, 24);
+		add(lblName);
+	}
+}

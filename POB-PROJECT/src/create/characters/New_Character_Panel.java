@@ -1,29 +1,66 @@
 package create.characters;
+
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-
+import javax.swing.JLabel;
 
 public class New_Character_Panel extends Back_Panel {
-	
-	JButton Knight_button = new JButton("KNIGHT");
-
 
 	public New_Character_Panel() {
-		Knight_button.addActionListener(new ActionListener() {
+
+		Main_Menu_Panel Main_Menu_Penel_object = new Main_Menu_Panel();
+		JButton Back_button = new JButton("Back to MENU");
+		JButton btnOrc = new JButton("ORC");
+		JButton btnHuman = new JButton("HUMAN");
+
+		btnOrc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Knight_Panel Knight_Panel_Object = new Knight_Panel();
-				Knight_Panel_Object.setBounds(0, 0, 800, 600);
-				Knight_button.setVisible(false);
-				
+				New_Orc_Panel New_Orc_Panel_object = new New_Orc_Panel();
+				New_Orc_Panel_object.setBounds(0, 0, 800, 600);
+
+				btnOrc.setVisible(false);
+				Back_button.setVisible(false);
+				btnHuman.setVisible(false);
+
+				background_label.setVisible(false);
+
+				add(New_Orc_Panel_object);
+
 			}
 		});
-	
-		
-		Knight_button.setBounds(41, 215, 118, 67);
-		add(Knight_button);
-		
+		btnOrc.setBounds(95, 229, 150, 100);
+
+		btnHuman.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOrc.setVisible(false);
+				btnHuman.setVisible(false);
+				Back_button.setVisible(false);
+				background_label.setVisible(false);
+
+			}
+		});
+		btnHuman.setBounds(530, 229, 150, 100);
+
+		Back_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnOrc.setVisible(false);
+				btnHuman.setVisible(false);
+				Back_button.setVisible(false);
+				background_label.setVisible(false);
+				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+
+			}
+		});
+		Back_button.setBounds(468, 438, 240, 93);
+
+		add(Back_button);
+		add(btnOrc);
+		add(btnHuman);
+		add(Main_Menu_Penel_object);
 		add(super.background_label);
 
 	}

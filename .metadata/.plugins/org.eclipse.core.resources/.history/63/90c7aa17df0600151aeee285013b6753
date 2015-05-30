@@ -1,0 +1,227 @@
+package create.characters;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+
+public class New_Orc_Panel extends Back_Panel {
+	private JTextField textField;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	public New_Orc_Panel() {
+		
+		JButton btnOrcWarrior = new JButton("Warrior");
+		btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcMage = new JButton("Mage");
+		btnOrcMage.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcRanger = new JButton("Ranger");
+		btnOrcRanger.setBackground(Color.LIGHT_GRAY);
+		JLabel lblClass = new JLabel("");
+		lblClass.setForeground(Color.WHITE);
+		JLabel lblWeapon = new JLabel("Weapon");
+		JLabel lblSelectedWeapon = new JLabel("None");
+		JButton btnWeaponPrev = new JButton("<");
+		JButton btnWeaponNext = new JButton(">");
+		JLabel lblShowWeapon = new JLabel("");
+
+		
+
+
+
+
+
+
+
+		JButton Back_button = new JButton("Back to MENU");
+		Back_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				Back_button.setVisible(false);
+				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+
+			}
+		});
+		Back_button.setBounds(607, 494, 183, 62);
+		
+		
+		add(Main_Menu_Penel_object);
+		add(Back_button);
+		
+		textField = new JTextField();
+		textField.setBounds(299, 505, 167, 34);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblName = new JLabel("NAME");
+		lblName.setForeground(Color.WHITE);
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblName.setBounds(208, 507, 70, 24);
+		add(lblName);
+		
+		
+		btnOrcWarrior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnOrcWarrior.setBackground(Color.GREEN);
+				btnOrcMage.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
+				lblClass.setText("Warrior");
+				lblSelectedWeapon.setText("Sword");
+				lblShowWeapon.setText(lblSelectedWeapon.getText());
+				
+			}
+		});
+		btnOrcWarrior.setBounds(13, 59, 81, 62);
+		add(btnOrcWarrior);
+		
+		
+		btnOrcMage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOrcMage.setBackground(Color.GREEN);
+				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
+				lblClass.setText("Mage");
+				lblSelectedWeapon.setText("Wand");
+
+
+			}
+		});
+		btnOrcMage.setBounds(104, 59, 81, 62);
+		add(btnOrcMage);
+		
+		
+		btnOrcRanger.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnOrcRanger.setBackground(Color.GREEN);
+				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+				btnOrcMage.setBackground(Color.LIGHT_GRAY);
+				lblClass.setText("Ranger");
+				lblSelectedWeapon.setText("Crossbow");
+
+
+			}
+		});
+		btnOrcRanger.setBounds(195, 59, 83, 62);
+		add(btnOrcRanger);
+
+		
+		lblClass.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblClass.setHorizontalAlignment(SwingConstants.CENTER);
+		lblClass.setBounds(453, 50, 271, 34);
+		add(lblClass);
+		
+		lblWeapon.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblWeapon.setForeground(Color.WHITE);
+		lblWeapon.setHorizontalAlignment(SwingConstants.CENTER);
+		lblWeapon.setBounds(104, 168, 81, 21);
+		add(lblWeapon);
+		
+		lblSelectedWeapon.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblSelectedWeapon.setForeground(Color.WHITE);
+		lblSelectedWeapon.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSelectedWeapon.setBounds(55, 200, 183, 24);
+		add(lblSelectedWeapon);
+		
+		btnWeaponPrev.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(btnOrcWarrior.getBackground()==Color.GREEN)
+				{
+					if(lblSelectedWeapon.getText()=="Sword")
+					{
+						lblSelectedWeapon.setText("Axe");
+					}
+					else if(lblSelectedWeapon.getText()=="Axe")
+					{
+						lblSelectedWeapon.setText("Club");
+					}
+					else if(lblSelectedWeapon.getText()=="Club")
+					{
+						lblSelectedWeapon.setText("Sword");
+					}
+				}
+				
+				else if(btnOrcMage.getBackground()==Color.GREEN)
+				{
+					if(lblSelectedWeapon.getText()=="Wand")
+					{
+						lblSelectedWeapon.setText("Staff");
+					}
+					else if(lblSelectedWeapon.getText()=="Staff")
+					{
+						lblSelectedWeapon.setText("Rod");
+					}
+					else if(lblSelectedWeapon.getText()=="Rod")
+					{
+						lblSelectedWeapon.setText("Wand");
+					}
+				}
+			}
+		});
+		btnWeaponPrev.setBackground(Color.ORANGE);
+		btnWeaponPrev.setBounds(0, 201, 45, 23);
+		add(btnWeaponPrev);
+		
+		btnWeaponNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(btnOrcWarrior.getBackground()==Color.GREEN)
+				{
+					if(lblSelectedWeapon.getText()=="Sword")
+					{
+						lblSelectedWeapon.setText("Club");
+					}
+					else if(lblSelectedWeapon.getText()=="Club")
+					{
+						lblSelectedWeapon.setText("Axe");
+					}
+					else if(lblSelectedWeapon.getText()=="Axe")
+					{
+						lblSelectedWeapon.setText("Sword");
+					}
+				}
+				
+				else if(btnOrcMage.getBackground()==Color.GREEN)
+				{
+					if(lblSelectedWeapon.getText()=="Wand")
+					{
+						lblSelectedWeapon.setText("Rod");
+					}
+					else if(lblSelectedWeapon.getText()=="Rod")
+					{
+						lblSelectedWeapon.setText("Staff");
+					}
+					else if(lblSelectedWeapon.getText()=="Staff")
+					{
+						lblSelectedWeapon.setText("Wand");
+					}
+				}
+			}
+		});
+		btnWeaponNext.setBackground(Color.ORANGE);
+		btnWeaponNext.setBounds(248, 201, 45, 23);
+		add(btnWeaponNext);
+		
+		lblShowWeapon.setForeground(Color.WHITE);
+		lblShowWeapon.setHorizontalAlignment(SwingConstants.CENTER);
+		lblShowWeapon.setBounds(463, 83, 261, 38);
+		add(lblShowWeapon);
+		add(super.background_label);
+
+
+	}
+}
