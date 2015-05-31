@@ -1,0 +1,14 @@
+package create.characters;
+
+import javax.swing.JPanel;
+
+public class New_Orc extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public New_Orc() {
+
+	}
+
+}
