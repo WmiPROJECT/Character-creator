@@ -4,16 +4,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-
+import javax.swing.JTextPane;
 import javax.swing.JLabel;
+
 import java.awt.Color;
 import java.awt.Font;
 
-
+import javax.swing.JComboBox;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
 public class New_Orc_Panel extends Back_Panel {
+	private JTextField NameField;
+	private JButton btnWeaponNext;
 
 	public New_Orc_Panel() {
 		// ----------------------------------------------------------------------------------------------------------
@@ -77,14 +87,6 @@ public class New_Orc_Panel extends Back_Panel {
 					lblName.setVisible(false);
 					NameField.setVisible(false);
 					btnCreate.setVisible(false);
-					btnArmorPrev.setVisible(false);
-					btnArmorNext.setVisible(false);
-					btnSkillsPrev.setVisible(false);
-					btnSkillsNext.setVisible(false);
-					lblSelectedArmor.setVisible(false);
-					lblSelectedSkills.setVisible(false);
-					lblShowArmor.setVisible(false);
-					lblShowSkills.setVisible(false);
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					Orc_Mage test_orc = new Orc_Mage(NameField.getText(),
@@ -104,14 +106,6 @@ public class New_Orc_Panel extends Back_Panel {
 					lblName.setVisible(false);
 					NameField.setVisible(false);
 					btnCreate.setVisible(false);
-					btnArmorPrev.setVisible(false);
-					btnArmorNext.setVisible(false);
-					btnSkillsPrev.setVisible(false);
-					btnSkillsNext.setVisible(false);
-					lblSelectedArmor.setVisible(false);
-					lblSelectedSkills.setVisible(false);
-					lblShowArmor.setVisible(false);
-					lblShowSkills.setVisible(false);
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					Orc_Ranger test_orc = new Orc_Ranger(NameField.getText(),
@@ -131,14 +125,6 @@ public class New_Orc_Panel extends Back_Panel {
 					lblName.setVisible(false);
 					NameField.setVisible(false);
 					btnCreate.setVisible(false);
-					btnArmorPrev.setVisible(false);
-					btnArmorNext.setVisible(false);
-					btnSkillsPrev.setVisible(false);
-					btnSkillsNext.setVisible(false);
-					lblSelectedArmor.setVisible(false);
-					lblSelectedSkills.setVisible(false);
-					lblShowArmor.setVisible(false);
-					lblShowSkills.setVisible(false);
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 				} else if (btnOrcWarrior.getBackground() != Color.GREEN
 						&& btnOrcMage.getBackground() != Color.GREEN

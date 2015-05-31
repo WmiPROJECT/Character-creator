@@ -33,7 +33,6 @@ public class Edit_Character_Panel extends Back_Panel {
 			
 			Back_button.setVisible(false);
 			Main_Menu_Penel_object.setBounds(0, 0, 800, 600);	
-			list.setVisible(false);
 			System.out.println(list.getSelectedValue());
 
 			}

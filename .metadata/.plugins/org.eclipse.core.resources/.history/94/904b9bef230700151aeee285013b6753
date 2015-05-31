@@ -14,6 +14,20 @@ public class Edit_Character_Panel extends Back_Panel {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Edit_Character_Panel() {
+		JButton Back_button = new JButton("Back to MENU");
+		Back_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+			Back_button.setVisible(false);
+			Main_Menu_Penel_object.setBounds(0, 0, 800, 600);	
+				
+			}
+		});
+		
+		
+		Back_button.setBounds(468, 438, 240, 93);
+		add(Main_Menu_Penel_object);
+		add(Back_button);
 		
 		DefaultListModel listModel;
 		listModel = new DefaultListModel();
@@ -26,26 +40,7 @@ public class Edit_Character_Panel extends Back_Panel {
 		
 		listModel.addElement("pierog");
 		listModel.addElement(name);
-		
-		JButton Back_button = new JButton("Back to MENU");
-		Back_button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			
-			Back_button.setVisible(false);
-			Main_Menu_Penel_object.setBounds(0, 0, 800, 600);	
-			list.setVisible(false);
-			System.out.println(list.getSelectedValue());
-
-			}
-		});
-		
-		
-		Back_button.setBounds(468, 438, 240, 93);
-		add(Main_Menu_Penel_object);
-		add(Back_button);
-		
-
-		
+		System.out.println(list.getSelectedValue());
 
 		add(super.background_label);
 
