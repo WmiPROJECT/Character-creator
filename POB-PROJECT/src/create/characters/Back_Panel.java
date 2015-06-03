@@ -17,47 +17,47 @@ interface New_Character {
 	public void ShowInfo();
 	
 }
-//-------------------------------------------------------------------------------------Load_Character abstract class
-@SuppressWarnings("serial")
-abstract class Load_Character implements New_Character,Serializable{
-	private String race;
-	protected String race_class;
-	protected String nickname;
-	protected String weapon;
-	protected String armor;
-	protected String skill;
-	protected int melee_attack;
-	protected int magic_attack;
-	protected int ranged_attack;
-	protected int vitality;
-	protected int attack_speed;	
-	
-	public void ChangeNickname(String change_name) {
-		nickname = change_name;
-	}
-	public void ChangeWeapon(String change_weapon){
-		weapon = change_weapon;	
-	}
-	public void ChangeArmor(String change_armor){
-		armor = change_armor;
-	}
-	public void ChangeSkill(String change_skill){
-		skill = change_skill;
-	}
-	public void ShowInfo(){
-		System.out.println("Race: " + race);
-		System.out.println("Class: " + race_class);
-		System.out.println("Nickname: " + nickname);
-		System.out.println("Weapon: " + weapon);
-		System.out.println("Armor: " + armor);
-		System.out.println("Skill: " + skill);
-		System.out.println("Melee attack: " + melee_attack);
-		System.out.println("Magic attack: " + magic_attack);
-		System.out.println("Ranged attack: " + ranged_attack);
-		System.out.println("Vitality: " + vitality);
-		System.out.println("Attack speed: " + attack_speed);
-	}
-}
+////-------------------------------------------------------------------------------------Load_Character abstract class
+//@SuppressWarnings("serial")
+//abstract class Load_Character implements New_Character,Serializable{
+//	private String race;
+//	protected String race_class;
+//	protected String nickname;
+//	protected String weapon;
+//	protected String armor;
+//	protected String skill;
+//	protected int melee_attack;
+//	protected int magic_attack;
+//	protected int ranged_attack;
+//	protected int vitality;
+//	protected int attack_speed;	
+//	
+//	public void ChangeNickname(String change_name) {
+//		nickname = change_name;
+//	}
+//	public void ChangeWeapon(String change_weapon){
+//		weapon = change_weapon;	
+//	}
+//	public void ChangeArmor(String change_armor){
+//		armor = change_armor;
+//	}
+//	public void ChangeSkill(String change_skill){
+//		skill = change_skill;
+//	}
+//	public void ShowInfo(){
+//		System.out.println("Race: " + race);
+//		System.out.println("Class: " + race_class);
+//		System.out.println("Nickname: " + nickname);
+//		System.out.println("Weapon: " + weapon);
+//		System.out.println("Armor: " + armor);
+//		System.out.println("Skill: " + skill);
+//		System.out.println("Melee attack: " + melee_attack);
+//		System.out.println("Magic attack: " + magic_attack);
+//		System.out.println("Ranged attack: " + ranged_attack);
+//		System.out.println("Vitality: " + vitality);
+//		System.out.println("Attack speed: " + attack_speed);
+//	}
+//}
 //-------------------------------------------------------------------------------------ORC abstract class
 @SuppressWarnings("serial")
 abstract class Orc implements New_Character,Serializable{
@@ -157,6 +157,12 @@ abstract class Human implements New_Character,Serializable{
 		System.out.println("Attack speed: " + attack_speed);
 	}
 }
+//-------------------------------------------------------------------------------------ORC Warrior class
+@SuppressWarnings("serial")
+class Load_Character extends Orc {
+	
+}
+
 //-------------------------------------------------------------------------------------ORC Warrior class
 @SuppressWarnings("serial")
 class Orc_Warrior extends Orc {

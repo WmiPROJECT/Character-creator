@@ -74,8 +74,11 @@ public class New_Orc_Panel extends Back_Panel {
 							lblShowSkills.getText());
 					
 					try {
-						ObjectOutputStream nc = new ObjectOutputStream(new FileOutputStream("Files\\Characters.dat"));
+//						ObjectOutputStream nc = new ObjectOutputStream(new FileOutputStream("Characters.dat",true));    <- dopisuje
+						ObjectOutputStream nc = new ObjectOutputStream(new FileOutputStream("Characters.dat"));
+
 						nc.writeObject(test_orc);
+						
 						nc.close();
 					} catch (FileNotFoundException e1) {
 						System.out.println("File not found");

@@ -6,44 +6,24 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import java.io.*;
-
 public class Load_Character_Panel extends Back_Panel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	 public static void main(String[] args){
-
-	ObjectInputStream lc;
-	try {
-		lc = new ObjectInputStream(new FileInputStream("Characters.dat"));
-		try {
-			System.out.println(lc.readObject());
-			System.out.println(lc.readObject().getClass());
-			Orc_Warrior character = ( Orc_Warrior ) lc.readObject();
-			character.ShowInfo();
-			lc.close();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
-	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-
-	//Load_Character character = ( Load_Character ) lc.readObject();
-//	character.ShowInfo();
-}
 		
 
-	public Load_Character_Panel() {
+	public Load_Character_Panel() throws FileNotFoundException, IOException, ClassNotFoundException {
+		
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Characters.dat"));
+		Orc_Warrior test_orc = ( Orc_Warrior )ois.readObject();	
+		ois.close();
+		test_orc.ShowInfo();
+		
+//		Load_Character test_load = ( Load_Character )ois.readObject();
+//		ois.close();
+//		test_load.ShowInfo();
 		JButton Back_button = new JButton("Back to MENU");
 		Back_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

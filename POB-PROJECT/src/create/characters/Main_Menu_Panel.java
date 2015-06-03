@@ -5,6 +5,9 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
@@ -33,15 +36,28 @@ public class Main_Menu_Panel extends JPanel {
 
 		Load_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Load_Character_Panel Load_Character_Panel_object = new Load_Character_Panel();
-				Load_Character_Panel_object.setBounds(0, 0, 800, 600);
-				New_Character_button.setVisible(false);
-				Exit_button.setVisible(false);
-				Load_Character_button.setVisible(false);
-				Author_button.setVisible(false);
-				Edit_Character_button.setVisible(false);
-				background_mario_label.setVisible(false);
-				add(Load_Character_Panel_object);
+				Load_Character_Panel Load_Character_Panel_object;
+				try {
+					Load_Character_Panel_object = new Load_Character_Panel();
+					Load_Character_Panel_object.setBounds(0, 0, 800, 600);
+					New_Character_button.setVisible(false);
+					Exit_button.setVisible(false);
+					Load_Character_button.setVisible(false);
+					Author_button.setVisible(false);
+					Edit_Character_button.setVisible(false);
+					background_mario_label.setVisible(false);
+					add(Load_Character_Panel_object);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 
 			}
 		});
