@@ -6,12 +6,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
 public class Main_Menu_Panel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton Edit_Character_button = new JButton("Edit Character");
 	JButton New_Character_button = new JButton("New Character");
 	JButton Load_Character_button = new JButton("Load Character");

@@ -7,6 +7,11 @@ import javax.swing.JButton;
 
 public class Edit_Character_Panel extends Back_Panel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Edit_Character_Panel() {
 		JButton Back_button = new JButton("Back to MENU");
 		Back_button.addActionListener(new ActionListener() {

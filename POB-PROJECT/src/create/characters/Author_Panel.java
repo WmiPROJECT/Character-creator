@@ -1,23 +1,18 @@
 package create.characters;
-
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
-import javax.swing.JSlider;
-import javax.swing.JSeparator;
-import javax.swing.JTree;
-import javax.swing.JScrollBar;
-import javax.swing.JList;
+
 
 public class Author_Panel extends Back_Panel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public Author_Panel() {
 		JButton Back_button = new JButton("Back to MENU");

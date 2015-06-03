@@ -1,27 +1,21 @@
 package create.characters;
-
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-import javax.swing.SwingConstants;
-import javax.swing.JOptionPane;
-import java.awt.Panel;
-import java.awt.Color;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.ImageIcon;
 
 public class Main_menu extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	// OBIEKT CLASY ZAINICJOWAÆ NA POCZATKU
 	JLabel background_mario_label = DefaultComponentFactory.getInstance()

@@ -1,0 +1,11 @@
+package rozw10;
+
+public class Pracownik implements Premiowany {
+
+	@Override
+	public void ustalPremie(double premia) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

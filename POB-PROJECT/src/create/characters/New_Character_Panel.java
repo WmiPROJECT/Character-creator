@@ -1,14 +1,14 @@
 package create.characters;
-
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 public class New_Character_Panel extends Back_Panel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public New_Character_Panel() {
 

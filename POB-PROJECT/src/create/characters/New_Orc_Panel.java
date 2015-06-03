@@ -1,29 +1,28 @@
 package create.characters;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
 
 import java.awt.Color;
 import java.awt.Font;
 
-import javax.swing.JComboBox;
-import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JScrollBar;
-import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 public class New_Orc_Panel extends Back_Panel {
-	private JTextField NameField;
-	private JButton btnWeaponNext;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public New_Orc_Panel() {
 		// ----------------------------------------------------------------------------------------------------------
@@ -73,6 +72,21 @@ public class New_Orc_Panel extends Back_Panel {
 					Orc_Warrior test_orc = new Orc_Warrior(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
+					
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(new FileOutputStream("Files\\Characters.dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					
+					
 					test_orc.ShowInfo();
 					btnOrcWarrior.setVisible(false);
 					btnOrcMage.setVisible(false);

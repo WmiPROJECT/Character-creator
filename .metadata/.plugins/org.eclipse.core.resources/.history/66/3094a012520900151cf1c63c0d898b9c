@@ -1,0 +1,10 @@
+package create.characters;
+import java.io.*;
+
+class Save_File {
+
+	   public static void main(String args[])throws IOException{
+
+
+	   }
+}
