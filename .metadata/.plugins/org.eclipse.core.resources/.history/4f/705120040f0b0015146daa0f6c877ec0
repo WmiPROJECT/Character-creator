@@ -1,0 +1,211 @@
+package Generator_kKlas;
+
+import java.util.*;
+import java.io.*;
+
+//class SaveFile {
+//    
+//    private String path;
+//    private boolean add_to_file = false;
+//     
+//    public SaveFile(String file_path){
+//    	path = file_path;
+//    }
+//     
+//    public SaveFile(String file_path, boolean add_txt){
+//    	path= file_path;
+//    	add_to_file = add_txt;
+//    }
+//     
+//    public void SaveToFile(String tekstLinia) throws IOException {
+//        FileWriter write = new FileWriter(path, add_to_file);
+//        PrintWriter drukuj_linie = new PrintWriter(write);
+//         
+//        drukuj_linie.printf("%s" + "%n", tekstLinia);
+//        drukuj_linie.close();
+//    }
+//     
+//}
+
+public class Generator {
+	private String name;
+	private int attributes_quantity;
+
+	public int getAttributes_quantity() {
+		return attributes_quantity;
+	}
+
+	public void setAttributes_quantity(int attributes_quantity) {
+		this.attributes_quantity = attributes_quantity;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public static void main(String[] args){
+
+		Scanner sc = new Scanner(System.in);
+		Generator gen = new Generator();
+
+		System.out.println("            Class generator      ");
+		System.out.println("[===================================]");
+		System.out.println("Set class name: ");
+		gen.setName(sc.nextLine());
+		System.out.println("-------------------------------------");
+
+		System.out.print("Set attributes quantity: ");
+		gen.setAttributes_quantity(sc.nextInt());
+		System.out.println("-------------------------------------");
+
+		String[] types = new String[gen.attributes_quantity+1];
+		String[] names = new String[gen.attributes_quantity+1];
+
+		System.out
+				.println("Set attributes types and names ( for example: string surname )");
+
+//		int first_loop = 0;
+//		for (int i = 0; i < gen.attributes_quantity; i++) 
+//		{
+//			if(i!=0)
+//			{
+//				System.out.print("Quantity number ");
+//				System.out.println(i);
+//			}
+//			tab[i] =sc.nextLine();
+//			first_loop++;
+//		}
+//		System.out.print("Quantity number ");
+//		System.out.println(first_loop);
+//		tab[first_loop] =sc.nextLine();
+		
+		int first_loop = 0;
+		for(int i = 0; i < gen.attributes_quantity; i++)
+		{
+			if(i!=0)
+			{
+				System.out.print("Quantity number ");
+				System.out.println(i);
+				System.out.print("Set type(int,string etc): ");
+			}
+			types[i] = sc.nextLine();
+			if(i!=0)
+			{
+				System.out.print("Set attribute name: ");
+				names[i] = sc.nextLine();								
+
+			}
+			first_loop++;
+		}
+		System.out.print("Quantity number ");
+		System.out.println(first_loop);
+		System.out.print("Set type(int,string etc): ");
+		types[first_loop] = sc.nextLine();
+		System.out.print("Set attribute name: ");
+		names[first_loop] = sc.nextLine();								
+		
+		
+		System.out.println("-------------------------------------");
+
+		System.out.print("Class name: ");
+		System.out.println(gen.getName());
+		System.out.print("Attributes quantity: ");
+		System.out.println(gen.getAttributes_quantity());
+		for (int i = 1; i < gen.attributes_quantity+1; i++) 
+		{
+			System.out.print("Quantity number ");
+			System.out.println(i);
+			System.out.print(types[i]);
+			System.out.print(" ");
+			System.out.println(names[i]);
+		}
+		sc.close();
+
+		FileWriter file_cpp = null;
+		try {
+			file_cpp = new FileWriter("main.cpp");
+			file_cpp.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// -----------------------------------------------------------------------------------
+		FileWriter file_hpp = null;
+		try {
+			file_hpp = new FileWriter("main.hpp");
+			String[] before_class = {"#ifndef main_hpp","#define main_hpp","#include <iostream>","using namespace std;","\n"};
+			for( int i  =0; i < before_class.length; i++ )
+			{
+				file_hpp.write(before_class[i]);
+				file_hpp.write("\n");
+			}
+			file_hpp.write("\n");
+			file_hpp.write("class ");
+			file_hpp.write(gen.getName());
+			file_hpp.write("{");
+			file_hpp.write("\n");
+			file_hpp.write("   protected:");
+			file_hpp.write("\n");
+			
+			for (int i = 1; i < gen.attributes_quantity+1; i++) 
+			{
+				file_hpp.write("       ");
+				file_hpp.write(types[i]);
+				file_hpp.write(" ");
+				file_hpp.write(names[i]);
+				file_hpp.write(";");
+				file_hpp.write("\n");
+			}
+			file_hpp.write("\n");
+			file_hpp.write("   public:");
+			file_hpp.write("\n");
+			for (int i = 1; i < gen.attributes_quantity+1; i++) 
+			{
+				file_hpp.write("       ");
+				file_hpp.write("void ");
+				file_hpp.write("set");
+				file_hpp.write(names[i]);
+				file_hpp.write("( ");
+				file_hpp.write(types[i]);
+				file_hpp.write(" x );");	
+				file_hpp.write("\n");
+				file_hpp.write("       ");
+				file_hpp.write(types[i]);
+				file_hpp.write(" get");
+				file_hpp.write(names[i]);
+				file_hpp.write("();");
+				file_hpp.write("\n");
+			}
+			file_hpp.write("       ");
+			file_hpp.write(gen.getName());
+			file_hpp.write("(");
+			for (int i = 1; i < gen.getAttributes_quantity(); i++) 
+			{
+				file_hpp.write(types[i]);
+				file_hpp.write(" x");
+				file_hpp.write(i);
+				file_hpp.write(",");
+			}
+			file_hpp.write(types[gen.getAttributes_quantity()]);
+			file_hpp.write(" x");
+			file_hpp.write(gen.getAttributes_quantity());
+			file_hpp.write(");");
+			file_hpp.write("\n");
+			file_hpp.write("};");
+			file_hpp.write("\n");
+			file_hpp.write("#endif");
+			file_hpp.close();
+	        System.out.println("Done");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+}

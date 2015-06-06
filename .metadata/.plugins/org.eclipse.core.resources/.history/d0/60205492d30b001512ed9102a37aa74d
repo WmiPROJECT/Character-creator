@@ -1,0 +1,68 @@
+package konwerter;
+import java.util.*;
+import java.io.*;
+
+public class Converter {
+	private int menu;
+
+	public int getMenu() {
+		return menu;
+	}
+
+	public void setMenu(int menu) {
+		this.menu = menu;
+	}
+	public void javatocpp(){
+		System.out.println("javatocpp");
+		
+		   FileReader fr = null;
+		   String linia = "";
+
+		   // OTWIERANIE PLIKU:
+		   try {
+		     fr = new FileReader("test_class_java.txt");
+		   } catch (FileNotFoundException e) {
+		       System.out.println("File not found!");
+		       System.exit(1);
+		   }
+
+		   BufferedReader bfr = new BufferedReader(fr);
+		   // ODCZYT KOLEJNYCH LINII Z PLIKU:
+		   try {
+		     while((linia = bfr.readLine()) != null){
+		        System.out.println(linia);
+		     }
+		    } catch (IOException e) {
+		        System.out.println("B£¥D ODCZYTU Z PLIKU!");
+		        System.exit(2);
+		   }
+	}
+	public void cpptojava(){
+		System.out.println("cpptojava");
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Converter con = new Converter();
+		
+		System.out.println("            CLASS CONVERTER      ");
+		System.out.println("[===================================]");
+		System.out.println("[===]      1. Java to C++       [===]");
+		System.out.println("[===]      2. C++ to Java       [===]");
+		System.out.println("[===================================]");
+		System.out.println("Select: ");
+		con.setMenu(sc.nextInt());
+		
+		switch (con.getMenu()) {
+		  case 1:
+		    con.javatocpp();
+		    break;
+		  case 2:
+			con.cpptojava();
+			break;
+		  default:
+			  System.out.println("Wrong choose");
+			  
+		}
+	}
+}

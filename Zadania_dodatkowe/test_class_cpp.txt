@@ -1,0 +1,22 @@
+class Osoby {
+ private:
+ 	string imie;
+ 	string nazwisko;
+	string wiek;
+
+ public:
+	void getImie(){return imie;}
+	void setImie(string x){imie=x;}
+	void getNazwisko(){return nazwisko;}
+	void setNazwisko(string x){ nazwisko=x;}
+	void getWiek(){return wiek;}
+	void setWiek(int x){wiek=x}
+
+	Osoby(string x1, string x2, string x3)
+	{
+		setimie(x1);
+		setnazwisko(x2);
+		setwiek(x3);
+	}
+	
+};
