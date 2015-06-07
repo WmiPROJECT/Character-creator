@@ -440,29 +440,6 @@ public class Edit_Character_Panel extends Back_Panel {
 		add(btnWeaponNext);
 		
 		JButton btnArmorNext = new JButton(">");
-		btnArmorNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (lblArmor.getText().equals("Plate")) {
-					lblArmor.setText("Golden");
-				} else if (lblArmor.getText().equals("Golden")) {
-					lblArmor.setText("Dark");
-				} else if (lblArmor.getText().equals("Dark")) {
-					lblArmor.setText("Plate");
-				} else if (lblArmor.getText().equals("Robe")) {
-					lblArmor.setText("Cape");
-				} else if (lblArmor.getText().equals("Cape")) {
-					lblArmor.setText("Coat");
-				} else if (lblArmor.getText().equals("Coat")) {
-					lblArmor.setText("Robe");
-				} else if (lblArmor.getText().equals("Paladin")) {
-					lblArmor.setText("Master Archer's");
-				} else if (lblArmor.getText().equals("Master Archer's")) {
-					lblArmor.setText("Yalahar");
-				} else if (lblArmor.getText() == "Yalahar") {
-					lblArmor.setText("Paladin");
-				}
-			}
-		});
 		btnArmorNext.setBounds(613, 274, 56, 22);
 		add(btnArmorNext);
 		

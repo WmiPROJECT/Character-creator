@@ -444,7 +444,6 @@ public class New_Orc_Panel extends Back_Panel {
 		btnArmorNext.setBackground(Color.ORANGE);
 		btnArmorNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Plate") {
 						lblSelectedArmor.setText("Golden");
