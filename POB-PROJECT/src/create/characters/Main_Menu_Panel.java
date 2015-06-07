@@ -91,15 +91,22 @@ public class Main_Menu_Panel extends JPanel {
 		Edit_Character_button.setBounds(467, 303, 266, 65);
 		Edit_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Edit_Character_Panel Edit_Character_Panel_object = new Edit_Character_Panel();
-				Edit_Character_Panel_object.setBounds(0, 0, 800, 600);
-				New_Character_button.setVisible(false);
-				Exit_button.setVisible(false);
-				Load_Character_button.setVisible(false);
-				Author_button.setVisible(false);
-				Edit_Character_button.setVisible(false);
-				background_mario_label.setVisible(false);
-				add(Edit_Character_Panel_object);
+				Edit_Character_Panel Edit_Character_Panel_object;
+				try {
+					Edit_Character_Panel_object = new Edit_Character_Panel();
+					Edit_Character_Panel_object.setBounds(0, 0, 800, 600);
+					New_Character_button.setVisible(false);
+					Exit_button.setVisible(false);
+					Load_Character_button.setVisible(false);
+					Author_button.setVisible(false);
+					Edit_Character_button.setVisible(false);
+					background_mario_label.setVisible(false);
+					add(Edit_Character_Panel_object);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
 			}
 		});
 		add(Edit_Character_button);
