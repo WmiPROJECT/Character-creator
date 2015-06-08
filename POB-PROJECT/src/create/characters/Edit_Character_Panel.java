@@ -1,15 +1,20 @@
 package create.characters;
 
 import java.awt.Color;
+import java.io.BufferedWriter;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -19,19 +24,20 @@ import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 
+import java.io.File;
+
 public class Edit_Character_Panel extends Back_Panel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField NameField;
 
 	public Edit_Character_Panel() throws IOException {
-		
+
 		JLabel lblNickname = new JLabel("");
 		lblNickname.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNickname.setFont(new Font("Century Gothic", Font.BOLD, 15));	
+		lblNickname.setFont(new Font("Century Gothic", Font.BOLD, 15));
 		JLabel lblWeapon = new JLabel("");
 		lblWeapon.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWeapon.setFont(new Font("Century Gothic", Font.BOLD, 15));
@@ -46,8 +52,34 @@ public class Edit_Character_Panel extends Back_Panel {
 		JLabel lblArmor_1 = new JLabel("Armor:");
 		JLabel lblSkill_1 = new JLabel("Skill:");
 		JButton btnWeaponPrev = new JButton("<");
-
 		JButton btnSelectedValueJList = new JButton("Select");
+		JButton btnWeaponNext = new JButton(">");
+		JButton btnArmorPrev = new JButton("<");
+		JButton btnArmorNext = new JButton(">");
+		JButton btnSkillPrev = new JButton("<");
+		JButton btnSkillNext = new JButton(">");
+		JLabel lblRace = new JLabel("");
+		JLabel lblClass = new JLabel("");
+		JButton btnSave = new JButton("SAVE");
+		JButton btnDelete = new JButton("Delete");
+		lblRace.setVisible(false);
+		lblClass.setVisible(false);
+		lblNickname.setVisible(false);
+		lblWeapon.setVisible(false);
+		lblArmor.setVisible(false);
+		lblSkill.setVisible(false);
+		lblNickname_1.setVisible(false);
+		lblWeapon_1.setVisible(false);
+		lblArmor_1.setVisible(false);
+		lblSkill_1.setVisible(false);
+		btnWeaponPrev.setVisible(false);
+		btnWeaponNext.setVisible(false);
+		btnArmorPrev.setVisible(false);
+		btnArmorNext.setVisible(false);
+		btnSkillPrev.setVisible(false);
+		btnSkillNext.setVisible(false);
+		btnSave.setVisible(false);
+		btnDelete.setVisible(false);
 		
 		BufferedReader in = null;
 		String line;
@@ -66,6 +98,7 @@ public class Edit_Character_Panel extends Back_Panel {
 		}
 
 		JList list = new JList(listModel);
+
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setBounds(10, 11, 187, 578);
 
@@ -76,6 +109,28 @@ public class Edit_Character_Panel extends Back_Panel {
 				String selected = (String) list.getSelectedValue();
 				String selected_class = "";
 				String selected_race = "";
+				
+				btnSelectedValueJList.setVisible(false);
+				list.setVisible(false);
+				lblNickname.setVisible(true);
+				lblWeapon.setVisible(true);
+				lblArmor.setVisible(true);
+				lblSkill.setVisible(true);
+				lblNickname_1.setVisible(true);
+				btnArmorNext.setVisible(true);
+				lblWeapon_1.setVisible(true);
+				lblArmor_1.setVisible(true);
+				lblSkill_1.setVisible(true);
+				btnWeaponPrev.setVisible(true);
+				btnDelete.setVisible(true);
+				
+				btnWeaponNext.setVisible(true);
+				btnArmorPrev.setVisible(true);
+				btnSave.setVisible(true);
+				btnWeaponNext.setVisible(true);
+				btnSkillPrev.setVisible(true);
+				btnSkillNext.setVisible(true);
+
 				// --------------------------------------------------------
 				// Class
 				boolean check = false;
@@ -111,7 +166,8 @@ public class Edit_Character_Panel extends Back_Panel {
 				String nick = "";
 				for (int i = 0; i < selected.length(); i++) {
 					char c = selected.charAt(i);
-					if (selected.charAt(i) == ' ' && selected.charAt(i+1) == '-')
+					if (selected.charAt(i) == ' '
+							&& selected.charAt(i + 1) == '-')
 						break;
 					nick = nick + c;
 				}
@@ -129,6 +185,10 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblWeapon.setText(test_orc.weapon);
 						lblArmor.setText(test_orc.armor);
 						lblSkill.setText(test_orc.skill);
+						lblRace.setText(selected_race);
+						lblClass.setText(selected_class);
+						
+
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -157,7 +217,10 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblWeapon.setText(test_orc.weapon);
 						lblArmor.setText(test_orc.armor);
 						lblSkill.setText(test_orc.skill);
-	
+						lblRace.setText(selected_race);
+						lblClass.setText(selected_class);
+						
+
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -185,6 +248,9 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblWeapon.setText(test_orc.weapon);
 						lblArmor.setText(test_orc.armor);
 						lblSkill.setText(test_orc.skill);
+						lblRace.setText(selected_race);
+						lblClass.setText(selected_class);
+					
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -214,7 +280,9 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblWeapon.setText(test_orc.weapon);
 						lblArmor.setText(test_orc.armor);
 						lblSkill.setText(test_orc.skill);
-
+						lblRace.setText(selected_race);
+						lblClass.setText(selected_class);
+						
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -243,7 +311,9 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblWeapon.setText(test_orc.weapon);
 						lblArmor.setText(test_orc.armor);
 						lblSkill.setText(test_orc.skill);
-
+						lblRace.setText(selected_race);
+						lblClass.setText(selected_class);
+						
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -271,6 +341,9 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblWeapon.setText(test_orc.weapon);
 						lblArmor.setText(test_orc.armor);
 						lblSkill.setText(test_orc.skill);
+						lblRace.setText(selected_race);
+						lblClass.setText(selected_class);
+						
 
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
@@ -291,7 +364,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				} else {
 					System.out.println("ERROR");
 				}
-
+				
 			}
 
 		});
@@ -299,62 +372,187 @@ public class Edit_Character_Panel extends Back_Panel {
 		add(btnSelectedValueJList);
 
 		lblNickname.setForeground(Color.WHITE);
-		lblNickname.setBounds(335, 208, 176, 22);
+		lblNickname.setBounds(444, 209, 176, 22);
 		add(lblNickname);
 
 		lblWeapon.setForeground(Color.WHITE);
-		lblWeapon.setBounds(335, 241, 176, 22);
+		lblWeapon.setBounds(444, 242, 176, 22);
 		add(lblWeapon);
 
 		lblArmor.setForeground(Color.WHITE);
-		lblArmor.setBounds(335, 274, 176, 22);
+		lblArmor.setBounds(444, 275, 176, 22);
 		add(lblArmor);
 
 		lblSkill.setForeground(Color.WHITE);
-		lblSkill.setBounds(335, 307, 176, 22);
+		lblSkill.setBounds(444, 308, 176, 22);
 		add(lblSkill);
-
 
 		lblNickname_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
 		lblNickname_1.setForeground(Color.WHITE);
-		lblNickname_1.setBounds(229, 208, 109, 22);
+		lblNickname_1.setBounds(338, 209, 109, 22);
 		add(lblNickname_1);
 
 		lblWeapon_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
 		lblWeapon_1.setForeground(Color.WHITE);
-		lblWeapon_1.setBounds(229, 241, 109, 22);
+		lblWeapon_1.setBounds(338, 242, 109, 22);
 		add(lblWeapon_1);
 
 		lblArmor_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
 		lblArmor_1.setForeground(Color.WHITE);
-		lblArmor_1.setBounds(229, 274, 109, 22);
+		lblArmor_1.setBounds(338, 275, 109, 22);
 		add(lblArmor_1);
 
 		lblSkill_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
 		lblSkill_1.setForeground(Color.WHITE);
-		lblSkill_1.setBounds(229, 307, 109, 22);
+		lblSkill_1.setBounds(338, 308, 109, 22);
 		add(lblSkill_1);
 
-	
-
-		NameField = new JTextField();
-		NameField.setBounds(547, 208, 122, 20);
-		add(NameField);
-		NameField.setColumns(10);
-		
-		JButton btnChangeName = new JButton("Change");
-		btnChangeName.addActionListener(new ActionListener() {
+		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lblNickname.setText(NameField.getText());
+				list.setVisible(true);
+				btnSelectedValueJList.setVisible(true);
+				lblNickname.setVisible(false);
+				lblWeapon.setVisible(false);
+				lblArmor.setVisible(false);
+				lblSkill.setVisible(false);
+				lblNickname_1.setVisible(false);
+				lblWeapon_1.setVisible(false);
+				lblArmor_1.setVisible(false);
+				lblSkill_1.setVisible(false);
+				btnWeaponPrev.setVisible(false);
+				
+				btnWeaponNext.setVisible(false);
+				btnArmorPrev.setVisible(false);
+				btnArmorNext.setVisible(false);
+				btnSkillPrev.setVisible(false);
+				btnSkillNext.setVisible(false);
+				btnSave.setVisible(false);
+				btnDelete.setVisible(false);
+				
+					
+					
+
+				if (lblClass.getText().equals("Warrior")
+						&& lblRace.getText().equals("Orc")) {
+					Orc_Warrior test_orc = new Orc_Warrior(lblNickname
+							.getText(), lblWeapon.getText(),
+							lblArmor.getText(), lblSkill.getText());
+
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ lblNickname.getText() + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				} else if (lblClass.getText().equals("Mage")
+						&& lblRace.getText().equals("Orc")) {
+					Orc_Mage test_orc = new Orc_Mage(lblNickname.getText(),
+							lblWeapon.getText(), lblArmor.getText(), lblSkill
+									.getText());
+
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ lblNickname.getText() + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				} else if (lblClass.getText().equals("Ranger")
+						&& lblRace.getText().equals("Orc")) {
+					Orc_Ranger test_orc = new Orc_Ranger(lblNickname.getText(),
+							lblWeapon.getText(), lblArmor.getText(), lblSkill
+									.getText());
+
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ lblNickname.getText() + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				} else if (lblClass.getText().equals("Warrior")
+						&& lblRace.getText().equals("Human")) {
+					Human_Warrior test_orc = new Human_Warrior(lblNickname
+							.getText(), lblWeapon.getText(),
+							lblArmor.getText(), lblSkill.getText());
+
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ lblNickname.getText() + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				} else if (lblClass.getText().equals("Warrior")
+						&& lblRace.getText().equals("Ranger")) {
+					Human_Ranger test_orc = new Human_Ranger(lblNickname
+							.getText(), lblWeapon.getText(),
+							lblArmor.getText(), lblSkill.getText());
+
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ lblNickname.getText() + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				} else if (lblClass.getText().equals("Mage")
+						&& lblRace.getText().equals("Human")) {
+					Human_Mage test_orc = new Human_Mage(lblNickname.getText(),
+							lblWeapon.getText(), lblArmor.getText(), lblSkill
+									.getText());
+
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ lblNickname.getText() + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+
 			}
 		});
-		btnChangeName.setBounds(679, 208, 82, 22);
-		add(btnChangeName);
-		
-		JButton btnSave = new JButton("SAVE");
 		btnSave.setBounds(513, 459, 277, 36);
 		add(btnSave);
-		
+
 		btnWeaponPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (lblWeapon.getText().equals("Sword")) {
@@ -378,10 +576,9 @@ public class Edit_Character_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnWeaponPrev.setBounds(547, 241, 56, 22);
+		btnWeaponPrev.setBounds(656, 242, 56, 22);
 		add(btnWeaponPrev);
-		
-		JButton btnArmorPrev = new JButton("<");
+
 		btnArmorPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (lblArmor.getText().equals("Plate")) {
@@ -405,14 +602,37 @@ public class Edit_Character_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnArmorPrev.setBounds(547, 274, 56, 22);
+		btnArmorPrev.setBounds(656, 275, 56, 22);
 		add(btnArmorPrev);
-		
-		JButton btnSkillPrev = new JButton("<");
-		btnSkillPrev.setBounds(547, 307, 56, 22);
+
+		btnSkillPrev.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				if (lblSkill.getText().equals("Exori")) {
+					lblSkill.setText("Exori Gran");
+				} else if (lblSkill.getText().equals("Exori Gran")) {
+					lblSkill.setText("Exori Gran Ico");
+				} else if (lblSkill.getText().equals("Exori Gran Ico")) {
+					lblSkill.setText("Exori");
+				} else if (lblSkill.getText().equals("Exevo Gran Mas Vis")) {
+					lblSkill.setText("Exori Frigo");
+				} else if (lblSkill.getText().equals("Exori Frigo")) {
+					lblSkill.setText("Utori Flam");
+				} else if (lblSkill.getText().equals("Utori Flam")) {
+					lblSkill.setText("Exevo Gran Mas Vis");
+				} else if (lblSkill.getText().equals("Exevo Mas San")) {
+					lblSkill.setText("Exori Con");
+				} else if (lblSkill.getText().equals("Exori Con")) {
+					lblSkill.setText("Utito Tempo San");
+				} else if (lblSkill.getText().equals("Utito Tempo San")) {
+					lblSkill.setText("Exevo Mas San");
+				}
+			}
+
+		});
+		btnSkillPrev.setBounds(656, 308, 56, 22);
 		add(btnSkillPrev);
-		
-		JButton btnWeaponNext = new JButton(">");
+
 		btnWeaponNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (lblWeapon.getText().equals("Sword")) {
@@ -421,7 +641,7 @@ public class Edit_Character_Panel extends Back_Panel {
 					lblWeapon.setText("Axe");
 				} else if (lblWeapon.getText().equals("Axe")) {
 					lblWeapon.setText("Sword");
-				}else if (lblWeapon.getText().equals("Wand")) {
+				} else if (lblWeapon.getText().equals("Wand")) {
 					lblWeapon.setText("Rod");
 				} else if (lblWeapon.getText().equals("Rod")) {
 					lblWeapon.setText("Staff");
@@ -436,10 +656,9 @@ public class Edit_Character_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnWeaponNext.setBounds(613, 241, 56, 22);
+		btnWeaponNext.setBounds(722, 242, 56, 22);
 		add(btnWeaponNext);
-		
-		JButton btnArmorNext = new JButton(">");
+
 		btnArmorNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (lblArmor.getText().equals("Plate")) {
@@ -463,46 +682,206 @@ public class Edit_Character_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnArmorNext.setBounds(613, 274, 56, 22);
+		btnArmorNext.setBounds(722, 275, 56, 22);
 		add(btnArmorNext);
-		
-		JButton btnSkillNext = new JButton(">");
-		btnSkillNext.setBounds(613, 307, 56, 22);
+
+		btnSkillNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (lblSkill.getText().equals("Exori")) {
+					lblSkill.setText("Exori Gran Ico");
+				} else if (lblSkill.getText().equals("Exori Gran Ico")) {
+					lblSkill.setText("Exori Gran");
+				} else if (lblSkill.getText().equals("Exori Gran")) {
+					lblSkill.setText("Exori");
+				} else if (lblSkill.getText().equals("Exevo Gran Mas Vis")) {
+					lblSkill.setText("Utori Flam");
+				} else if (lblSkill.getText().equals("Utori Flam")) {
+					lblSkill.setText("Exori Frigo");
+				} else if (lblSkill.getText().equals("Exori Frigo")) {
+					lblSkill.setText("Exevo Gran Mas Vis");
+				} else if (lblSkill.getText().equals("Exevo Mas San")) {
+					lblSkill.setText("Utito Tempo San");
+				} else if (lblSkill.getText().equals("Utito Tempo San")) {
+					lblSkill.setText("Exori Con");
+				} else if (lblSkill.getText().equals("Exori Con")) {
+					lblSkill.setText("Exevo Mas San");
+				}
+
+			}
+		});
+		btnSkillNext.setBounds(722, 308, 56, 22);
 		add(btnSkillNext);
-		
+
 		JButton Back_button = new JButton("Back to MENU");
 		Back_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			btnWeaponPrev.setVisible(false);
-			btnWeaponNext.setVisible(false);
-			btnArmorPrev.setVisible(false);
-			btnArmorNext.setVisible(false);
-			btnSkillPrev.setVisible(false);
-			btnSkillNext.setVisible(false);
-			Back_button.setVisible(false);
-			list.setVisible(false);
-			btnChangeName.setVisible(false);
-			btnSave.setVisible(false);
-			btnSelectedValueJList.setVisible(false);
-			NameField.setVisible(false);
-			lblNickname.setVisible(false);
-			lblWeapon.setVisible(false);
-			lblArmor.setVisible(false);
-			lblSkill.setVisible(false);
-			lblNickname_1.setVisible(false);
-			lblWeapon_1.setVisible(false);
-			lblArmor_1.setVisible(false);
-			lblSkill_1.setVisible(false);
-			
-			Main_Menu_Penel_object.setBounds(0, 0, 800, 600);	
+				btnWeaponPrev.setVisible(false);
+				btnWeaponNext.setVisible(false);
+				btnArmorPrev.setVisible(false);
+				btnArmorNext.setVisible(false);
+				btnSkillPrev.setVisible(false);
+				btnSkillNext.setVisible(false);
+				Back_button.setVisible(false);
+				list.setVisible(false);
 				
+				btnSave.setVisible(false);
+				btnSelectedValueJList.setVisible(false);
+				
+				lblNickname.setVisible(false);
+				lblWeapon.setVisible(false);
+				lblArmor.setVisible(false);
+				lblSkill.setVisible(false);
+				lblNickname_1.setVisible(false);
+				lblWeapon_1.setVisible(false);
+				lblArmor_1.setVisible(false);
+				lblSkill_1.setVisible(false);
+				btnDelete.setVisible(false);
+				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+
 			}
 		});
 		Back_button.setBounds(513, 553, 277, 36);
 		add(Main_Menu_Penel_object);
 		add(Back_button);
-		
-		add(super.background_label);
 
+		lblRace.setBounds(335, 69, 144, 22);
+		add(lblRace);
+
+		lblClass.setBounds(335, 124, 144, 22);
+		add(lblClass);
+		
+		
+		
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+//				File inputFile = new File("characters.txt");
+//				File tempFile = new File("characterstemp.txt");
+//
+//				BufferedReader reader = null;
+//				BufferedWriter writer = null;
+//
+//				try {
+//					reader = new BufferedReader(new FileReader(inputFile));
+//					writer = new BufferedWriter(new FileWriter(tempFile));
+//
+//					String lineToRemove = "Darek - Orc Warrior";
+//					String currentLine;
+//					while((currentLine = reader.readLine()) != null) {
+//					    // trim newline when comparing with lineToRemove
+//					    String trimmedLine = currentLine.trim();
+//					    if(trimmedLine.equals(lineToRemove)) continue;
+//					    writer.write(currentLine + System.getProperty("line.separator"));
+//						writer.close();
+//						reader.close();
+//						boolean successful = tempFile.renameTo(inputFile);
+//					}  
+//				} catch (FileNotFoundException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				} catch (IOException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+				
+
+		
+				try {
+
+				      File inFile = new File("characters.txt");
+
+				      if (!inFile.isFile()) {
+				        System.out.println("Parameter is not an existing file");
+				        return;
+				      }
+
+				      //Construct the new file that will later be renamed to the original filename.
+				      File tempFile = new File(inFile.getAbsolutePath() + "characterstmp.txt");
+
+				      BufferedReader br = new BufferedReader(new FileReader("characters.txt"));
+				      PrintWriter pw = new PrintWriter(new FileWriter("characterstmp.txt"));
+
+				      String line = null;
+
+				      //Read from the original file and write to the new
+				      //unless content matches data to be removed.
+				      while ((line = br.readLine()) != null) {
+
+				        if (!line.trim().equals(lblNickname.getText()+" - "+lblRace.getText()+" "+lblClass.getText())) {
+
+				          pw.println(line);
+				          pw.flush();
+				        }
+				      }
+				      pw.close();
+				      br.close();
+
+				      //Delete the original file
+				      if (!inFile.delete()) {
+				        System.out.println("Could not delete file");
+				        return;
+				      }
+
+				      //Rename the new file to the filename the original file had.		
+//				      if (!tempFile.renameTo(inFile))
+//				        System.out.println("Could not rename file");
+//
+				        File oldfile =new File("characterstmp.txt");
+				        File newfile =new File("characters.txt");
+
+				        if(oldfile.renameTo(newfile)){
+				         
+				        }else{
+				            System.out.println("Sorry! the file can't be renamed");
+				        }
+				    }
+				      
+				    catch (FileNotFoundException ex) {
+				      ex.printStackTrace();
+				    }
+				    catch (IOException ex) {
+				      ex.printStackTrace();
+				    }
+
+	
+				try{
+					 
+		    		File file = new File("CharactersDB\\"+lblNickname.getText()+".dat");
+		 
+		    		file.delete();
+		    			
+		 
+		    	}catch(Exception e){
+		 
+		    		e.printStackTrace();
+		 
+		    	}
+				btnWeaponPrev.setVisible(false);
+				btnWeaponNext.setVisible(false);
+				btnArmorPrev.setVisible(false);
+				btnArmorNext.setVisible(false);
+				btnSkillPrev.setVisible(false);
+				btnSkillNext.setVisible(false);
+				Back_button.setVisible(false);
+				list.setVisible(false);
+				
+				btnSave.setVisible(false);
+				btnSelectedValueJList.setVisible(false);
+				
+				lblNickname.setVisible(false);
+				lblWeapon.setVisible(false);
+				lblArmor.setVisible(false);
+				lblSkill.setVisible(false);
+				lblNickname_1.setVisible(false);
+				lblWeapon_1.setVisible(false);
+				lblArmor_1.setVisible(false);
+				lblSkill_1.setVisible(false);
+				btnDelete.setVisible(false);
+				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+			}
+		});
+		btnDelete.setBounds(510, 506, 280, 36);
+		add(btnDelete);
+		add(super.background_label);
 	}
 }
