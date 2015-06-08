@@ -19,6 +19,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.JEditorPane;
+import javax.swing.DropMode;
 
 public class New_Orc_Panel extends Back_Panel {
 
@@ -65,6 +67,7 @@ public class New_Orc_Panel extends Back_Panel {
 		JLabel lblShowSkills = new JLabel("Default Skill");
 		lblShowSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
+		
 		// ----------------------------------------------------------------------------------------------------------
 		// CREATE BUTTON
 
@@ -570,9 +573,7 @@ public class New_Orc_Panel extends Back_Panel {
 		btnSkillsNext.setBackground(Color.ORANGE);
 		btnSkillsNext.setBounds(248, 339, 45, 23);
 		add(btnSkillsNext);
-
+		
 		add(super.background_label);
-
 	}
-
 }

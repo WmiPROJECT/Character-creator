@@ -1,4 +1,5 @@
 package create.characters;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,9 +15,12 @@ import javax.swing.SwingConstants;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.JEditorPane;
+
 public class New_Orc_Panel extends Back_Panel {
 
 	/**
@@ -62,9 +66,10 @@ public class New_Orc_Panel extends Back_Panel {
 		JLabel lblShowSkills = new JLabel("Default Skill");
 		lblShowSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
-
+		
 		// ----------------------------------------------------------------------------------------------------------
 		// CREATE BUTTON
+
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -72,9 +77,22 @@ public class New_Orc_Panel extends Back_Panel {
 					Orc_Warrior test_orc = new Orc_Warrior(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
-					
 					try {
-						ObjectOutputStream nc = new ObjectOutputStream(new FileOutputStream("Files\\Characters.dat"));
+						FileWriter new_warrior = null;
+						new_warrior = new FileWriter("characters.txt", true);
+						new_warrior.write(test_orc.nickname);
+						new_warrior.write(" - Orc ");
+						new_warrior.write(test_orc.race_class);
+						new_warrior.write("\n");
+						new_warrior.close();
+					} catch (IOException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ test_orc.nickname + ".dat"));
 						nc.writeObject(test_orc);
 						nc.close();
 					} catch (FileNotFoundException e1) {
@@ -84,61 +102,67 @@ public class New_Orc_Panel extends Back_Panel {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					
 
-
-					test_orc.ShowInfo();
-					btnOrcWarrior.setVisible(false);
-					btnOrcMage.setVisible(false);
-					btnOrcRanger.setVisible(false);
-					lblClass.setVisible(false);
-					lblWeapon.setVisible(false);
-					lblSelectedWeapon.setVisible(false);
-					btnWeaponPrev.setVisible(false);
-					btnWeaponNext.setVisible(false);
-					lblShowWeapon.setVisible(false);
-					Back_button.setVisible(false);
-					lblName.setVisible(false);
-					NameField.setVisible(false);
-					btnCreate.setVisible(false);
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					Orc_Mage test_orc = new Orc_Mage(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
-					test_orc.ShowInfo();
-					btnOrcWarrior.setVisible(false);
-					btnOrcMage.setVisible(false);
-					btnOrcRanger.setVisible(false);
-					lblClass.setVisible(false);
-					lblWeapon.setVisible(false);
-					lblSelectedWeapon.setVisible(false);
-					btnWeaponPrev.setVisible(false);
-					btnWeaponNext.setVisible(false);
-					lblShowWeapon.setVisible(false);
-					Back_button.setVisible(false);
-					lblName.setVisible(false);
-					NameField.setVisible(false);
-					btnCreate.setVisible(false);
+					try {
+						FileWriter new_mage = null;
+						new_mage = new FileWriter("characters.txt", true);
+						new_mage.write(test_orc.nickname);
+						new_mage.write(" - Orc ");
+						new_mage.write(test_orc.race_class);
+						new_mage.write("\n");
+						new_mage.close();
+					} catch (IOException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ test_orc.nickname + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					Orc_Ranger test_orc = new Orc_Ranger(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
-					test_orc.ShowInfo();
-					btnOrcWarrior.setVisible(false);
-					btnOrcMage.setVisible(false);
-					btnOrcRanger.setVisible(false);
-					lblClass.setVisible(false);
-					lblWeapon.setVisible(false);
-					lblSelectedWeapon.setVisible(false);
-					btnWeaponPrev.setVisible(false);
-					btnWeaponNext.setVisible(false);
-					lblShowWeapon.setVisible(false);
-					Back_button.setVisible(false);
-					lblName.setVisible(false);
-					NameField.setVisible(false);
-					btnCreate.setVisible(false);
+					try {
+						FileWriter new_ranger = null;
+						new_ranger = new FileWriter("characters.txt", true);
+						new_ranger.write(test_orc.nickname);
+						new_ranger.write(" - Orc ");
+						new_ranger.write(test_orc.race_class);
+						new_ranger.write("\n");
+						new_ranger.close();
+					} catch (IOException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
+					try {
+						ObjectOutputStream nc = new ObjectOutputStream(
+								new FileOutputStream("CharactersDB\\"
+										+ test_orc.nickname + ".dat"));
+						nc.writeObject(test_orc);
+						nc.close();
+					} catch (FileNotFoundException e1) {
+						System.out.println("File not found");
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 				} else if (btnOrcWarrior.getBackground() != Color.GREEN
 						&& btnOrcMage.getBackground() != Color.GREEN
@@ -146,7 +170,25 @@ public class New_Orc_Panel extends Back_Panel {
 					lblShowWeapon.setText("Error");
 					lblClass.setText("ERROR");
 				}
-
+				btnOrcWarrior.setVisible(false);
+				btnOrcMage.setVisible(false);
+				btnOrcRanger.setVisible(false);
+				lblClass.setVisible(false);
+				lblWeapon.setVisible(false);
+				lblSelectedWeapon.setVisible(false);
+				btnWeaponPrev.setVisible(false);
+				btnWeaponNext.setVisible(false);
+				btnArmorPrev.setVisible(false);
+				btnArmorNext.setVisible(false);
+				btnSkillsPrev.setVisible(false);
+				btnSkillsNext.setVisible(false);
+				lblArmor.setVisible(false);
+				lblSkills.setVisible(false);
+				lblShowWeapon.setVisible(false);
+				Back_button.setVisible(false);
+				lblName.setVisible(false);
+				NameField.setVisible(false);
+				btnCreate.setVisible(false);
 			}
 		});
 		btnCreate.setBounds(607, 408, 183, 75);
@@ -164,6 +206,12 @@ public class New_Orc_Panel extends Back_Panel {
 				lblSelectedWeapon.setVisible(false);
 				btnWeaponPrev.setVisible(false);
 				btnWeaponNext.setVisible(false);
+				btnArmorPrev.setVisible(false);
+				btnArmorNext.setVisible(false);
+				btnSkillsPrev.setVisible(false);
+				btnSkillsNext.setVisible(false);
+				lblArmor.setVisible(false);
+				lblSkills.setVisible(false);
 				lblShowWeapon.setVisible(false);
 				Back_button.setVisible(false);
 				lblName.setVisible(false);
@@ -258,7 +306,7 @@ public class New_Orc_Panel extends Back_Panel {
 		lblShowArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblShowArmor.setBounds(453, 120, 271, 38);
 		add(lblShowArmor);
-		
+
 		lblShowSkills.setHorizontalAlignment(SwingConstants.CENTER);
 		lblShowSkills.setForeground(Color.WHITE);
 		lblShowSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -290,8 +338,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Sword");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				} 
-				else if (btnOrcMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Wand") {
 						lblSelectedWeapon.setText("Staff");
 					} else if (lblSelectedWeapon.getText() == "Staff") {
@@ -300,8 +347,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Wand");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				} 
-				else if (btnOrcRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Crossbow") {
 						lblSelectedWeapon.setText("Bow");
 					} else if (lblSelectedWeapon.getText() == "Bow") {
@@ -328,8 +374,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Sword");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				}
-				else if (btnOrcMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Wand") {
 						lblSelectedWeapon.setText("Rod");
 					} else if (lblSelectedWeapon.getText() == "Rod") {
@@ -338,8 +383,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Wand");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				}
-				else if (btnOrcRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Crossbow") {
 						lblSelectedWeapon.setText("Spear");
 					} else if (lblSelectedWeapon.getText() == "Spear") {
@@ -381,8 +425,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Plate");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				}
-				else if (btnOrcMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Robe") {
 						lblSelectedArmor.setText("Coat");
 					} else if (lblSelectedArmor.getText() == "Coat") {
@@ -391,8 +434,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Robe");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				}
-				else if (btnOrcRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Paladin") {
 						lblSelectedArmor.setText("Yalahar");
 					} else if (lblSelectedArmor.getText() == "Yalahar") {
@@ -410,7 +452,6 @@ public class New_Orc_Panel extends Back_Panel {
 		btnArmorNext.setBackground(Color.ORANGE);
 		btnArmorNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Plate") {
 						lblSelectedArmor.setText("Golden");
@@ -420,8 +461,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Plate");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				}
-				else if (btnOrcMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Robe") {
 						lblSelectedArmor.setText("Cape");
 					} else if (lblSelectedArmor.getText() == "Cape") {
@@ -430,8 +470,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Robe");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				}
-				else if (btnOrcRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Paladin") {
 						lblSelectedArmor.setText("Master Archer's");
 					} else if (lblSelectedArmor.getText() == "Master Archer's") {
@@ -472,8 +511,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				}
-				else if (btnOrcMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Gran Mas Vis") {
 						lblSelectedSkills.setText("Exori Frigo");
 					} else if (lblSelectedSkills.getText() == "Exori Frigo") {
@@ -482,8 +520,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exevo Gran Mas Vis");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				}
-				else if (btnOrcRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Mas San") {
 						lblSelectedSkills.setText("Exori Con");
 					} else if (lblSelectedSkills.getText() == "Exori Con") {
@@ -495,7 +532,7 @@ public class New_Orc_Panel extends Back_Panel {
 				}
 			}
 		});
-		
+
 		btnSkillsNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
@@ -507,8 +544,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				}
-				else if (btnOrcMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Gran Mas Vis") {
 						lblSelectedSkills.setText("Utori Flam");
 					} else if (lblSelectedSkills.getText() == "Utori Flam") {
@@ -517,8 +553,7 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exevo Gran Mas Vis");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				}
-				else if (btnOrcRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Mas San") {
 						lblSelectedSkills.setText("Utito Tempo San");
 					} else if (lblSelectedSkills.getText() == "Utito Tempo San") {
@@ -530,7 +565,7 @@ public class New_Orc_Panel extends Back_Panel {
 				}
 			}
 		});
-		
+
 		btnSkillsPrev.setBounds(0, 339, 45, 23);
 		add(btnSkillsPrev);
 
@@ -538,9 +573,20 @@ public class New_Orc_Panel extends Back_Panel {
 		btnSkillsNext.setBounds(248, 339, 45, 23);
 		add(btnSkillsNext);
 
-		add(super.background_label);
 		
+		
+		JEditorPane editorPane = new JEditorPane();
+		String url="http://google.co.in";    
+		editorPane.setEditable(false);
+		  try {
+		        editorPane.setPage(url);
+		  } catch (IOException e) {
+		      System.err.println("Attempted to read a bad URL: " + url);
+		  }
+		
+		editorPane.setBounds(395, 235, 295, 125);
+		add(editorPane);
+		add(super.background_label);
 
 	}
-
 }
