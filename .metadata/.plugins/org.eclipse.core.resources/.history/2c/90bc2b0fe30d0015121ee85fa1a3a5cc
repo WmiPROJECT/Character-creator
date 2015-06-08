@@ -80,7 +80,7 @@ public class Edit_Character_Panel extends Back_Panel {
 		btnSkillNext.setVisible(false);
 		btnSave.setVisible(false);
 		btnDelete.setVisible(false);
-
+		
 		BufferedReader in = null;
 		String line;
 		DefaultListModel listModel = new DefaultListModel();
@@ -109,7 +109,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				String selected = (String) list.getSelectedValue();
 				String selected_class = "";
 				String selected_race = "";
-
+				
 				btnSelectedValueJList.setVisible(false);
 				list.setVisible(false);
 				lblNickname.setVisible(true);
@@ -123,7 +123,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblSkill_1.setVisible(true);
 				btnWeaponPrev.setVisible(true);
 				btnDelete.setVisible(true);
-
+				
 				btnWeaponNext.setVisible(true);
 				btnArmorPrev.setVisible(true);
 				btnSave.setVisible(true);
@@ -187,6 +187,7 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
+						
 
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
@@ -218,6 +219,7 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
+						
 
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
@@ -248,7 +250,7 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
+					
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -280,7 +282,7 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
+						
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -311,7 +313,7 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
+						
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
 						// TODO Auto-generated catch block
@@ -341,6 +343,7 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
+						
 
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
@@ -361,7 +364,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				} else {
 					System.out.println("ERROR");
 				}
-
+				
 			}
 
 		});
@@ -417,7 +420,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblArmor_1.setVisible(false);
 				lblSkill_1.setVisible(false);
 				btnWeaponPrev.setVisible(false);
-
+				
 				btnWeaponNext.setVisible(false);
 				btnArmorPrev.setVisible(false);
 				btnArmorNext.setVisible(false);
@@ -425,6 +428,9 @@ public class Edit_Character_Panel extends Back_Panel {
 				btnSkillNext.setVisible(false);
 				btnSave.setVisible(false);
 				btnDelete.setVisible(false);
+				
+					
+					
 
 				if (lblClass.getText().equals("Warrior")
 						&& lblRace.getText().equals("Orc")) {
@@ -502,8 +508,8 @@ public class Edit_Character_Panel extends Back_Panel {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-				} else if (lblClass.getText().equals("Ranger")
-						&& lblRace.getText().equals("Human")) {
+				} else if (lblClass.getText().equals("Warrior")
+						&& lblRace.getText().equals("Ranger")) {
 					Human_Ranger test_orc = new Human_Ranger(lblNickname
 							.getText(), lblWeapon.getText(),
 							lblArmor.getText(), lblSkill.getText());
@@ -717,10 +723,10 @@ public class Edit_Character_Panel extends Back_Panel {
 				btnSkillNext.setVisible(false);
 				Back_button.setVisible(false);
 				list.setVisible(false);
-
+				
 				btnSave.setVisible(false);
 				btnSelectedValueJList.setVisible(false);
-
+				
 				lblNickname.setVisible(false);
 				lblWeapon.setVisible(false);
 				lblArmor.setVisible(false);
@@ -743,80 +749,80 @@ public class Edit_Character_Panel extends Back_Panel {
 
 		lblClass.setBounds(335, 124, 144, 22);
 		add(lblClass);
-
+		
+		
+		
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+		
 				try {
 
-					File inFile = new File("characters.txt");
+				      File inFile = new File("characters.txt");
 
-					if (!inFile.isFile()) {
-						System.out.println("Parameter is not an existing file");
-						return;
-					}
+				      if (!inFile.isFile()) {
+				        System.out.println("Parameter is not an existing file");
+				        return;
+				      }
 
-					// Construct the new file that will later be renamed to the
-					// original filename.
-					File tempFile = new File(inFile.getAbsolutePath()
-							+ "characterstmp.txt");
+				      //Construct the new file that will later be renamed to the original filename.
+				      File tempFile = new File(inFile.getAbsolutePath() + "characterstmp.txt");
 
-					BufferedReader br = new BufferedReader(new FileReader(
-							"characters.txt"));
-					PrintWriter pw = new PrintWriter(new FileWriter(
-							"characterstmp.txt"));
+				      BufferedReader br = new BufferedReader(new FileReader("characters.txt"));
+				      PrintWriter pw = new PrintWriter(new FileWriter("characterstmp.txt"));
 
-					String line = null;
+				      String line = null;
 
-					// Read from the original file and write to the new
-					// unless content matches data to be removed.
-					while ((line = br.readLine()) != null) {
+				      //Read from the original file and write to the new
+				      //unless content matches data to be removed.
+				      while ((line = br.readLine()) != null) {
 
-						if (!line.trim().equals(
-								lblNickname.getText() + " - "
-										+ lblRace.getText() + " "
-										+ lblClass.getText())) {
+				        if (!line.trim().equals(lblNickname.getText()+" - "+lblRace.getText()+" "+lblClass.getText())) {
 
-							pw.println(line);
-							pw.flush();
-						}
-					}
-					pw.close();
-					br.close();
+				          pw.println(line);
+				          pw.flush();
+				        }
+				      }
+				      pw.close();
+				      br.close();
 
-					if (!inFile.delete()) {
-						System.out.println("Could not delete file");
-						return;
-					}
+		
+				      if (!inFile.delete()) {
+				        System.out.println("Could not delete file");
+				        return;
+				      }
 
-					File oldfile = new File("characterstmp.txt");
-					File newfile = new File("characters.txt");
+				      
 
-					if (oldfile.renameTo(newfile)) {
+				        File oldfile =new File("characterstmp.txt");
+				        File newfile =new File("characters.txt");
 
-					} else {
-						System.out.println("Sorry! the file can't be renamed");
-					}
-				}
+				        if(oldfile.renameTo(newfile)){
+				         
+				        }else{
+				            System.out.println("Sorry! the file can't be renamed");
+				        }
+				    }
+				      
+				    catch (FileNotFoundException ex) {
+				      ex.printStackTrace();
+				    }
+				    catch (IOException ex) {
+				      ex.printStackTrace();
+				    }
 
-				catch (FileNotFoundException ex) {
-					ex.printStackTrace();
-				} catch (IOException ex) {
-					ex.printStackTrace();
-				}
-
-				try {
-
-					File file = new File("CharactersDB\\"
-							+ lblNickname.getText() + ".dat");
-
-					file.delete();
-
-				} catch (Exception e) {
-
-					e.printStackTrace();
-
-				}
+	
+				try{
+					 
+		    		File file = new File("CharactersDB\\"+lblNickname.getText()+".dat");
+		 
+		    		file.delete();
+		    			
+		 
+		    	}catch(Exception e){
+		 
+		    		e.printStackTrace();
+		 
+		    	}
 				btnWeaponPrev.setVisible(false);
 				btnWeaponNext.setVisible(false);
 				btnArmorPrev.setVisible(false);
@@ -825,10 +831,10 @@ public class Edit_Character_Panel extends Back_Panel {
 				btnSkillNext.setVisible(false);
 				Back_button.setVisible(false);
 				list.setVisible(false);
-
+				
 				btnSave.setVisible(false);
 				btnSelectedValueJList.setVisible(false);
-
+				
 				lblNickname.setVisible(false);
 				lblWeapon.setVisible(false);
 				lblArmor.setVisible(false);
