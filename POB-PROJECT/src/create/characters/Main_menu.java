@@ -46,7 +46,7 @@ public class Main_menu extends JFrame {
 	public Main_menu() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 810, 638);
+		setBounds(0, 0, 1280, 1024);
 		// TUTAJ TRZEBA DODAC CONENT PANE
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -59,7 +59,7 @@ public class Main_menu extends JFrame {
 		Start_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				main_panel_object.setBounds(0, 0, 800, 600);
+				main_panel_object.setBounds(0, 0, 1280, 1024);
 				Start_Button.setVisible(false);
 
 			}
@@ -71,8 +71,8 @@ public class Main_menu extends JFrame {
 		JLabel background_mario_label = DefaultComponentFactory.getInstance()
 				.createTitle("New JGoodies title");
 		background_mario_label.setIcon(new ImageIcon(Main_menu.class
-				.getResource("/create/characters/img/background_mario.gif")));
-		background_mario_label.setBounds(-6, 0, 800, 600);
+				.getResource("/create/characters/img/black_background.jpg")));
+		background_mario_label.setBounds(0, 0, 1280, 1024);
 		contentPane.add(background_mario_label);
 		// WA¯NE CONTENT PANE.ADD JPANEL
 

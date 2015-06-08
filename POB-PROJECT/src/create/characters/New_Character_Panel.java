@@ -20,7 +20,7 @@ public class New_Character_Panel extends Back_Panel {
 		btnOrc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				New_Orc_Panel New_Orc_Panel_object = new New_Orc_Panel();
-				New_Orc_Panel_object.setBounds(0, 0, 800, 600);
+				New_Orc_Panel_object.setBounds(0, 0, 1280, 1024);
 
 				btnOrc.setVisible(false);
 				Back_button.setVisible(false);
@@ -37,7 +37,7 @@ public class New_Character_Panel extends Back_Panel {
 		btnHuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				New_Human_Panel New_Human_Panel_object = new New_Human_Panel();
-				New_Human_Panel_object.setBounds(0, 0, 800, 600);
+				New_Human_Panel_object.setBounds(0, 0, 1280, 1024);
 				
 				btnOrc.setVisible(false);
 				btnHuman.setVisible(false);
@@ -57,7 +57,7 @@ public class New_Character_Panel extends Back_Panel {
 				btnHuman.setVisible(false);
 				Back_button.setVisible(false);
 				background_label.setVisible(false);
-				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+				Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 
 			}
 		});

@@ -217,8 +217,8 @@ public class Back_Panel extends JPanel {
 		setLayout(null);
 		add(Main_Menu_Penel_object);
 
-		background_label.setIcon(new ImageIcon(Author_Panel.class.getResource("/create/characters/img/background_mario.gif")));
-		background_label.setBounds(-6, 0, 800, 600);
+		background_label.setIcon(new ImageIcon(Author_Panel.class.getResource("/create/characters/img/black_background.jpg")));
+		background_label.setBounds(0, 0, 1280, 1024);
 		
 
 	}

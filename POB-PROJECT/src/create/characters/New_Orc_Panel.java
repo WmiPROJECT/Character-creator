@@ -21,6 +21,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JEditorPane;
 import javax.swing.DropMode;
+import javax.swing.ImageIcon;
 
 public class New_Orc_Panel extends Back_Panel {
 
@@ -66,7 +67,7 @@ public class New_Orc_Panel extends Back_Panel {
 		JButton btnSkillsNext = new JButton(">");
 		JLabel lblShowSkills = new JLabel("Default Skill");
 		lblShowSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
-
+		JLabel lblShowCharacter = new JLabel("");
 		
 		// ----------------------------------------------------------------------------------------------------------
 		// CREATE BUTTON
@@ -104,7 +105,7 @@ public class New_Orc_Panel extends Back_Panel {
 						e1.printStackTrace();
 					}
 
-					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+					Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					Orc_Mage test_orc = new Orc_Mage(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
@@ -134,7 +135,7 @@ public class New_Orc_Panel extends Back_Panel {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+					Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					Orc_Ranger test_orc = new Orc_Ranger(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
@@ -164,7 +165,7 @@ public class New_Orc_Panel extends Back_Panel {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+					Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 				} else if (btnOrcWarrior.getBackground() != Color.GREEN
 						&& btnOrcMage.getBackground() != Color.GREEN
 						&& btnOrcRanger.getBackground() != Color.GREEN) {
@@ -192,7 +193,7 @@ public class New_Orc_Panel extends Back_Panel {
 				btnCreate.setVisible(false);
 			}
 		});
-		btnCreate.setBounds(607, 408, 183, 75);
+		btnCreate.setBounds(1068, 817, 183, 75);
 		add(btnCreate);
 
 		// ----------------------------------------------------------------------------------------------------------
@@ -218,22 +219,22 @@ public class New_Orc_Panel extends Back_Panel {
 				lblName.setVisible(false);
 				NameField.setVisible(false);
 				btnCreate.setVisible(false);
-				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+				Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 			}
 		});
-		Back_button.setBounds(607, 494, 183, 62);
+		Back_button.setBounds(1068, 916, 183, 62);
 
 		add(Main_Menu_Penel_object);
 		add(Back_button);
 
 		NameField.setText("");
-		NameField.setBounds(299, 505, 167, 34);
+		NameField.setBounds(671, 858, 167, 34);
 		add(NameField);
 		NameField.setColumns(10);
 
 		lblName.setForeground(Color.WHITE);
 		lblName.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblName.setBounds(208, 507, 70, 24);
+		lblName.setBounds(607, 860, 70, 24);
 		add(lblName);
 
 		// ----------------------------------------------------------------------------------------------------------
@@ -252,24 +253,27 @@ public class New_Orc_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnOrcWarrior.setBounds(13, 59, 81, 62);
+		btnOrcWarrior.setBounds(21, 308, 81, 62);
 		add(btnOrcWarrior);
 
 		btnOrcMage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Def.gif")));
+				
 				btnOrcMage.setBackground(Color.GREEN);
 				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
 				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
 				lblClass.setText("Mage");
-				lblSelectedWeapon.setText("Wand");
-				lblSelectedArmor.setText("Robe");
-				lblSelectedSkills.setText("Exevo Gran Mas Vis");
+				lblSelectedWeapon.setText("Default Weapon");
+				lblSelectedArmor.setText("Default Armor");
+				lblSelectedSkills.setText("Default Skill");
 				lblShowWeapon.setText(lblSelectedWeapon.getText());
 				lblShowArmor.setText(lblSelectedArmor.getText());
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnOrcMage.setBounds(104, 59, 81, 62);
+		btnOrcMage.setBounds(112, 308, 81, 62);
 		add(btnOrcMage);
 
 		btnOrcRanger.addActionListener(new ActionListener() {
@@ -286,32 +290,32 @@ public class New_Orc_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnOrcRanger.setBounds(195, 59, 83, 62);
+		btnOrcRanger.setBounds(203, 308, 83, 62);
 		add(btnOrcRanger);
 
 		// ----------------------------------------------------------------------------------------------------------
 		// POKAZYWANIE POSTACI
 		lblClass.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblClass.setHorizontalAlignment(SwingConstants.CENTER);
-		lblClass.setBounds(453, 25, 271, 34);
+		lblClass.setBounds(999, 24, 271, 34);
 		add(lblClass);
 
 		lblShowWeapon.setForeground(Color.WHITE);
 		lblShowWeapon.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblShowWeapon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblShowWeapon.setBounds(453, 80, 271, 38);
+		lblShowWeapon.setBounds(999, 83, 271, 38);
 		add(lblShowWeapon);
 
 		lblShowArmor.setHorizontalAlignment(SwingConstants.CENTER);
 		lblShowArmor.setForeground(Color.WHITE);
 		lblShowArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblShowArmor.setBounds(453, 120, 271, 38);
+		lblShowArmor.setBounds(999, 125, 271, 38);
 		add(lblShowArmor);
 
 		lblShowSkills.setHorizontalAlignment(SwingConstants.CENTER);
 		lblShowSkills.setForeground(Color.WHITE);
 		lblShowSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblShowSkills.setBounds(453, 160, 271, 38);
+		lblShowSkills.setBounds(999, 158, 271, 38);
 		add(lblShowSkills);
 
 		// ----------------------------------------------------------------------------------------------------------
@@ -319,23 +323,82 @@ public class New_Orc_Panel extends Back_Panel {
 		lblWeapon.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblWeapon.setForeground(Color.WHITE);
 		lblWeapon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWeapon.setBounds(104, 165, 93, 24);
+		lblWeapon.setBounds(112, 414, 93, 24);
 		add(lblWeapon);
 
 		lblSelectedWeapon.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblSelectedWeapon.setForeground(Color.WHITE);
 		lblSelectedWeapon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedWeapon.setBounds(55, 200, 183, 24);
+		lblSelectedWeapon.setBounds(63, 449, 183, 24);
 		add(lblSelectedWeapon);
 
 		btnWeaponPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Def.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Def.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Def.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Def.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Wand") && lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Robe.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Robe.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Cape.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Cape.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Cape.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Coat.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Coat.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Coat.gif")));
+				}
+				
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
+						
 					if (lblSelectedWeapon.getText() == "Sword") {
 						lblSelectedWeapon.setText("Axe");
 					} else if (lblSelectedWeapon.getText() == "Axe") {
 						lblSelectedWeapon.setText("Club");
 					} else if (lblSelectedWeapon.getText() == "Club") {
+						lblSelectedWeapon.setText("Sword");
+					}else if (lblSelectedWeapon.getText() == "Default Weapon") {
 						lblSelectedWeapon.setText("Sword");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
@@ -346,6 +409,8 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Rod");
 					} else if (lblSelectedWeapon.getText() == "Rod") {
 						lblSelectedWeapon.setText("Wand");
+					}else if (lblSelectedWeapon.getText() == "Default Weapon") {
+						lblSelectedWeapon.setText("Staff");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
@@ -354,6 +419,8 @@ public class New_Orc_Panel extends Back_Panel {
 					} else if (lblSelectedWeapon.getText() == "Bow") {
 						lblSelectedWeapon.setText("Spear");
 					} else if (lblSelectedWeapon.getText() == "Spear") {
+						lblSelectedWeapon.setText("Crossbow");
+					}else if (lblSelectedWeapon.getText() == "Default Weapon") {
 						lblSelectedWeapon.setText("Crossbow");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
@@ -361,17 +428,75 @@ public class New_Orc_Panel extends Back_Panel {
 			}
 		});
 		btnWeaponPrev.setBackground(Color.ORANGE);
-		btnWeaponPrev.setBounds(0, 201, 45, 23);
+		btnWeaponPrev.setBounds(8, 450, 45, 23);
 		add(btnWeaponPrev);
 
 		btnWeaponNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Def.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Def.gif")));
+				} else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Def.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Def.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Rod") && lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Robe.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Robe.gif")));
+				} else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Cape.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Cape.gif")));
+				}else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Cape.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Coat.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Coat.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Coat.gif")));
+				}
+				
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Sword") {
 						lblSelectedWeapon.setText("Club");
 					} else if (lblSelectedWeapon.getText() == "Club") {
 						lblSelectedWeapon.setText("Axe");
 					} else if (lblSelectedWeapon.getText() == "Axe") {
+						lblSelectedWeapon.setText("Sword");
+					}else if (lblSelectedWeapon.getText() == "Default Weapon") {
 						lblSelectedWeapon.setText("Sword");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
@@ -382,6 +507,8 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Staff");
 					} else if (lblSelectedWeapon.getText() == "Staff") {
 						lblSelectedWeapon.setText("Wand");
+					}else if (lblSelectedWeapon.getText() == "Default Weapon") {
+						lblSelectedWeapon.setText("Wand");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
@@ -391,13 +518,15 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Bow");
 					} else if (lblSelectedWeapon.getText() == "Bow") {
 						lblSelectedWeapon.setText("Crossbow");
+					}else if (lblSelectedWeapon.getText() == "Default Weapon") {
+						lblSelectedWeapon.setText("Crossbow");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
 				}
 			}
 		});
 		btnWeaponNext.setBackground(Color.ORANGE);
-		btnWeaponNext.setBounds(248, 201, 45, 23);
+		btnWeaponNext.setBounds(256, 450, 45, 23);
 		add(btnWeaponNext);
 
 		// ----------------------------------------------------------------------------------------------------------
@@ -405,24 +534,81 @@ public class New_Orc_Panel extends Back_Panel {
 		lblArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblArmor.setForeground(Color.WHITE);
 		lblArmor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblArmor.setBounds(103, 235, 94, 38);
+		lblArmor.setBounds(111, 484, 94, 38);
 		add(lblArmor);
 
 		lblSelectedArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblSelectedArmor.setForeground(Color.WHITE);
 		lblSelectedArmor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedArmor.setBounds(55, 269, 183, 24);
+		lblSelectedArmor.setBounds(63, 518, 183, 24);
 		add(lblSelectedArmor);
 
 		btnArmorPrev.setBackground(Color.ORANGE);
 		btnArmorPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Coat.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Default Weapon")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Default Weapon")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Coat.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Coat.gif")));
+				}if(lblShowWeapon.getText().equals("Staff") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Coat.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Coat.gif")));
+				}if(lblShowWeapon.getText().equals("Rod") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Coat.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Coat.gif")));
+				}
+				
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Plate") {
 						lblSelectedArmor.setText("Dark");
 					} else if (lblSelectedArmor.getText() == "Dark") {
 						lblSelectedArmor.setText("Golden");
 					} else if (lblSelectedArmor.getText() == "Golden") {
+						lblSelectedArmor.setText("Plate");
+					}else if (lblSelectedArmor.getText() == "Default Armor") {
 						lblSelectedArmor.setText("Plate");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
@@ -433,6 +619,8 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Cape");
 					} else if (lblSelectedArmor.getText() == "Cape") {
 						lblSelectedArmor.setText("Robe");
+					}else if (lblSelectedArmor.getText() == "Default Armor") {
+						lblSelectedArmor.setText("Coat");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
@@ -442,23 +630,81 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Master Archer's");
 					} else if (lblSelectedArmor.getText() == "Master Archer's") {
 						lblSelectedArmor.setText("Paladin");
+					}else if (lblSelectedArmor.getText() == "Default Armor") {
+						lblSelectedArmor.setText("Paladin");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
 				}
 			}
 		});
-		btnArmorPrev.setBounds(0, 272, 45, 23);
+		btnArmorPrev.setBounds(8, 521, 45, 23);
 		add(btnArmorPrev);
 
 		btnArmorNext.setBackground(Color.ORANGE);
 		btnArmorNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Robe.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Default Weapon")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Default Weapon")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Default Weapon")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Robe.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Robe.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Wand")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Wand-Robe.gif")));
+				}if(lblShowWeapon.getText().equals("Staff") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Robe.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Staff")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Staff-Robe.gif")));
+				}if(lblShowWeapon.getText().equals("Rod") && lblShowArmor.getText().equals("Default Armor"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Robe.gif")));
+				}
+				else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Robe"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Cape.gif")));
+				} else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Cape"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Coat.gif")));
+				}else if(lblShowWeapon.getText().equals("Rod")&& lblShowArmor.getText().equals("Coat"))
+				{
+					lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Rod-Robe.gif")));
+				}
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Plate") {
 						lblSelectedArmor.setText("Golden");
 					} else if (lblSelectedArmor.getText() == "Golden") {
 						lblSelectedArmor.setText("Dark");
 					} else if (lblSelectedArmor.getText() == "Dark") {
+						lblSelectedArmor.setText("Plate");
+					}else if (lblSelectedArmor.getText() == "Default Armor") {
 						lblSelectedArmor.setText("Plate");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
@@ -469,6 +715,8 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Coat");
 					} else if (lblSelectedArmor.getText() == "Coat") {
 						lblSelectedArmor.setText("Robe");
+					}else if (lblSelectedArmor.getText() == "Default Armor") {
+						lblSelectedArmor.setText("Robe");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
@@ -478,12 +726,14 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Yalahar");
 					} else if (lblSelectedArmor.getText() == "Yalahar") {
 						lblSelectedArmor.setText("Paladin");
+					}else if (lblSelectedArmor.getText() == "Default Armor") {
+						lblSelectedArmor.setText("Paladin");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
 				}
 			}
 		});
-		btnArmorNext.setBounds(248, 272, 45, 23);
+		btnArmorNext.setBounds(256, 521, 45, 23);
 		add(btnArmorNext);
 
 		// ----------------------------------------------------------------------------------------------------------
@@ -491,13 +741,13 @@ public class New_Orc_Panel extends Back_Panel {
 		lblSkills.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSkills.setForeground(Color.WHITE);
 		lblSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSkills.setBounds(104, 304, 94, 24);
+		lblSkills.setBounds(112, 553, 94, 24);
 		add(lblSkills);
 
 		lblSelectedSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblSelectedSkills.setForeground(Color.WHITE);
 		lblSelectedSkills.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedSkills.setBounds(55, 336, 183, 24);
+		lblSelectedSkills.setBounds(63, 585, 183, 24);
 		add(lblSelectedSkills);
 
 		btnSkillsPrev.setBackground(Color.ORANGE);
@@ -510,6 +760,8 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori Gran Ico");
 					} else if (lblSelectedSkills.getText() == "Exori Gran Ico") {
 						lblSelectedSkills.setText("Exori");
+					}else if (lblSelectedSkills.getText() == "Default Skill") {
+						lblSelectedSkills.setText("Exori");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
 				} else if (btnOrcMage.getBackground() == Color.GREEN) {
@@ -519,6 +771,8 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Utori Flam");
 					} else if (lblSelectedSkills.getText() == "Utori Flam") {
 						lblSelectedSkills.setText("Exevo Gran Mas Vis");
+					}else if (lblSelectedSkills.getText() == "Default Skill") {
+						lblSelectedSkills.setText("Exevo Gran Mas Vis");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
 				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
@@ -527,6 +781,8 @@ public class New_Orc_Panel extends Back_Panel {
 					} else if (lblSelectedSkills.getText() == "Exori Con") {
 						lblSelectedSkills.setText("Utito Tempo San");
 					} else if (lblSelectedSkills.getText() == "Utito Tempo San") {
+						lblSelectedSkills.setText("Exevo Mas San");
+					}else if (lblSelectedSkills.getText() == "Default Skill") {
 						lblSelectedSkills.setText("Exevo Mas San");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
@@ -543,6 +799,10 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori Gran");
 					} else if (lblSelectedSkills.getText() == "Exori Gran") {
 						lblSelectedSkills.setText("Exori");
+					}else if (lblSelectedSkills.getText() == "Exori Gran Ico") {
+						lblSelectedSkills.setText("Exori");
+					}else if (lblSelectedSkills.getText() == "Default Skill") {
+						lblSelectedSkills.setText("Exori");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
 				} else if (btnOrcMage.getBackground() == Color.GREEN) {
@@ -551,6 +811,8 @@ public class New_Orc_Panel extends Back_Panel {
 					} else if (lblSelectedSkills.getText() == "Utori Flam") {
 						lblSelectedSkills.setText("Exori Frigo");
 					} else if (lblSelectedSkills.getText() == "Exori Frigo") {
+						lblSelectedSkills.setText("Exevo Gran Mas Vis");
+					}else if (lblSelectedSkills.getText() == "Default Skill") {
 						lblSelectedSkills.setText("Exevo Gran Mas Vis");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
@@ -561,19 +823,33 @@ public class New_Orc_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori Con");
 					} else if (lblSelectedSkills.getText() == "Exori Con") {
 						lblSelectedSkills.setText("Exevo Mas San");
+					}else if (lblSelectedSkills.getText() == "Default Skill") {
+						lblSelectedSkills.setText("Exevo Mas San");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
 				}
 			}
 		});
 
-		btnSkillsPrev.setBounds(0, 339, 45, 23);
+		btnSkillsPrev.setBounds(8, 588, 45, 23);
 		add(btnSkillsPrev);
 
 		btnSkillsNext.setBackground(Color.ORANGE);
-		btnSkillsNext.setBounds(248, 339, 45, 23);
+		btnSkillsNext.setBounds(256, 588, 45, 23);
 		add(btnSkillsNext);
 		
+		
+		
+		
+		if(lblShowWeapon.getText().equals("Default Weapon") && lblShowArmor.getText().equals("Default Armor"))
+		{
+			lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/BloodElf-Mage/BloodElf-Def-Def.gif")));
+		}
+		
+		lblShowCharacter.setHorizontalAlignment(SwingConstants.LEFT);
+		lblShowCharacter.setBounds(0, 0, 1270, 1013);
+		add(lblShowCharacter);
+
 		add(super.background_label);
 	}
 }

@@ -1,3 +1,4 @@
 Marian - Orc Warrior
 Serek - Human Mage
 RangerHumanoid - Human Ranger
+test - Orc Mage

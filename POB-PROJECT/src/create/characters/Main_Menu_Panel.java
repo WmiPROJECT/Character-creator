@@ -39,7 +39,7 @@ public class Main_Menu_Panel extends JPanel {
 				Load_Character_Panel Load_Character_Panel_object;
 				try {
 					Load_Character_Panel_object = new Load_Character_Panel();
-					Load_Character_Panel_object.setBounds(0, 0, 800, 600);
+					Load_Character_Panel_object.setBounds(0, 0, 1280, 1024);
 					New_Character_button.setVisible(false);
 					Exit_button.setVisible(false);
 					Load_Character_button.setVisible(false);
@@ -76,7 +76,7 @@ public class Main_Menu_Panel extends JPanel {
 		Author_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Author_Panel Author_Panel_object = new Author_Panel();
-				Author_Panel_object.setBounds(0, 0, 800, 600);
+				Author_Panel_object.setBounds(0, 0, 1280, 1024);
 				New_Character_button.setVisible(false);
 				Exit_button.setVisible(false);
 				Load_Character_button.setVisible(false);
@@ -94,7 +94,7 @@ public class Main_Menu_Panel extends JPanel {
 				Edit_Character_Panel Edit_Character_Panel_object;
 				try {
 					Edit_Character_Panel_object = new Edit_Character_Panel();
-					Edit_Character_Panel_object.setBounds(0, 0, 800, 600);
+					Edit_Character_Panel_object.setBounds(0, 0, 1280, 1024);
 					New_Character_button.setVisible(false);
 					Exit_button.setVisible(false);
 					Load_Character_button.setVisible(false);
@@ -115,7 +115,7 @@ public class Main_Menu_Panel extends JPanel {
 		New_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				New_Character_Panel New_Character_panel_object = new New_Character_Panel();
-				New_Character_panel_object.setBounds(0, 0, 800, 600);
+				New_Character_panel_object.setBounds(0, 0, 1280, 1024);
 				New_Character_button.setVisible(false);
 				Exit_button.setVisible(false);
 				Load_Character_button.setVisible(false);
@@ -128,8 +128,8 @@ public class Main_Menu_Panel extends JPanel {
 
 		background_mario_label.setHorizontalAlignment(SwingConstants.CENTER);
 		background_mario_label.setIcon(new ImageIcon(Main_Menu_Panel.class
-				.getResource("/create/characters/img/background_mario.gif")));
-		background_mario_label.setBounds(0, 0, 800, 600);
+				.getResource("/create/characters/img/black_background.jpg")));
+		background_mario_label.setBounds(0, 0, 1280, 1024);
 		
 		add(New_Character_button);
 
