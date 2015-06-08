@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="lblRace" key="selection"/>
+		<item value="characters" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="characters"/>
+			<item value="del"/>
+			<item value="namefield"/>
+			<item value="old_name"/>
+			<item value="lblNickname"/>
 			<item value="lblrace"/>
 			<item value="selected_class"/>
-			<item value="lblNickname"/>
 			<item value="select"/>
-			<item value="list"/>
-			<item value="system.out.pri"/>
-			<item value="system.out"/>
-			<item value="package konwerter;"/>
 		</list>
 		<list key="replacehistory">
 		</list>
