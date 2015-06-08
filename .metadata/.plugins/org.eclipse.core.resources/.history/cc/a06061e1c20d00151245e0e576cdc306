@@ -754,6 +754,37 @@ public class Edit_Character_Panel extends Back_Panel {
 		
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+//				File inputFile = new File("characters.txt");
+//				File tempFile = new File("characterstemp.txt");
+//
+//				BufferedReader reader = null;
+//				BufferedWriter writer = null;
+//
+//				try {
+//					reader = new BufferedReader(new FileReader(inputFile));
+//					writer = new BufferedWriter(new FileWriter(tempFile));
+//
+//					String lineToRemove = "Darek - Orc Warrior";
+//					String currentLine;
+//					while((currentLine = reader.readLine()) != null) {
+//					    // trim newline when comparing with lineToRemove
+//					    String trimmedLine = currentLine.trim();
+//					    if(trimmedLine.equals(lineToRemove)) continue;
+//					    writer.write(currentLine + System.getProperty("line.separator"));
+//						writer.close();
+//						reader.close();
+//						boolean successful = tempFile.renameTo(inputFile);
+//					}  
+//				} catch (FileNotFoundException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				} catch (IOException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+				
+
 		
 				try {
 
@@ -785,14 +816,16 @@ public class Edit_Character_Panel extends Back_Panel {
 				      pw.close();
 				      br.close();
 
-		
+				      //Delete the original file
 				      if (!inFile.delete()) {
 				        System.out.println("Could not delete file");
 				        return;
 				      }
 
-				      
-
+				      //Rename the new file to the filename the original file had.		
+//				      if (!tempFile.renameTo(inFile))
+//				        System.out.println("Could not rename file");
+//
 				        File oldfile =new File("characterstmp.txt");
 				        File newfile =new File("characters.txt");
 

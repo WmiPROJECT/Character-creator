@@ -204,6 +204,12 @@ public class New_Orc_Panel extends Back_Panel {
 				lblSelectedWeapon.setVisible(false);
 				btnWeaponPrev.setVisible(false);
 				btnWeaponNext.setVisible(false);
+				btnArmorPrev.setVisible(false);
+				btnArmorNext.setVisible(false);
+				btnSkillsPrev.setVisible(false);
+				btnSkillsNext.setVisible(false);
+				lblArmor.setVisible(false);
+				lblSkills.setVisible(false);
 				lblShowWeapon.setVisible(false);
 				Back_button.setVisible(false);
 				lblName.setVisible(false);

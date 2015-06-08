@@ -20,22 +20,22 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class New_Human_Panel extends Back_Panel {
+public class New_Orc_Panel extends Back_Panel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public New_Human_Panel() {
+	public New_Orc_Panel() {
 		// ----------------------------------------------------------------------------------------------------------
 		// OBIEKTY
-		JButton btnHumanWarrior = new JButton("Warrior");
-		btnHumanWarrior.setBackground(Color.LIGHT_GRAY);
-		JButton btnHumanMage = new JButton("Mage");
-		btnHumanMage.setBackground(Color.LIGHT_GRAY);
-		JButton btnHumanRanger = new JButton("Ranger");
-		btnHumanRanger.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcWarrior = new JButton("Warrior");
+		btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcMage = new JButton("Mage");
+		btnOrcMage.setBackground(Color.LIGHT_GRAY);
+		JButton btnOrcRanger = new JButton("Ranger");
+		btnOrcRanger.setBackground(Color.LIGHT_GRAY);
 		JLabel lblClass = new JLabel("Default Class");
 		lblClass.setForeground(Color.WHITE);
 		lblClass.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -71,15 +71,15 @@ public class New_Human_Panel extends Back_Panel {
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
-					Human_Warrior test_orc = new Human_Warrior(NameField.getText(),
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
+					Orc_Warrior test_orc = new Orc_Warrior(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
 					try {
 						FileWriter new_warrior = null;
 						new_warrior = new FileWriter("characters.txt", true);
 						new_warrior.write(test_orc.nickname);
-						new_warrior.write(" - Human ");
+						new_warrior.write(" - Orc ");
 						new_warrior.write(test_orc.race_class);
 						new_warrior.write("\n");
 						new_warrior.close();
@@ -102,15 +102,15 @@ public class New_Human_Panel extends Back_Panel {
 					}
 
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
-					Human_Mage test_orc = new Human_Mage(NameField.getText(),
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
+					Orc_Mage test_orc = new Orc_Mage(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
 					try {
 						FileWriter new_mage = null;
 						new_mage = new FileWriter("characters.txt", true);
 						new_mage.write(test_orc.nickname);
-						new_mage.write(" - Human ");
+						new_mage.write(" - Orc ");
 						new_mage.write(test_orc.race_class);
 						new_mage.write("\n");
 						new_mage.close();
@@ -132,15 +132,15 @@ public class New_Human_Panel extends Back_Panel {
 						e1.printStackTrace();
 					}
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
-					Human_Ranger test_orc = new Human_Ranger(NameField.getText(),
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
+					Orc_Ranger test_orc = new Orc_Ranger(NameField.getText(),
 							lblShowWeapon.getText(), lblShowArmor.getText(),
 							lblShowSkills.getText());
 					try {
 						FileWriter new_ranger = null;
 						new_ranger = new FileWriter("characters.txt", true);
 						new_ranger.write(test_orc.nickname);
-						new_ranger.write(" - Human ");
+						new_ranger.write(" - Orc ");
 						new_ranger.write(test_orc.race_class);
 						new_ranger.write("\n");
 						new_ranger.close();
@@ -162,15 +162,15 @@ public class New_Human_Panel extends Back_Panel {
 						e1.printStackTrace();
 					}
 					Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
-				} else if (btnHumanWarrior.getBackground() != Color.GREEN
-						&& btnHumanMage.getBackground() != Color.GREEN
-						&& btnHumanRanger.getBackground() != Color.GREEN) {
+				} else if (btnOrcWarrior.getBackground() != Color.GREEN
+						&& btnOrcMage.getBackground() != Color.GREEN
+						&& btnOrcRanger.getBackground() != Color.GREEN) {
 					lblShowWeapon.setText("Error");
 					lblClass.setText("ERROR");
 				}
-				btnHumanWarrior.setVisible(false);
-				btnHumanMage.setVisible(false);
-				btnHumanRanger.setVisible(false);
+				btnOrcWarrior.setVisible(false);
+				btnOrcMage.setVisible(false);
+				btnOrcRanger.setVisible(false);
 				lblClass.setVisible(false);
 				lblWeapon.setVisible(false);
 				lblSelectedWeapon.setVisible(false);
@@ -196,22 +196,14 @@ public class New_Human_Panel extends Back_Panel {
 		// BACK_BUTTON I NICKNAME
 		Back_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				btnHumanWarrior.setVisible(false);
-				btnHumanMage.setVisible(false);
-				btnHumanRanger.setVisible(false);
+				btnOrcWarrior.setVisible(false);
+				btnOrcMage.setVisible(false);
+				btnOrcRanger.setVisible(false);
 				lblClass.setVisible(false);
 				lblWeapon.setVisible(false);
 				lblSelectedWeapon.setVisible(false);
 				btnWeaponPrev.setVisible(false);
 				btnWeaponNext.setVisible(false);
-				btnArmorPrev.setVisible(false);
-				btnArmorNext.setVisible(false);
-				btnSkillsPrev.setVisible(false);
-				btnSkillsNext.setVisible(false);
-				lblArmor.setVisible(false);
-				lblSkills.setVisible(false);
-				lblShowWeapon.setVisible(false);
-				Back_button.setVisible(false);
 				lblShowWeapon.setVisible(false);
 				Back_button.setVisible(false);
 				lblName.setVisible(false);
@@ -237,11 +229,11 @@ public class New_Human_Panel extends Back_Panel {
 
 		// ----------------------------------------------------------------------------------------------------------
 		// BUTTONY KLAS
-		btnHumanWarrior.addActionListener(new ActionListener() {
+		btnOrcWarrior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				btnHumanWarrior.setBackground(Color.GREEN);
-				btnHumanMage.setBackground(Color.LIGHT_GRAY);
-				btnHumanRanger.setBackground(Color.LIGHT_GRAY);
+				btnOrcWarrior.setBackground(Color.GREEN);
+				btnOrcMage.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
 				lblClass.setText("Warrior");
 				lblSelectedWeapon.setText("Sword");
 				lblSelectedArmor.setText("Plate");
@@ -251,14 +243,14 @@ public class New_Human_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnHumanWarrior.setBounds(13, 59, 81, 62);
-		add(btnHumanWarrior);
+		btnOrcWarrior.setBounds(13, 59, 81, 62);
+		add(btnOrcWarrior);
 
-		btnHumanMage.addActionListener(new ActionListener() {
+		btnOrcMage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnHumanMage.setBackground(Color.GREEN);
-				btnHumanWarrior.setBackground(Color.LIGHT_GRAY);
-				btnHumanRanger.setBackground(Color.LIGHT_GRAY);
+				btnOrcMage.setBackground(Color.GREEN);
+				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.LIGHT_GRAY);
 				lblClass.setText("Mage");
 				lblSelectedWeapon.setText("Wand");
 				lblSelectedArmor.setText("Robe");
@@ -268,14 +260,14 @@ public class New_Human_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnHumanMage.setBounds(104, 59, 81, 62);
-		add(btnHumanMage);
+		btnOrcMage.setBounds(104, 59, 81, 62);
+		add(btnOrcMage);
 
-		btnHumanRanger.addActionListener(new ActionListener() {
+		btnOrcRanger.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnHumanRanger.setBackground(Color.GREEN);
-				btnHumanWarrior.setBackground(Color.LIGHT_GRAY);
-				btnHumanMage.setBackground(Color.LIGHT_GRAY);
+				btnOrcRanger.setBackground(Color.GREEN);
+				btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
+				btnOrcMage.setBackground(Color.LIGHT_GRAY);
 				lblClass.setText("Ranger");
 				lblSelectedWeapon.setText("Crossbow");
 				lblSelectedArmor.setText("Paladin");
@@ -285,8 +277,8 @@ public class New_Human_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnHumanRanger.setBounds(195, 59, 83, 62);
-		add(btnHumanRanger);
+		btnOrcRanger.setBounds(195, 59, 83, 62);
+		add(btnOrcRanger);
 
 		// ----------------------------------------------------------------------------------------------------------
 		// POKAZYWANIE POSTACI
@@ -329,7 +321,7 @@ public class New_Human_Panel extends Back_Panel {
 
 		btnWeaponPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Sword") {
 						lblSelectedWeapon.setText("Axe");
 					} else if (lblSelectedWeapon.getText() == "Axe") {
@@ -338,7 +330,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Sword");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Wand") {
 						lblSelectedWeapon.setText("Staff");
 					} else if (lblSelectedWeapon.getText() == "Staff") {
@@ -347,7 +339,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Wand");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Crossbow") {
 						lblSelectedWeapon.setText("Bow");
 					} else if (lblSelectedWeapon.getText() == "Bow") {
@@ -365,7 +357,7 @@ public class New_Human_Panel extends Back_Panel {
 
 		btnWeaponNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Sword") {
 						lblSelectedWeapon.setText("Club");
 					} else if (lblSelectedWeapon.getText() == "Club") {
@@ -374,7 +366,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Sword");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Wand") {
 						lblSelectedWeapon.setText("Rod");
 					} else if (lblSelectedWeapon.getText() == "Rod") {
@@ -383,7 +375,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedWeapon.setText("Wand");
 					}
 					lblShowWeapon.setText(lblSelectedWeapon.getText());
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedWeapon.getText() == "Crossbow") {
 						lblSelectedWeapon.setText("Spear");
 					} else if (lblSelectedWeapon.getText() == "Spear") {
@@ -416,7 +408,7 @@ public class New_Human_Panel extends Back_Panel {
 		btnArmorPrev.setBackground(Color.ORANGE);
 		btnArmorPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Plate") {
 						lblSelectedArmor.setText("Dark");
 					} else if (lblSelectedArmor.getText() == "Dark") {
@@ -425,7 +417,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Plate");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Robe") {
 						lblSelectedArmor.setText("Coat");
 					} else if (lblSelectedArmor.getText() == "Coat") {
@@ -434,7 +426,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Robe");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Paladin") {
 						lblSelectedArmor.setText("Yalahar");
 					} else if (lblSelectedArmor.getText() == "Yalahar") {
@@ -452,8 +444,7 @@ public class New_Human_Panel extends Back_Panel {
 		btnArmorNext.setBackground(Color.ORANGE);
 		btnArmorNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Plate") {
 						lblSelectedArmor.setText("Golden");
 					} else if (lblSelectedArmor.getText() == "Golden") {
@@ -462,7 +453,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Plate");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Robe") {
 						lblSelectedArmor.setText("Cape");
 					} else if (lblSelectedArmor.getText() == "Cape") {
@@ -471,7 +462,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedArmor.setText("Robe");
 					}
 					lblShowArmor.setText(lblSelectedArmor.getText());
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedArmor.getText() == "Paladin") {
 						lblSelectedArmor.setText("Master Archer's");
 					} else if (lblSelectedArmor.getText() == "Master Archer's") {
@@ -503,7 +494,7 @@ public class New_Human_Panel extends Back_Panel {
 		btnSkillsPrev.setBackground(Color.ORANGE);
 		btnSkillsPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exori") {
 						lblSelectedSkills.setText("Exori Gran");
 					} else if (lblSelectedSkills.getText() == "Exori Gran") {
@@ -512,7 +503,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Gran Mas Vis") {
 						lblSelectedSkills.setText("Exori Frigo");
 					} else if (lblSelectedSkills.getText() == "Exori Frigo") {
@@ -521,7 +512,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exevo Gran Mas Vis");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Mas San") {
 						lblSelectedSkills.setText("Exori Con");
 					} else if (lblSelectedSkills.getText() == "Exori Con") {
@@ -536,7 +527,7 @@ public class New_Human_Panel extends Back_Panel {
 
 		btnSkillsNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (btnHumanWarrior.getBackground() == Color.GREEN) {
+				if (btnOrcWarrior.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exori") {
 						lblSelectedSkills.setText("Exori Gran Ico");
 					} else if (lblSelectedSkills.getText() == "Exori Gran Ico") {
@@ -545,7 +536,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exori");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				} else if (btnHumanMage.getBackground() == Color.GREEN) {
+				} else if (btnOrcMage.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Gran Mas Vis") {
 						lblSelectedSkills.setText("Utori Flam");
 					} else if (lblSelectedSkills.getText() == "Utori Flam") {
@@ -554,7 +545,7 @@ public class New_Human_Panel extends Back_Panel {
 						lblSelectedSkills.setText("Exevo Gran Mas Vis");
 					}
 					lblShowSkills.setText(lblSelectedSkills.getText());
-				} else if (btnHumanRanger.getBackground() == Color.GREEN) {
+				} else if (btnOrcRanger.getBackground() == Color.GREEN) {
 					if (lblSelectedSkills.getText() == "Exevo Mas San") {
 						lblSelectedSkills.setText("Utito Tempo San");
 					} else if (lblSelectedSkills.getText() == "Utito Tempo San") {
