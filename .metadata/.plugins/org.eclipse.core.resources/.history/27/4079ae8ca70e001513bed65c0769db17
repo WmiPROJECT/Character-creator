@@ -1,0 +1,124 @@
+package pl.java.tomek;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import java.awt.Color;
+import java.awt.TextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Second_JPanel extends Back_Panel_Silnik {
+	private JTextField textField;
+	JButton btnStudencki = new JButton("Studencki");
+	JButton btnNormalny = new JButton("Normalny");
+	JButton btnZatwierdz = new JButton("Zatwierdz");
+	JButton btnTygodniowy = new JButton("Tygodniowy");
+	JButton btnUlgowy = new JButton("Ulgowy");
+	JLabel lblCena_Show = new JLabel("");
+	/**
+	 * Create the panel.
+	 */
+	public Second_JPanel() {
+		setLayout(null);
+		
+		JLabel lblWybierzBilet = new JLabel("Wybierz bilet");
+		lblWybierzBilet.setBounds(187, 11, 108, 21);
+		add(lblWybierzBilet);
+		
+		
+		btnNormalny.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			if(btnUlgowy.getBackground() != Color.GREEN && btnNormalny.getBackground() != Color.GREEN && btnTygodniowy.getBackground() != Color.GREEN && btnStudencki.getBackground() != Color.GREEN)
+			{
+				btnNormalny.setBackground(Color.green);
+			}
+			}
+		});
+		btnNormalny.setBounds(23, 50, 91, 84);
+		add(btnNormalny);
+		
+		
+		btnStudencki.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(btnUlgowy.getBackground() != Color.GREEN && btnNormalny.getBackground() != Color.GREEN && btnTygodniowy.getBackground() != Color.GREEN && btnStudencki.getBackground() != Color.GREEN)
+				{
+				btnStudencki.setBackground(Color.green);
+				}
+			}
+		});
+		btnStudencki.setBounds(124, 50, 91, 84);
+		add(btnStudencki);
+		
+		
+		btnUlgowy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(btnUlgowy.getBackground() != Color.GREEN && btnNormalny.getBackground() != Color.GREEN && btnTygodniowy.getBackground() != Color.GREEN && btnStudencki.getBackground() != Color.GREEN)
+				{
+				btnUlgowy.setBackground(Color.green);
+				}
+			}
+		});
+		btnUlgowy.setBounds(225, 50, 91, 84);
+		add(btnUlgowy);
+		
+		JButton btnTygodniowy = new JButton("Tygodniowy");
+		btnTygodniowy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(btnUlgowy.getBackground() != Color.GREEN && btnNormalny.getBackground() != Color.GREEN && btnTygodniowy.getBackground() != Color.GREEN && btnStudencki.getBackground() != Color.GREEN)
+				{
+				btnTygodniowy.setBackground(Color.green);
+				}
+			}
+		});
+		btnTygodniowy.setBounds(326, 50, 91, 84);
+		add(btnTygodniowy);
+		
+		textField = new JTextField();
+		textField.setBounds(207, 145, 121, 27);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblPodajIlosc = new JLabel("Podaj ilosc");
+		lblPodajIlosc.setBounds(124, 145, 91, 27);
+		add(lblPodajIlosc);
+		
+		
+		btnZatwierdz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if(btnNormalny.getBackground() == Color.GREEN)
+				{
+				Normalny normalny_obiekt = new Normalny(2.5,5);
+				normalny_obiekt.cena=normalny_obiekt.cena*normalny_obiekt.ilosc;
+			
+				lblCena_Show.setText("chuj");
+				}
+				
+				
+			}
+		});
+		btnZatwierdz.setBounds(207, 173, 123, 32);
+		add(btnZatwierdz);
+		
+		JLabel lblCena = new JLabel("Cena:");
+		lblCena.setBounds(97, 207, 61, 21);
+		add(lblCena);
+		
+	
+		lblCena_Show.setBounds(173, 207, 122, 21);
+		add(lblCena_Show);
+		
+		JButton btnKupuje = new JButton("Kupuje");
+		btnKupuje.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnKupuje.setBounds(40, 241, 367, 23);
+		add(btnKupuje);
+
+	}
+
+}

@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Arch" key="selection"/>
+		<item value="lblCena_Show" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="lblCena_Show"/>
+			<item value=".getBackground() == Color.GREEN"/>
+			<item value="setBounds(0, 0, 800, 600);"/>
+			<item value="Main_Menu_Penel_object"/>
 			<item value="arch"/>
 			<item value="characters"/>
 			<item value="del"/>
 			<item value="namefield"/>
-			<item value="old_name"/>
-			<item value="lblNickname"/>
-			<item value="lblrace"/>
-			<item value="selected_class"/>
 		</list>
 		<list key="replacehistory">
 		</list>

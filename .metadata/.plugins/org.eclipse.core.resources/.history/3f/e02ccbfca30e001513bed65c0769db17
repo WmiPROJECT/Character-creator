@@ -1,0 +1,14 @@
+package pl.java.tomek;
+
+import javax.swing.JPanel;
+
+public class Second_JPanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Second_JPanel() {
+
+	}
+
+}

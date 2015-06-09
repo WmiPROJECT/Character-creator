@@ -1,0 +1,74 @@
+package pl.java.tomek;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Second_JPanel extends Back_Panel_Silnik {
+	private JTextField textField;
+
+	/**
+	 * Create the panel.
+	 */
+	public Second_JPanel() {
+		setLayout(null);
+		
+		JLabel lblWybierzBilet = new JLabel("Wybierz bilet");
+		lblWybierzBilet.setBounds(187, 11, 108, 21);
+		add(lblWybierzBilet);
+		
+		JButton btnNormalny = new JButton("Normalny");
+		btnNormalny.setBounds(23, 50, 91, 84);
+		add(btnNormalny);
+		
+		JButton btnStudencki = new JButton("Studencki");
+		btnStudencki.setBounds(124, 50, 91, 84);
+		add(btnStudencki);
+		
+		JButton btnUlgowy = new JButton("Ulgowy");
+		btnUlgowy.setBounds(225, 50, 91, 84);
+		add(btnUlgowy);
+		
+		JButton btnTygodniowy = new JButton("Tygodniowy");
+		btnTygodniowy.setBounds(326, 50, 91, 84);
+		add(btnTygodniowy);
+		
+		textField = new JTextField();
+		textField.setBounds(195, 145, 121, 27);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblPodajIlosc = new JLabel("Podaj ilosc");
+		lblPodajIlosc.setBounds(124, 145, 61, 27);
+		add(lblPodajIlosc);
+		
+		JButton btnZatwierdz = new JButton("Zatwierdz");
+		btnZatwierdz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnZatwierdz.setBounds(193, 173, 123, 32);
+		add(btnZatwierdz);
+		
+		JLabel lblCena = new JLabel("Cena:");
+		lblCena.setBounds(134, 201, 61, 21);
+		add(lblCena);
+		
+		JLabel lblCena_Show = new JLabel("");
+		lblCena_Show.setBounds(173, 201, 155, 27);
+		add(lblCena_Show);
+		
+		JButton btnKupuje = new JButton("Kupuje");
+		btnKupuje.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnKupuje.setBounds(39, 233, 367, 23);
+		add(btnKupuje);
+
+	}
+
+}

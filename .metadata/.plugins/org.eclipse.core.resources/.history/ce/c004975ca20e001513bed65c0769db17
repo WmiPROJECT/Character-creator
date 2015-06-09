@@ -1,0 +1,90 @@
+package com.Tomek.java;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+
+
+public class First_JFrame extends Back_Panel_Silnik {
+
+	private JPanel contentPane;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					First_JFrame frame = new First_JFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public First_JFrame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnZatwierdz = new JButton("Zatwierdz");
+		btnZatwierdz.setBounds(5, 245, 432, 23);
+		contentPane.add(btnZatwierdz);
+		
+		JLabel lblWybierzBilet = new JLabel("Wybierz bilet ");
+		lblWybierzBilet.setBounds(-12, 0, 432, 14);
+		lblWybierzBilet.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblWybierzBilet);
+		
+		JButton btnNormalny = new JButton("Normalny");
+		btnNormalny.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNormalny.setBounds(5, 19, 91, 66);
+		contentPane.add(btnNormalny);
+		
+		JButton btnUlgowy = new JButton("Ulgowy ");
+		btnUlgowy.setBounds(106, 19, 91, 66);
+		contentPane.add(btnUlgowy);
+		
+		JButton btnTygodniowy = new JButton("Tygodniowy");
+		btnTygodniowy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnTygodniowy.setBounds(207, 19, 91, 66);
+		contentPane.add(btnTygodniowy);
+		
+		JButton btnNewButton_3 = new JButton("Studencki");
+		btnNewButton_3.setBounds(308, 21, 91, 64);
+		contentPane.add(btnNewButton_3);
+		
+		textField = new JTextField();
+		textField.setBounds(195, 145, 86, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblPodajIlosc = new JLabel("Podaj ilosc");
+		lblPodajIlosc.setBounds(139, 145, 73, 17);
+		contentPane.add(lblPodajIlosc);
+	}
+}

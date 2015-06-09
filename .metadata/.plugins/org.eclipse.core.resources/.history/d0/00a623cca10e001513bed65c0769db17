@@ -1,0 +1,13 @@
+import javax.swing.JPanel;
+
+
+public class Back_Panel_Silnik extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Back_Panel_Silnik() {
+
+	}
+
+}
