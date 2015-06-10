@@ -55,7 +55,7 @@ public class Main_menu extends JFrame {
 
 		JButton Start_Button = new JButton(
 				"COŒ W STYLU  KLIKNIJ ABY PRZEJSC DO TWORZENIA POSTACI");
-		Start_Button.setBounds(105, 179, 588, 163);
+		Start_Button.setBounds(105, 179, 1141, 532);
 		Start_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 

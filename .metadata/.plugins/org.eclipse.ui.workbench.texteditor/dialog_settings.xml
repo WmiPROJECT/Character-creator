@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="lblCena_Show" key="selection"/>
+		<item value="btnArmor" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="btnArmor"/>
 			<item value="lblCena_Show"/>
 			<item value=".getBackground() == Color.GREEN"/>
 			<item value="setBounds(0, 0, 800, 600);"/>
@@ -19,7 +20,6 @@
 			<item value="arch"/>
 			<item value="characters"/>
 			<item value="del"/>
-			<item value="namefield"/>
 		</list>
 		<list key="replacehistory">
 		</list>

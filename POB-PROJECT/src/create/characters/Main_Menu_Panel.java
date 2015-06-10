@@ -32,7 +32,7 @@ public class Main_Menu_Panel extends JPanel {
 	public Main_Menu_Panel() {
 		setBorder(null);
 		setLayout(null);
-		Load_Character_button.setBounds(467, 205, 266, 60);
+		Load_Character_button.setBounds(385, 321, 440, 95);
 
 		Load_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -63,7 +63,7 @@ public class Main_Menu_Panel extends JPanel {
 		});
 		add(Load_Character_button);
 		
-		Exit_button.setBounds(467, 486, 266, 60);
+		Exit_button.setBounds(227, 662, 266, 60);
 
 		Exit_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -72,7 +72,7 @@ public class Main_Menu_Panel extends JPanel {
 		});
 		add(Exit_button);
 		
-		Author_button.setBounds(467, 394, 266, 63);
+		Author_button.setBounds(559, 696, 266, 63);
 		Author_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Author_Panel Author_Panel_object = new Author_Panel();
@@ -88,7 +88,7 @@ public class Main_Menu_Panel extends JPanel {
 		});
 		add(Author_button);
 		
-		Edit_Character_button.setBounds(467, 303, 266, 65);
+		Edit_Character_button.setBounds(385, 505, 440, 95);
 		Edit_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Edit_Character_Panel Edit_Character_Panel_object;
@@ -111,7 +111,7 @@ public class Main_Menu_Panel extends JPanel {
 		});
 		add(Edit_Character_button);
 		
-		New_Character_button.setBounds(467, 108, 266, 60);
+		New_Character_button.setBounds(385, 86, 440, 118);
 		New_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				New_Character_Panel New_Character_panel_object = new New_Character_Panel();

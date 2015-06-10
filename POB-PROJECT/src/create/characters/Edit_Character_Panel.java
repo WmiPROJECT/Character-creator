@@ -775,48 +775,48 @@ public class Edit_Character_Panel extends Back_Panel {
 						if (!line.trim().equals(
 								lblNickname.getText() + " - "
 										+ lblRace.getText() + " "
-										+ lblClass.getText())) {
-
-							pw.println(line);
-							pw.flush();
+											+ lblClass.getText())) {
+	
+								pw.println(line);
+								pw.flush();
+							}
+						}
+						pw.close();
+						br.close();
+	
+						if (!inFile.delete()) {
+							System.out.println("Could not delete file");
+							return;
+						}
+	
+						File oldfile = new File("characterstmp.txt");
+						File newfile = new File("characters.txt");
+	
+						if (oldfile.renameTo(newfile)) {
+	
+						} else {
+							System.out.println("Sorry! the file can't be renamed");
 						}
 					}
-					pw.close();
-					br.close();
-
-					if (!inFile.delete()) {
-						System.out.println("Could not delete file");
-						return;
+	
+					catch (FileNotFoundException ex) {
+						ex.printStackTrace();
+					} catch (IOException ex) {
+						ex.printStackTrace();
 					}
-
-					File oldfile = new File("characterstmp.txt");
-					File newfile = new File("characters.txt");
-
-					if (oldfile.renameTo(newfile)) {
-
-					} else {
-						System.out.println("Sorry! the file can't be renamed");
+	
+					try {
+	
+						File file = new File("CharactersDB\\"
+								+ lblNickname.getText() + ".dat");
+	
+						file.delete();
+	
+					} catch (Exception e) {
+	
+						e.printStackTrace();
+	
 					}
-				}
-
-				catch (FileNotFoundException ex) {
-					ex.printStackTrace();
-				} catch (IOException ex) {
-					ex.printStackTrace();
-				}
-
-				try {
-
-					File file = new File("CharactersDB\\"
-							+ lblNickname.getText() + ".dat");
-
-					file.delete();
-
-				} catch (Exception e) {
-
-					e.printStackTrace();
-
-				}
 				btnWeaponPrev.setVisible(false);
 				btnWeaponNext.setVisible(false);
 				btnArmorPrev.setVisible(false);

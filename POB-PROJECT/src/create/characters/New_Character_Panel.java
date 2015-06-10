@@ -32,7 +32,7 @@ public class New_Character_Panel extends Back_Panel {
 
 			}
 		});
-		btnOrc.setBounds(95, 229, 150, 100);
+		btnOrc.setBounds(95, 229, 363, 211);
 
 		btnHuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -49,7 +49,7 @@ public class New_Character_Panel extends Back_Panel {
 
 			}
 		});
-		btnHuman.setBounds(530, 229, 150, 100);
+		btnHuman.setBounds(689, 229, 363, 229);
 
 		Back_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -61,7 +61,7 @@ public class New_Character_Panel extends Back_Panel {
 
 			}
 		});
-		Back_button.setBounds(468, 438, 240, 93);
+		Back_button.setBounds(403, 561, 467, 211);
 
 		add(Back_button);
 		add(btnOrc);
