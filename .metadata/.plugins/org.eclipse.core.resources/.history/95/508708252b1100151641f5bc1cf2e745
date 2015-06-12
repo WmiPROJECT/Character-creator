@@ -54,7 +54,7 @@ public class Main_menu extends JFrame {
 		setContentPane(contentPane);
 
 		JButton Start_Button = new JButton(
-				"Click to continue");
+				"COŒ W STYLU  KLIKNIJ ABY PRZEJSC DO TWORZENIA POSTACI");
 		Start_Button.setBounds(105, 179, 1141, 532);
 		Start_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -64,9 +64,6 @@ public class Main_menu extends JFrame {
 
 			}
 		});
-		Start_Button.setOpaque(false);
-		Start_Button.setContentAreaFilled(false);
-		Start_Button.setBorderPainted(false);
 		contentPane.setLayout(null);
 		contentPane.add(Start_Button);
 		contentPane.add(main_panel_object);

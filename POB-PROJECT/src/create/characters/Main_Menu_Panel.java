@@ -128,7 +128,7 @@ public class Main_Menu_Panel extends JPanel {
 
 		background_mario_label.setHorizontalAlignment(SwingConstants.CENTER);
 		background_mario_label.setIcon(new ImageIcon(Main_Menu_Panel.class
-				.getResource("/create/characters/img/black_background.jpg")));
+				.getResource("/create/characters/img/Start.gif")));
 		background_mario_label.setBounds(0, 0, 1280, 1024);
 		
 		add(New_Character_button);
