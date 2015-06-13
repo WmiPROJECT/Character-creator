@@ -1,14 +1,21 @@
 package create.characters;
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import javax.swing.ImageIcon;
+
+import java.awt.Color;
 
 public class Main_menu extends JFrame {
 
@@ -55,7 +62,8 @@ public class Main_menu extends JFrame {
 
 		JButton Start_Button = new JButton(
 				"Click to continue");
-		Start_Button.setBounds(105, 179, 1141, 532);
+		Start_Button.setForeground(Color.WHITE);
+		Start_Button.setBounds(10, 11, 1252, 949);
 		Start_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -76,6 +84,16 @@ public class Main_menu extends JFrame {
 		background_mario_label.setIcon(new ImageIcon(Main_menu.class
 				.getResource("/create/characters/img/Start.gif")));
 		background_mario_label.setBounds(0, 0, 1280, 1024);
+		JLabel lbldown = new JLabel("");
+		JLabel lblup = new JLabel("");
+		lblup.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/pauza-ros.png")));
+		lblup.setBounds(-5, 0, 1280, 80);
+		add(lblup);
+		
+		lbldown.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/pauza-ros2.png")));
+		lbldown.setBounds(-5, 925, 1280, 80);
+		
+		add(lbldown);
 		contentPane.add(background_mario_label);
 		// WA¯NE CONTENT PANE.ADD JPANEL
 

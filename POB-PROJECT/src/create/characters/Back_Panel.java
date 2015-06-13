@@ -216,7 +216,16 @@ public class Back_Panel extends JPanel {
 	public Back_Panel() {
 		setLayout(null);
 		add(Main_Menu_Penel_object);
-
+		JLabel lbldown = new JLabel("");
+		JLabel lblup = new JLabel("");
+		lblup.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/pauza-ros.png")));
+		lblup.setBounds(-5, 0, 1280, 80);
+		add(lblup);
+		
+		lbldown.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/pauza-ros2.png")));
+		lbldown.setBounds(-5, 925, 1280, 80);
+		
+		add(lbldown);
 		background_label.setIcon(new ImageIcon(Author_Panel.class.getResource("/create/characters/img/Start.gif")));
 		background_label.setBounds(0, 0, 1280, 1024);
 		

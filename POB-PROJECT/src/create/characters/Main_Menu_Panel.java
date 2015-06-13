@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import java.awt.Dimension;
 
 public class Main_Menu_Panel extends JPanel {
 
@@ -18,13 +19,14 @@ public class Main_Menu_Panel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton Edit_Character_button = new JButton("Edit Character");
-	JButton New_Character_button = new JButton("New Character");
-	JButton Load_Character_button = new JButton("Load Character");
-	JButton Exit_button = new JButton("EXIT");
-	JButton Author_button = new JButton("Author");
+	JButton Edit_Character_button = new JButton("");
+	JButton New_Character_button = new JButton("");
+	JButton Load_Character_button = new JButton("");
+	JButton Exit_button = new JButton("");
+	JButton Author_button = new JButton("\r\n");
 
-	JLabel background_mario_label = new JLabel("New label");
+	JLabel background_mario_label = new JLabel("");
+	private final JLabel lbldown = new JLabel("");
 
 	/**
 	 * Create the panel.
@@ -32,7 +34,8 @@ public class Main_Menu_Panel extends JPanel {
 	public Main_Menu_Panel() {
 		setBorder(null);
 		setLayout(null);
-		Load_Character_button.setBounds(385, 321, 440, 95);
+		Load_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Load_character_off.png")));
+		Load_Character_button.setBounds(467, 285, 434, 109);
 
 		Load_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -61,18 +64,29 @@ public class Main_Menu_Panel extends JPanel {
 
 			}
 		});
-		add(Load_Character_button);
 		
-		Exit_button.setBounds(227, 662, 266, 60);
-
+		Load_Character_button.setBorderPainted(false); 
+		Load_Character_button.setContentAreaFilled(false); 
+		Load_Character_button.setFocusPainted(false); 
+		Load_Character_button.setOpaque(false);
+		
+		add(Load_Character_button);
+		Exit_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Exit_off.png")));
+		
+		Exit_button.setBounds(467, 735, 434, 109);
+		Exit_button.setBorderPainted(false); 
+		Exit_button.setContentAreaFilled(false); 
+		Exit_button.setFocusPainted(false); 
+		Exit_button.setOpaque(false);
 		Exit_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
 		add(Exit_button);
+		Author_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Author_off.png")));
 		
-		Author_button.setBounds(559, 696, 266, 63);
+		Author_button.setBounds(467, 585, 438, 109);
 		Author_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Author_Panel Author_Panel_object = new Author_Panel();
@@ -86,9 +100,17 @@ public class Main_Menu_Panel extends JPanel {
 				add(Author_Panel_object);
 			}
 		});
+		
+		Author_button.setBorderPainted(false); 
+		Author_button.setContentAreaFilled(false); 
+		Author_button.setFocusPainted(false); 
+		Author_button.setOpaque(false);
+		
 		add(Author_button);
 		
-		Edit_Character_button.setBounds(385, 505, 440, 95);
+		Edit_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Edit_character_off.png")));
+		
+		Edit_Character_button.setBounds(467, 435, 434, 109);
 		Edit_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Edit_Character_Panel Edit_Character_Panel_object;
@@ -109,12 +131,26 @@ public class Main_Menu_Panel extends JPanel {
 
 			}
 		});
-		add(Edit_Character_button);
 		
-		New_Character_button.setBounds(385, 86, 440, 118);
+		
+		Edit_Character_button.setBorderPainted(false); 
+		Edit_Character_button.setContentAreaFilled(false); 
+		Edit_Character_button.setFocusPainted(false); 
+		Edit_Character_button.setOpaque(false);
+		
+		
+		add(Edit_Character_button);
+		New_Character_button.setPreferredSize(new Dimension(550, 130));
+		New_Character_button.setMinimumSize(new Dimension(500, 130));
+		
+		New_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/New_character_off.png")));
+		
+		New_Character_button.setBounds(413, 135, 550, 130);
 		New_Character_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				New_Character_Panel New_Character_panel_object = new New_Character_Panel();
+				
+				
 				New_Character_panel_object.setBounds(0, 0, 1280, 1024);
 				New_Character_button.setVisible(false);
 				Exit_button.setVisible(false);
@@ -125,6 +161,55 @@ public class Main_Menu_Panel extends JPanel {
 				add(New_Character_panel_object);
 			}
 		});
+		New_Character_button.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	New_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/New_character_on.png")));
+		    }
+
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	New_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/New_character_off.png")));
+		    }
+		});
+		Edit_Character_button.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	Edit_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Edit_character_on.png")));
+		    }
+
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	Edit_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Edit_character_off.png")));
+		    }
+		});
+		Load_Character_button.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	Load_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Load_character_on.png")));
+		    }
+
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	Load_Character_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Load_character_off.png")));
+		    }
+		});
+		Author_button.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	Author_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Author_on.png")));
+		    }
+
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	Author_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Author_off.png")));
+		    }
+		});
+		Exit_button.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {
+		    	Exit_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Exit_on.png")));
+		    }
+
+		    public void mouseExited(java.awt.event.MouseEvent evt) {
+		    	Exit_button.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/Buttons/Exit_off.png")));
+		    }
+		});
+		New_Character_button.setBorderPainted(false); 
+		 New_Character_button.setContentAreaFilled(false); 
+		 New_Character_button.setFocusPainted(false); 
+		 New_Character_button.setOpaque(false);
 
 		background_mario_label.setHorizontalAlignment(SwingConstants.CENTER);
 		background_mario_label.setIcon(new ImageIcon(Main_Menu_Panel.class
@@ -133,7 +218,17 @@ public class Main_Menu_Panel extends JPanel {
 		
 		add(New_Character_button);
 
+		
+		
+		JLabel lblup = new JLabel("");
+		lblup.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/pauza-ros.png")));
+		lblup.setBounds(-5, 0, 1280, 80);
+		add(lblup);
+		
+		lbldown.setIcon(new ImageIcon(Main_Menu_Panel.class.getResource("/create/characters/img/pauza-ros2.png")));
+		lbldown.setBounds(-5, 925, 1280, 80);
+		
+		add(lbldown);
 		add(background_mario_label);
-
 	}
 }
