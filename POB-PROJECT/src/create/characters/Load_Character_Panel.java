@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class Load_Character_Panel extends Back_Panel {
 
@@ -28,7 +30,8 @@ public class Load_Character_Panel extends Back_Panel {
 			ClassNotFoundException {
 		setForeground(Color.WHITE);
 
-		JButton btnSelectedValueJList = new JButton("Select");
+		JButton btnSelectedValueJList = new JButton("");
+		btnSelectedValueJList.setIcon(new ImageIcon(Load_Character_Panel.class.getResource("/create/characters/img/Buttons/SelectOFF.png")));
 		JLabel lblNickname = new JLabel("");
 		lblNickname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNickname.setFont(new Font("Century Gothic", Font.BOLD, 15));
@@ -91,12 +94,21 @@ public class Load_Character_Panel extends Back_Panel {
 		}
 
 		JList list = new JList(listModel);
+	list.setBackground(new Color(0, 0, 0, 0));
+		list.setForeground(Color.WHITE);
+		list.setFont(new Font("LifeCraft", Font.PLAIN, 35));
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setBounds(10, 11, 187, 578);
-
+		list.setBounds(297, 187, 470, 666);
+	
+		list.setOpaque(false);
 		add(list);
 
-		JButton Back_button = new JButton("Back to MENU");
+		JButton Back_button = new JButton("");
+		Back_button.setIcon(new ImageIcon(Load_Character_Panel.class.getResource("/create/characters/img/Buttons/Return_off.png")));
+		Back_button.setBorderPainted(false); 
+		Back_button.setContentAreaFilled(false); 
+		Back_button.setFocusPainted(false); 
+		Back_button.setOpaque(false);
 		Back_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				list.setVisible(false);
@@ -107,10 +119,13 @@ public class Load_Character_Panel extends Back_Panel {
 			}
 		});
 
-		Back_button.setBounds(513, 553, 277, 36);
+		Back_button.setBounds(845, 807, 435, 109);
 		add(Main_Menu_Penel_object);
 		add(Back_button);
-
+		btnSelectedValueJList.setBorderPainted(false); 
+		btnSelectedValueJList.setContentAreaFilled(false); 
+		btnSelectedValueJList.setFocusPainted(false); 
+		btnSelectedValueJList.setOpaque(false);
 		btnSelectedValueJList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String selected = (String) list.getSelectedValue();
@@ -385,109 +400,114 @@ public class Load_Character_Panel extends Back_Panel {
 			}
 
 		});
-		btnSelectedValueJList.setBounds(513, 506, 277, 36);
+		btnSelectedValueJList.setBounds(845, 687, 435, 109);
 		add(btnSelectedValueJList);
 
 		lblNickname.setForeground(Color.WHITE);
-		lblNickname.setBounds(584, 11, 206, 22);
+		lblNickname.setBounds(1064, 97, 206, 22);
 		add(lblNickname);
 
 		lblRace.setForeground(Color.WHITE);
-		lblRace.setBounds(584, 43, 206, 22);
+		lblRace.setBounds(1064, 129, 206, 22);
 		add(lblRace);
 
 		lblClass.setForeground(Color.WHITE);
-		lblClass.setBounds(584, 76, 206, 22);
+		lblClass.setBounds(1064, 162, 206, 22);
 		add(lblClass);
 
 		lblWeapon.setForeground(Color.WHITE);
-		lblWeapon.setBounds(584, 109, 206, 22);
+		lblWeapon.setBounds(1064, 195, 206, 22);
 		add(lblWeapon);
 
 		lblArmor.setForeground(Color.WHITE);
-		lblArmor.setBounds(584, 142, 206, 22);
+		lblArmor.setBounds(1064, 228, 206, 22);
 		add(lblArmor);
 
 		lblSkill.setForeground(Color.WHITE);
-		lblSkill.setBounds(584, 175, 206, 22);
+		lblSkill.setBounds(1064, 261, 206, 22);
 		add(lblSkill);
 
 		lblMelee.setForeground(Color.WHITE);
-		lblMelee.setBounds(584, 208, 206, 22);
+		lblMelee.setBounds(1064, 294, 206, 22);
 		add(lblMelee);
 
 		lblMagic.setForeground(Color.WHITE);
-		lblMagic.setBounds(584, 241, 206, 22);
+		lblMagic.setBounds(1064, 327, 206, 22);
 		add(lblMagic);
 
 		lblRanged.setForeground(Color.WHITE);
-		lblRanged.setBounds(584, 308, 206, 22);
+		lblRanged.setBounds(1064, 394, 206, 22);
 		add(lblRanged);
 
 		lblVitality.setForeground(Color.WHITE);
-		lblVitality.setBounds(584, 274, 206, 22);
+		lblVitality.setBounds(1064, 360, 206, 22);
 		add(lblVitality);
 
 		lblAttackSpeed.setForeground(Color.WHITE);
-		lblAttackSpeed.setBounds(584, 341, 206, 22);
+		lblAttackSpeed.setBounds(1064, 427, 206, 22);
 		add(lblAttackSpeed);
 
 		lblNickname_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblNickname_1.setForeground(Color.WHITE);
-		lblNickname_1.setBounds(514, 11, 109, 22);
+		lblNickname_1.setBounds(994, 97, 109, 22);
 		add(lblNickname_1);
 
 		lblRace_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblRace_1.setForeground(Color.WHITE);
-		lblRace_1.setBounds(514, 43, 109, 22);
+		lblRace_1.setBounds(994, 129, 109, 22);
 		add(lblRace_1);
 
 		lblClass_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblClass_1.setForeground(Color.WHITE);
-		lblClass_1.setBounds(514, 76, 109, 22);
+		lblClass_1.setBounds(994, 162, 109, 22);
 		add(lblClass_1);
 
 		lblWeapon_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblWeapon_1.setForeground(Color.WHITE);
-		lblWeapon_1.setBounds(514, 109, 109, 22);
+		lblWeapon_1.setBounds(994, 195, 109, 22);
 		add(lblWeapon_1);
 
 		lblArmor_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblArmor_1.setForeground(Color.WHITE);
-		lblArmor_1.setBounds(514, 142, 109, 22);
+		lblArmor_1.setBounds(994, 228, 109, 22);
 		add(lblArmor_1);
 
 		lblSkill_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblSkill_1.setForeground(Color.WHITE);
-		lblSkill_1.setBounds(514, 175, 109, 22);
+		lblSkill_1.setBounds(994, 261, 109, 22);
 		add(lblSkill_1);
 
 		lblMeleeAttack.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblMeleeAttack.setForeground(Color.WHITE);
-		lblMeleeAttack.setBounds(514, 208, 109, 22);
+		lblMeleeAttack.setBounds(994, 294, 109, 22);
 		add(lblMeleeAttack);
 
 		lblMagicAttack.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblMagicAttack.setForeground(Color.WHITE);
-		lblMagicAttack.setBounds(514, 241, 109, 22);
+		lblMagicAttack.setBounds(994, 327, 109, 22);
 		add(lblMagicAttack);
 
 		lblRangedAttack.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblRangedAttack.setForeground(Color.WHITE);
-		lblRangedAttack.setBounds(514, 274, 109, 22);
+		lblRangedAttack.setBounds(994, 360, 109, 22);
 		add(lblRangedAttack);
 
 		lblVitality_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblVitality_1.setForeground(Color.WHITE);
-		lblVitality_1.setBounds(513, 308, 110, 22);
+		lblVitality_1.setBounds(993, 394, 110, 22);
 		add(lblVitality_1);
 
 		lblAttackSpeed_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
 		lblAttackSpeed_1.setForeground(Color.WHITE);
-		lblAttackSpeed_1.setBounds(514, 341, 109, 22);
+		lblAttackSpeed_1.setBounds(994, 427, 109, 22);
 		add(lblAttackSpeed_1);
 
+		
+		
+		JLabel lblLoadTable = new JLabel("");
+		lblLoadTable.setIcon(new ImageIcon(Load_Character_Panel.class.getResource("/create/characters/img/Load_bg.png")));
+		lblLoadTable.setBounds(127, 97, 831, 1011);
+		add(lblLoadTable);
 		add(super.background_label);
-
 	}
 }

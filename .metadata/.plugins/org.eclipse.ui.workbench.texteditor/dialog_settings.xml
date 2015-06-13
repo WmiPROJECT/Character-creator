@@ -6,28 +6,28 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="empty" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="empty"/>
-			<item value="background_mario_label"/>
-			<item value="btnArmor"/>
-			<item value="lblCena_Show"/>
-			<item value=".getBackground() == Color.GREEN"/>
-			<item value="setBounds(0, 0, 800, 600);"/>
-			<item value="Main_Menu_Penel_object"/>
-			<item value="arch"/>
+			<item value="default"/>
+			<item value="default s"/>
+			<item value="lblShowSkills"/>
+			<item value="(lblShowSkills"/>
+			<item value="lblShowCharacter"/>
+			<item value="lblName"/>
+			<item value="background_l"/>
+			<item value="backgrou"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="237" key="DIALOG_WIDTH"/>
-		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
-		<item value="357" key="DIALOG_HEIGHT"/>
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="381" key="DIALOG_HEIGHT"/>
 		<item value="1164" key="DIALOG_X_ORIGIN"/>
 		<item value="193" key="DIALOG_Y_ORIGIN"/>
 	</section>

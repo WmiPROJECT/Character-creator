@@ -2,3 +2,4 @@ Marian - Orc Warrior
 Serek - Human Mage
 RangerHumanoid - Human Ranger
 test - Orc Mage
+Jebak leœny - Orc Ranger
