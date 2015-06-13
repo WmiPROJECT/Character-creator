@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="background_mario_label" key="selection"/>
+		<item value="empty" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="empty"/>
 			<item value="background_mario_label"/>
 			<item value="btnArmor"/>
 			<item value="lblCena_Show"/>
@@ -19,7 +20,6 @@
 			<item value="setBounds(0, 0, 800, 600);"/>
 			<item value="Main_Menu_Penel_object"/>
 			<item value="arch"/>
-			<item value="characters"/>
 		</list>
 		<list key="replacehistory">
 		</list>

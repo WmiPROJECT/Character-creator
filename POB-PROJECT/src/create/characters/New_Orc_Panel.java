@@ -34,18 +34,25 @@ public class New_Orc_Panel extends Back_Panel {
 	public New_Orc_Panel() {
 		// ----------------------------------------------------------------------------------------------------------
 		// OBIEKTY
-		JButton btnOrcWarrior = new JButton("Warrior");
+		JButton btnOrcWarrior = new JButton("");
+		btnOrcWarrior.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/warrior_icon.png")));
 		btnOrcWarrior.setBackground(Color.LIGHT_GRAY);
-		JButton btnOrcMage = new JButton("Mage");
+		JButton btnOrcMage = new JButton("");
+		btnOrcMage.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/priest_icon.png")));
 		btnOrcMage.setBackground(Color.LIGHT_GRAY);
-		JButton btnOrcRanger = new JButton("Ranger");
+		JButton btnOrcRanger = new JButton("");
+		btnOrcRanger.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/hunter_icon.png")));
 		btnOrcRanger.setBackground(Color.LIGHT_GRAY);
 		JLabel lblClass = new JLabel("Default Class");
 		lblClass.setVisible(false);
 		lblClass.setForeground(Color.WHITE);
 		lblClass.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		JLabel lblName = new JLabel("NAME");
+		JLabel lblName = new JLabel("");
+		lblName.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/name.png")));
 		JTextField NameField = new JTextField();
+		NameField.setFont(new Font("LifeCraft", Font.PLAIN, 20));
+		NameField.setBackground(Color.BLACK);
+		NameField.setForeground(Color.WHITE);
 		JButton btnCreate = new JButton("");
 		btnCreate.setOpaque(false);
 		btnCreate.setPreferredSize(new Dimension(30, 7));
@@ -55,24 +62,30 @@ public class New_Orc_Panel extends Back_Panel {
 		// ------------------------------------------------ Weapon
 		JLabel lblWeapon = new JLabel("Weapon");
 		JLabel lblSelectedWeapon = new JLabel("None");
-		JButton btnWeaponPrev = new JButton("<");
-		JButton btnWeaponNext = new JButton(">");
+		JButton btnWeaponPrev = new JButton("");
+		btnWeaponPrev.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/strzalka-lewo.png")));
+		JButton btnWeaponNext = new JButton("");
+		btnWeaponNext.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/strzalka-prawo.png")));
 		JLabel lblShowWeapon = new JLabel("Default Weapon");
 		lblShowWeapon.setVisible(false);
 		lblShowWeapon.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		// ------------------------------------------------ Armor
 		JLabel lblArmor = new JLabel("Armor");
 		JLabel lblSelectedArmor = new JLabel("None");
-		JButton btnArmorPrev = new JButton("<");
-		JButton btnArmorNext = new JButton(">");
+		JButton btnArmorPrev = new JButton("");
+		btnArmorPrev.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/strzalka-lewo.png")));
+		JButton btnArmorNext = new JButton("");
+		btnArmorNext.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/strzalka-prawo.png")));
 		JLabel lblShowArmor = new JLabel("Default Armor");
 		lblShowArmor.setVisible(false);
 		lblShowArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		// ------------------------------------------------ Skill
 		JLabel lblSkills = new JLabel("Skills");
 		JLabel lblSelectedSkills = new JLabel("None");
-		JButton btnSkillsPrev = new JButton("<");
-		JButton btnSkillsNext = new JButton(">");
+		JButton btnSkillsPrev = new JButton("");
+		btnSkillsPrev.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/strzalka-lewo.png")));
+		JButton btnSkillsNext = new JButton("");
+		btnSkillsNext.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/strzalka-prawo.png")));
 		JLabel lblShowSkills = new JLabel("Default Skill");
 		lblShowSkills.setVisible(false);
 		lblShowSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -243,19 +256,24 @@ public class New_Orc_Panel extends Back_Panel {
 
 		add(Main_Menu_Penel_object);
 		add(Back_button);
-
+		
+		NameField.setOpaque(false);
 		NameField.setText("");
-		NameField.setBounds(671, 858, 167, 34);
+		NameField.setBounds(621, 864, 214, 34);
 		add(NameField);
 		NameField.setColumns(10);
 
 		lblName.setForeground(Color.WHITE);
 		lblName.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblName.setBounds(607, 860, 70, 24);
+		lblName.setBounds(545, 789, 371, 149);
 		add(lblName);
 
 		// ----------------------------------------------------------------------------------------------------------
 		// BUTTONY KLAS
+		btnOrcWarrior.setBorderPainted(false); 
+		btnOrcWarrior.setContentAreaFilled(false); 
+		btnOrcWarrior.setFocusPainted(false); 
+		btnOrcWarrior.setOpaque(false);
 		btnOrcWarrior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -272,9 +290,12 @@ public class New_Orc_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnOrcWarrior.setBounds(65, 309, 81, 62);
+		btnOrcWarrior.setBounds(48, 213, 104, 102);
 		add(btnOrcWarrior);
-
+		btnOrcMage.setBorderPainted(false); 
+		btnOrcMage.setContentAreaFilled(false); 
+		btnOrcMage.setFocusPainted(false); 
+		btnOrcMage.setOpaque(false);
 		btnOrcMage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -292,9 +313,12 @@ public class New_Orc_Panel extends Back_Panel {
 				lblShowSkills.setText(lblSelectedSkills.getText());
 			}
 		});
-		btnOrcMage.setBounds(156, 309, 81, 62);
+		btnOrcMage.setBounds(162, 213, 104, 102);
 		add(btnOrcMage);
-
+		btnOrcRanger.setBorderPainted(false); 
+		btnOrcRanger.setContentAreaFilled(false); 
+		btnOrcRanger.setFocusPainted(false); 
+		btnOrcRanger.setOpaque(false);
 		btnOrcRanger.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -313,7 +337,7 @@ public class New_Orc_Panel extends Back_Panel {
 				
 			}
 		});
-		btnOrcRanger.setBounds(247, 309, 83, 62);
+		btnOrcRanger.setBounds(276, 213, 104, 102);
 		add(btnOrcRanger);
 
 		// ----------------------------------------------------------------------------------------------------------
@@ -343,18 +367,21 @@ public class New_Orc_Panel extends Back_Panel {
 
 		// ----------------------------------------------------------------------------------------------------------
 		// WEAPON
-		lblWeapon.setFont(new Font("LifeCraft", Font.BOLD, 15));
+		lblWeapon.setFont(new Font("LifeCraft", Font.BOLD, 30));
 		lblWeapon.setForeground(Color.WHITE);
 		lblWeapon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWeapon.setBounds(156, 415, 93, 24);
+		lblWeapon.setBounds(48, 326, 332, 37);
 		add(lblWeapon);
 
-		lblSelectedWeapon.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSelectedWeapon.setFont(new Font("LifeCraft", Font.PLAIN, 20));
 		lblSelectedWeapon.setForeground(Color.WHITE);
 		lblSelectedWeapon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedWeapon.setBounds(107, 450, 183, 24);
+		lblSelectedWeapon.setBounds(48, 374, 332, 38);
 		add(lblSelectedWeapon);
-
+		btnWeaponPrev.setBorderPainted(false); 
+		btnWeaponPrev.setContentAreaFilled(false); 
+		btnWeaponPrev.setFocusPainted(false); 
+		btnWeaponPrev.setOpaque(false);
 		btnWeaponPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -566,10 +593,13 @@ public class New_Orc_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnWeaponPrev.setBackground(Color.ORANGE);
-		btnWeaponPrev.setBounds(52, 451, 45, 23);
+		btnWeaponPrev.setBackground(Color.LIGHT_GRAY);
+		btnWeaponPrev.setBounds(48, 350, 59, 70);
 		add(btnWeaponPrev);
-
+		btnWeaponNext.setBorderPainted(false); 
+		btnWeaponNext.setContentAreaFilled(false); 
+		btnWeaponNext.setFocusPainted(false); 
+		btnWeaponNext.setOpaque(false);
 		btnWeaponNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -786,24 +816,28 @@ public class New_Orc_Panel extends Back_Panel {
 			}
 		});
 		btnWeaponNext.setBackground(Color.ORANGE);
-		btnWeaponNext.setBounds(300, 451, 45, 23);
+		btnWeaponNext.setBounds(315, 352, 65, 67);
 		add(btnWeaponNext);
 
 		// ----------------------------------------------------------------------------------------------------------
 		// ARMOR
-		lblArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblArmor.setFont(new Font("LifeCraft", Font.BOLD, 30));
 		lblArmor.setForeground(Color.WHITE);
 		lblArmor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblArmor.setBounds(155, 485, 94, 38);
+		lblArmor.setBounds(48, 431, 332, 38);
 		add(lblArmor);
 
-		lblSelectedArmor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSelectedArmor.setFont(new Font("LifeCraft", Font.PLAIN, 20));
 		lblSelectedArmor.setForeground(Color.WHITE);
 		lblSelectedArmor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedArmor.setBounds(107, 519, 183, 24);
+		lblSelectedArmor.setBounds(48, 480, 332, 40);
 		add(lblSelectedArmor);
 
 		btnArmorPrev.setBackground(Color.ORANGE);
+		btnArmorPrev.setBorderPainted(false); 
+		btnArmorPrev.setContentAreaFilled(false); 
+		btnArmorPrev.setFocusPainted(false); 
+		btnArmorPrev.setOpaque(false);
 		btnArmorPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -1012,10 +1046,14 @@ public class New_Orc_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnArmorPrev.setBounds(52, 522, 45, 23);
+		btnArmorPrev.setBounds(48, 450, 59, 89);
 		add(btnArmorPrev);
 
 		btnArmorNext.setBackground(Color.ORANGE);
+		btnArmorNext.setBorderPainted(false); 
+		btnArmorNext.setContentAreaFilled(false); 
+		btnArmorNext.setFocusPainted(false); 
+		btnArmorNext.setOpaque(false);
 		btnArmorNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -1221,24 +1259,28 @@ public class New_Orc_Panel extends Back_Panel {
 				}
 			}
 		});
-		btnArmorNext.setBounds(300, 522, 45, 23);
+		btnArmorNext.setBounds(315, 450, 65, 89);
 		add(btnArmorNext);
 
 		// ----------------------------------------------------------------------------------------------------------
 		// SKILL
 		lblSkills.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSkills.setForeground(Color.WHITE);
-		lblSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSkills.setBounds(156, 554, 94, 24);
+		lblSkills.setFont(new Font("LifeCraft", Font.BOLD, 30));
+		lblSkills.setBounds(48, 531, 332, 40);
 		add(lblSkills);
 
-		lblSelectedSkills.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSelectedSkills.setFont(new Font("LifeCraft", Font.PLAIN, 20));
 		lblSelectedSkills.setForeground(Color.WHITE);
 		lblSelectedSkills.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedSkills.setBounds(107, 586, 183, 24);
+		lblSelectedSkills.setBounds(48, 578, 332, 38);
 		add(lblSelectedSkills);
 
 		btnSkillsPrev.setBackground(Color.ORANGE);
+		btnSkillsPrev.setBorderPainted(false); 
+		btnSkillsPrev.setContentAreaFilled(false); 
+		btnSkillsPrev.setFocusPainted(false); 
+		btnSkillsPrev.setOpaque(false);
 		btnSkillsPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
@@ -1277,7 +1319,10 @@ public class New_Orc_Panel extends Back_Panel {
 				}
 			}
 		});
-
+		btnSkillsNext.setBorderPainted(false); 
+		btnSkillsNext.setContentAreaFilled(false); 
+		btnSkillsNext.setFocusPainted(false); 
+		btnSkillsNext.setOpaque(false);
 		btnSkillsNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnOrcWarrior.getBackground() == Color.GREEN) {
@@ -1319,11 +1364,11 @@ public class New_Orc_Panel extends Back_Panel {
 			}
 		});
 
-		btnSkillsPrev.setBounds(52, 589, 45, 23);
+		btnSkillsPrev.setBounds(48, 546, 59, 78);
 		add(btnSkillsPrev);
 
 		btnSkillsNext.setBackground(Color.ORANGE);
-		btnSkillsNext.setBounds(300, 589, 45, 23);
+		btnSkillsNext.setBounds(315, 549, 65, 67);
 		add(btnSkillsNext);
 		
 		
@@ -1333,6 +1378,11 @@ public class New_Orc_Panel extends Back_Panel {
 		{
 			lblShowCharacter.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/Orc-Warrior/Orc-Def-Def.gif")));
 		}
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(New_Orc_Panel.class.getResource("/create/characters/img/tabela.png")));
+		lblNewLabel.setBounds(10, 96, 450, 675);
+		add(lblNewLabel);
 		
 		lblShowCharacter.setHorizontalAlignment(SwingConstants.LEFT);
 		lblShowCharacter.setBounds(0, 0, 1270, 1013);
