@@ -1,7 +1,6 @@
 package create.characters;
 
 import java.awt.Color;
-import java.io.BufferedWriter;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,12 +16,12 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextField;
 
 import java.io.File;
 
@@ -37,20 +36,20 @@ public class Edit_Character_Panel extends Back_Panel {
 
 		JLabel lblNickname = new JLabel("");
 		lblNickname.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNickname.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		lblNickname.setFont(new Font("LifeCraft", Font.PLAIN, 40));
 		JLabel lblWeapon = new JLabel("");
 		lblWeapon.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWeapon.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		lblWeapon.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		JLabel lblArmor = new JLabel("");
 		lblArmor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblArmor.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		lblArmor.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		JLabel lblSkill = new JLabel("");
 		lblSkill.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSkill.setFont(new Font("Century Gothic", Font.BOLD, 15));
-		JLabel lblNickname_1 = new JLabel("Name:");
-		JLabel lblWeapon_1 = new JLabel("Weapon:");
-		JLabel lblArmor_1 = new JLabel("Armor:");
-		JLabel lblSkill_1 = new JLabel("Skill:");
+		lblSkill.setFont(new Font("LifeCraft", Font.PLAIN, 25));
+		JLabel lblNickname_1 = new JLabel("Name");
+		JLabel lblWeapon_1 = new JLabel("Weapon");
+		JLabel lblArmor_1 = new JLabel("Armor");
+		JLabel lblSkill_1 = new JLabel("Skill");
 		JButton btnWeaponPrev = new JButton("<");
 		JButton btnSelectedValueJList = new JButton("Select");
 		JButton btnWeaponNext = new JButton(">");
@@ -59,9 +58,15 @@ public class Edit_Character_Panel extends Back_Panel {
 		JButton btnSkillPrev = new JButton("<");
 		JButton btnSkillNext = new JButton(">");
 		JLabel lblRace = new JLabel("");
+		lblRace.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		JLabel lblClass = new JLabel("");
+		lblClass.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		JButton btnSave = new JButton("SAVE");
 		JButton btnDelete = new JButton("Delete");
+		JLabel lblLoadTable = new JLabel("");
+		lblLoadTable.setFont(new Font("LifeCraft", Font.PLAIN, 25));
+		JLabel lblTable2 = new JLabel("");
+		lblTable2.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		lblRace.setVisible(false);
 		lblClass.setVisible(false);
 		lblNickname.setVisible(false);
@@ -80,6 +85,8 @@ public class Edit_Character_Panel extends Back_Panel {
 		btnSkillNext.setVisible(false);
 		btnSave.setVisible(false);
 		btnDelete.setVisible(false);
+		JLabel lblCharacter_Load = new JLabel("");
+		JLabel lblShowIcon = new JLabel("");
 
 		BufferedReader in = null;
 		String line;
@@ -99,8 +106,11 @@ public class Edit_Character_Panel extends Back_Panel {
 
 		JList list = new JList(listModel);
 
+		list.setBackground(new Color(0, 0, 0, 0));
+		list.setForeground(Color.WHITE);
+		list.setFont(new Font("LifeCraft", Font.PLAIN, 35));
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setBounds(10, 11, 187, 578);
+		list.setBounds(293, 135, 442, 672);
 
 		add(list);
 
@@ -109,8 +119,11 @@ public class Edit_Character_Panel extends Back_Panel {
 				String selected = (String) list.getSelectedValue();
 				String selected_class = "";
 				String selected_race = "";
-
+				
+				
 				btnSelectedValueJList.setVisible(false);
+				lblLoadTable.setVisible(false);
+				background_label.setVisible(false);
 				list.setVisible(false);
 				lblNickname.setVisible(true);
 				lblWeapon.setVisible(true);
@@ -123,14 +136,12 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblSkill_1.setVisible(true);
 				btnWeaponPrev.setVisible(true);
 				btnDelete.setVisible(true);
-
 				btnWeaponNext.setVisible(true);
 				btnArmorPrev.setVisible(true);
 				btnSave.setVisible(true);
 				btnWeaponNext.setVisible(true);
 				btnSkillPrev.setVisible(true);
 				btnSkillNext.setVisible(true);
-
 				// --------------------------------------------------------
 				// Class
 				boolean check = false;
@@ -187,23 +198,16 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
 						System.out.println("IOE");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
 						System.out.println("Classnotfound");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-
 				} else if (selected_class.equals("Mage")
 						&& selected_race.equals("Orc")) {
 					ObjectInputStream ois;
@@ -218,20 +222,14 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
 						System.out.println("IOE");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
 						System.out.println("Classnotfound");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else if (selected_class.equals("Ranger")
@@ -248,23 +246,16 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
 						System.out.println("IOE");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
 						System.out.println("Classnotfound");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-
 				} else if (selected_class.equals("Warrior")
 						&& selected_race.equals("Human")) {
 					ObjectInputStream ois;
@@ -280,23 +271,16 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
 						System.out.println("IOE");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
 						System.out.println("Classnotfound");
-
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-
 				} else if (selected_class.equals("Mage")
 						&& selected_race.equals("Human")) {
 					ObjectInputStream ois;
@@ -311,20 +295,16 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
 						System.out.println("IOE");
 
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
 						System.out.println("Classnotfound");
 
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else if (selected_class.equals("Ranger")
@@ -341,73 +321,86 @@ public class Edit_Character_Panel extends Back_Panel {
 						lblSkill.setText(test_orc.skill);
 						lblRace.setText(selected_race);
 						lblClass.setText(selected_class);
-
 					} catch (FileNotFoundException e) {
 						System.out.println("not found");
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
 						System.out.println("IOE");
 
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
 						System.out.println("Classnotfound");
 
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-
 				} else {
 					System.out.println("ERROR");
 				}
+				if (lblRace.getText().equals("Human")) {
+					lblRace.setText("BloodElf");
+				}
+				if (lblArmor.getText().equals("Master")) {
+					lblArmor.setText("Master");
+				}
+				lblCharacter_Load.setIcon(new ImageIcon(
+						Load_Character_Panel.class
+								.getResource("/create/characters/img/"
+										+ lblRace.getText() + "-"
+										+ lblClass.getText() + "/"
+										+ lblRace.getText() + "-"
+										+ lblWeapon.getText() + "-"
+										+ lblArmor.getText() + ".gif")));
+				lblShowIcon.setIcon(new ImageIcon(Load_Character_Panel.class
+						.getResource("/create/characters/img/Skills/"
+								+ lblClass.getText() + "_" + lblSkill.getText()
+								+ ".png")));
 
 			}
 
 		});
-		btnSelectedValueJList.setBounds(513, 506, 277, 36);
+		btnSelectedValueJList.setBounds(920, 751, 277, 36);
 		add(btnSelectedValueJList);
 
 		lblNickname.setForeground(Color.WHITE);
-		lblNickname.setBounds(444, 209, 176, 22);
+		lblNickname.setBounds(82, 256, 262, 65);
 		add(lblNickname);
 
 		lblWeapon.setForeground(Color.WHITE);
-		lblWeapon.setBounds(444, 242, 176, 22);
+		lblWeapon.setBounds(124, 401, 176, 22);
 		add(lblWeapon);
 
 		lblArmor.setForeground(Color.WHITE);
-		lblArmor.setBounds(444, 275, 176, 22);
+		lblArmor.setBounds(124, 514, 176, 22);
 		add(lblArmor);
 
 		lblSkill.setForeground(Color.WHITE);
-		lblSkill.setBounds(444, 308, 176, 22);
+		lblSkill.setBounds(128, 619, 176, 22);
 		add(lblSkill);
 
-		lblNickname_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		lblNickname_1.setFont(new Font("LifeCraft", Font.PLAIN, 30));
 		lblNickname_1.setForeground(Color.WHITE);
-		lblNickname_1.setBounds(338, 209, 109, 22);
+		lblNickname_1.setBounds(184, 214, 54, 31);
 		add(lblNickname_1);
 
-		lblWeapon_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		lblWeapon_1.setFont(new Font("LifeCraft", Font.PLAIN, 30));
 		lblWeapon_1.setForeground(Color.WHITE);
-		lblWeapon_1.setBounds(338, 242, 109, 22);
+		lblWeapon_1.setBounds(174, 351, 80, 31);
 		add(lblWeapon_1);
 
-		lblArmor_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		lblArmor_1.setFont(new Font("LifeCraft", Font.PLAIN, 30));
 		lblArmor_1.setForeground(Color.WHITE);
-		lblArmor_1.setBounds(338, 275, 109, 22);
+		lblArmor_1.setBounds(184, 460, 67, 31);
 		add(lblArmor_1);
 
-		lblSkill_1.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		lblSkill_1.setFont(new Font("LifeCraft", Font.PLAIN, 30));
 		lblSkill_1.setForeground(Color.WHITE);
-		lblSkill_1.setBounds(338, 308, 109, 22);
+		lblSkill_1.setBounds(184, 577, 57, 31);
 		add(lblSkill_1);
 
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				list.setVisible(true);
-				btnSelectedValueJList.setVisible(true);
+				list.setVisible(false);
+				btnSelectedValueJList.setVisible(false);
 				lblNickname.setVisible(false);
 				lblWeapon.setVisible(false);
 				lblArmor.setVisible(false);
@@ -417,7 +410,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblArmor_1.setVisible(false);
 				lblSkill_1.setVisible(false);
 				btnWeaponPrev.setVisible(false);
-
+				
 				btnWeaponNext.setVisible(false);
 				btnArmorPrev.setVisible(false);
 				btnArmorNext.setVisible(false);
@@ -425,7 +418,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				btnSkillNext.setVisible(false);
 				btnSave.setVisible(false);
 				btnDelete.setVisible(false);
-
+			
 				if (lblClass.getText().equals("Warrior")
 						&& lblRace.getText().equals("Orc")) {
 					Orc_Warrior test_orc = new Orc_Warrior(lblNickname
@@ -442,7 +435,6 @@ public class Edit_Character_Panel extends Back_Panel {
 						System.out.println("File not found");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				} else if (lblClass.getText().equals("Mage")
@@ -461,7 +453,6 @@ public class Edit_Character_Panel extends Back_Panel {
 						System.out.println("File not found");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				} else if (lblClass.getText().equals("Ranger")
@@ -480,7 +471,6 @@ public class Edit_Character_Panel extends Back_Panel {
 						System.out.println("File not found");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				} else if (lblClass.getText().equals("Warrior")
@@ -499,7 +489,6 @@ public class Edit_Character_Panel extends Back_Panel {
 						System.out.println("File not found");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				} else if (lblClass.getText().equals("Ranger")
@@ -518,7 +507,6 @@ public class Edit_Character_Panel extends Back_Panel {
 						System.out.println("File not found");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				} else if (lblClass.getText().equals("Mage")
@@ -537,14 +525,14 @@ public class Edit_Character_Panel extends Back_Panel {
 						System.out.println("File not found");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
+				Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 
-			}
+			}			
 		});
-		btnSave.setBounds(513, 459, 277, 36);
+		btnSave.setBounds(920, 704, 277, 36);
 		add(btnSave);
 
 		btnWeaponPrev.addActionListener(new ActionListener() {
@@ -568,9 +556,24 @@ public class Edit_Character_Panel extends Back_Panel {
 				} else if (lblWeapon.getText().equals("Spear")) {
 					lblWeapon.setText("Crossbow");
 				}
+				if (lblRace.getText().equals("Human")) {
+					lblRace.setText("BloodElf");
+				}
+				if (lblArmor.getText().equals("Master")) {
+					lblArmor.setText("Master");
+				}
+
+				lblCharacter_Load.setIcon(new ImageIcon(
+						Load_Character_Panel.class
+								.getResource("/create/characters/img/"
+										+ lblRace.getText() + "-"
+										+ lblClass.getText() + "/"
+										+ lblRace.getText() + "-"
+										+ lblWeapon.getText() + "-"
+										+ lblArmor.getText() + ".gif")));
 			}
 		});
-		btnWeaponPrev.setBounds(656, 242, 56, 22);
+		btnWeaponPrev.setBounds(32, 401, 56, 22);
 		add(btnWeaponPrev);
 
 		btnArmorPrev.addActionListener(new ActionListener() {
@@ -590,41 +593,61 @@ public class Edit_Character_Panel extends Back_Panel {
 				} else if (lblArmor.getText().equals("Paladin")) {
 					lblArmor.setText("Yalahar");
 				} else if (lblArmor.getText().equals("Yalahar")) {
-					lblArmor.setText("Master Archer's");
-				} else if (lblArmor.getText().equals("Master Archer's")) {
+					lblArmor.setText("Master");
+				} else if (lblArmor.getText().equals("Master")) {
 					lblArmor.setText("Paladin");
 				}
+				if (lblRace.getText().equals("Human")) {
+					lblRace.setText("BloodElf");
+				}
+				if (lblArmor.getText().equals("Master")) {
+					lblArmor.setText("Master");
+				}
+
+				lblCharacter_Load.setIcon(new ImageIcon(
+						Load_Character_Panel.class
+								.getResource("/create/characters/img/"
+										+ lblRace.getText() + "-"
+										+ lblClass.getText() + "/"
+										+ lblRace.getText() + "-"
+										+ lblWeapon.getText() + "-"
+										+ lblArmor.getText() + ".gif")));
 			}
 		});
-		btnArmorPrev.setBounds(656, 275, 56, 22);
+		btnArmorPrev.setBounds(32, 514, 56, 22);
 		add(btnArmorPrev);
 
 		btnSkillPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (lblSkill.getText().equals("Exori")) {
-					lblSkill.setText("Exori Gran");
-				} else if (lblSkill.getText().equals("Exori Gran")) {
-					lblSkill.setText("Exori Gran Ico");
-				} else if (lblSkill.getText().equals("Exori Gran Ico")) {
-					lblSkill.setText("Exori");
-				} else if (lblSkill.getText().equals("Exevo Gran Mas Vis")) {
-					lblSkill.setText("Exori Frigo");
-				} else if (lblSkill.getText().equals("Exori Frigo")) {
-					lblSkill.setText("Utori Flam");
-				} else if (lblSkill.getText().equals("Utori Flam")) {
-					lblSkill.setText("Exevo Gran Mas Vis");
-				} else if (lblSkill.getText().equals("Exevo Mas San")) {
-					lblSkill.setText("Exori Con");
-				} else if (lblSkill.getText().equals("Exori Con")) {
-					lblSkill.setText("Utito Tempo San");
-				} else if (lblSkill.getText().equals("Utito Tempo San")) {
-					lblSkill.setText("Exevo Mas San");
+				if (lblSkill.getText().equals("Brutal Shot")) {
+					lblSkill.setText("Gains");
+				} else if (lblSkill.getText().equals("Gains")) {
+					lblSkill.setText("Berserker Rage");
+				} else if (lblSkill.getText().equals("Berserker Rage")) {
+					lblSkill.setText("Brutal Shot");
+				} else if (lblSkill.getText().equals("Eye Of The Storm")) {
+					lblSkill.setText("Shadow Form");
+				} else if (lblSkill.getText().equals("Shadow Form")) {
+					lblSkill.setText("Fire Breathe");
+				} else if (lblSkill.getText().equals("Fire Breathe")) {
+					lblSkill.setText("Eye Of The Storm");
+				} else if (lblSkill.getText().equals("Power Shot")) {
+					lblSkill.setText("Freeze");
+				} else if (lblSkill.getText().equals("Freeze")) {
+					lblSkill.setText("Strafe");
+				} else if (lblSkill.getText().equals("Strafe")) {
+					lblSkill.setText("Power Shot");
 				}
+				lblShowIcon.setIcon(new ImageIcon(Load_Character_Panel.class
+						.getResource("/create/characters/img/Skills/"
+								+ lblClass.getText() + "_" + lblSkill.getText()
+								+ ".png")));
+
 			}
 
 		});
-		btnSkillPrev.setBounds(656, 308, 56, 22);
+		btnSkillPrev.setBounds(32, 619, 56, 22);
 		add(btnSkillPrev);
 
 		btnWeaponNext.addActionListener(new ActionListener() {
@@ -648,9 +671,24 @@ public class Edit_Character_Panel extends Back_Panel {
 				} else if (lblWeapon.getText().equals("Bow")) {
 					lblWeapon.setText("Crossbow");
 				}
+				if (lblRace.getText().equals("Human")) {
+					lblRace.setText("BloodElf");
+				}
+				if (lblArmor.getText().equals("Master")) {
+					lblArmor.setText("Master");
+				}
+
+				lblCharacter_Load.setIcon(new ImageIcon(
+						Load_Character_Panel.class
+								.getResource("/create/characters/img/"
+										+ lblRace.getText() + "-"
+										+ lblClass.getText() + "/"
+										+ lblRace.getText() + "-"
+										+ lblWeapon.getText() + "-"
+										+ lblArmor.getText() + ".gif")));
 			}
 		});
-		btnWeaponNext.setBounds(722, 242, 56, 22);
+		btnWeaponNext.setBounds(329, 401, 56, 22);
 		add(btnWeaponNext);
 
 		btnArmorNext.addActionListener(new ActionListener() {
@@ -668,42 +706,60 @@ public class Edit_Character_Panel extends Back_Panel {
 				} else if (lblArmor.getText().equals("Coat")) {
 					lblArmor.setText("Robe");
 				} else if (lblArmor.getText().equals("Paladin")) {
-					lblArmor.setText("Master Archer's");
-				} else if (lblArmor.getText().equals("Master Archer's")) {
+					lblArmor.setText("Master");
+				} else if (lblArmor.getText().equals("Master")) {
 					lblArmor.setText("Yalahar");
 				} else if (lblArmor.getText() == "Yalahar") {
 					lblArmor.setText("Paladin");
 				}
+				if (lblRace.getText().equals("Human")) {
+					lblRace.setText("BloodElf");
+				}
+				if (lblArmor.getText().equals("Master")) {
+					lblArmor.setText("Master");
+				}
+
+				lblCharacter_Load.setIcon(new ImageIcon(
+						Load_Character_Panel.class
+								.getResource("/create/characters/img/"
+										+ lblRace.getText() + "-"
+										+ lblClass.getText() + "/"
+										+ lblRace.getText() + "-"
+										+ lblWeapon.getText() + "-"
+										+ lblArmor.getText() + ".gif")));
 			}
 		});
-		btnArmorNext.setBounds(722, 275, 56, 22);
+		btnArmorNext.setBounds(329, 514, 56, 22);
 		add(btnArmorNext);
 
 		btnSkillNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (lblSkill.getText().equals("Exori")) {
-					lblSkill.setText("Exori Gran Ico");
-				} else if (lblSkill.getText().equals("Exori Gran Ico")) {
-					lblSkill.setText("Exori Gran");
-				} else if (lblSkill.getText().equals("Exori Gran")) {
-					lblSkill.setText("Exori");
-				} else if (lblSkill.getText().equals("Exevo Gran Mas Vis")) {
-					lblSkill.setText("Utori Flam");
-				} else if (lblSkill.getText().equals("Utori Flam")) {
-					lblSkill.setText("Exori Frigo");
-				} else if (lblSkill.getText().equals("Exori Frigo")) {
-					lblSkill.setText("Exevo Gran Mas Vis");
-				} else if (lblSkill.getText().equals("Exevo Mas San")) {
-					lblSkill.setText("Utito Tempo San");
-				} else if (lblSkill.getText().equals("Utito Tempo San")) {
-					lblSkill.setText("Exori Con");
-				} else if (lblSkill.getText().equals("Exori Con")) {
-					lblSkill.setText("Exevo Mas San");
+				if (lblSkill.getText().equals("Brutal Shot")) {
+					lblSkill.setText("Berserker Rage");
+				} else if (lblSkill.getText().equals("Berserker Rage")) {
+					lblSkill.setText("Gains");
+				} else if (lblSkill.getText().equals("Gains")) {
+					lblSkill.setText("Brutal Shot");
+				} else if (lblSkill.getText().equals("Eye Of The Storm")) {
+					lblSkill.setText("Fire Breathe");
+				} else if (lblSkill.getText().equals("Fire Breathe")) {
+					lblSkill.setText("Shadow Form");
+				} else if (lblSkill.getText().equals("Shadow Form")) {
+					lblSkill.setText("Eye Of The Storm");
+				} else if (lblSkill.getText().equals("Power Shot")) {
+					lblSkill.setText("Strafe");
+				} else if (lblSkill.getText().equals("Strafe")) {
+					lblSkill.setText("Freeze");
+				} else if (lblSkill.getText().equals("Freeze")) {
+					lblSkill.setText("Power Shot");
 				}
-
+				lblShowIcon.setIcon(new ImageIcon(Load_Character_Panel.class
+						.getResource("/create/characters/img/Skills/"
+								+ lblClass.getText() + "_" + lblSkill.getText()
+								+ ".png")));
 			}
 		});
-		btnSkillNext.setBounds(722, 308, 56, 22);
+		btnSkillNext.setBounds(329, 619, 56, 22);
 		add(btnSkillNext);
 
 		JButton Back_button = new JButton("Back to MENU");
@@ -730,18 +786,18 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblArmor_1.setVisible(false);
 				lblSkill_1.setVisible(false);
 				btnDelete.setVisible(false);
-				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+				Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 
 			}
 		});
-		Back_button.setBounds(513, 553, 277, 36);
+		Back_button.setBounds(920, 798, 277, 36);
 		add(Main_Menu_Penel_object);
 		add(Back_button);
 
-		lblRace.setBounds(335, 69, 144, 22);
+		lblRace.setBounds(814, 275, 144, 22);
 		add(lblRace);
 
-		lblClass.setBounds(335, 124, 144, 22);
+		lblClass.setBounds(814, 329, 144, 22);
 		add(lblClass);
 
 		btnDelete.addActionListener(new ActionListener() {
@@ -775,48 +831,48 @@ public class Edit_Character_Panel extends Back_Panel {
 						if (!line.trim().equals(
 								lblNickname.getText() + " - "
 										+ lblRace.getText() + " "
-											+ lblClass.getText())) {
-	
-								pw.println(line);
-								pw.flush();
-							}
-						}
-						pw.close();
-						br.close();
-	
-						if (!inFile.delete()) {
-							System.out.println("Could not delete file");
-							return;
-						}
-	
-						File oldfile = new File("characterstmp.txt");
-						File newfile = new File("characters.txt");
-	
-						if (oldfile.renameTo(newfile)) {
-	
-						} else {
-							System.out.println("Sorry! the file can't be renamed");
+										+ lblClass.getText())) {
+
+							pw.println(line);
+							pw.flush();
 						}
 					}
-	
-					catch (FileNotFoundException ex) {
-						ex.printStackTrace();
-					} catch (IOException ex) {
-						ex.printStackTrace();
+					pw.close();
+					br.close();
+
+					if (!inFile.delete()) {
+						System.out.println("Could not delete file");
+						return;
 					}
-	
-					try {
-	
-						File file = new File("CharactersDB\\"
-								+ lblNickname.getText() + ".dat");
-	
-						file.delete();
-	
-					} catch (Exception e) {
-	
-						e.printStackTrace();
-	
+
+					File oldfile = new File("characterstmp.txt");
+					File newfile = new File("characters.txt");
+
+					if (oldfile.renameTo(newfile)) {
+
+					} else {
+						System.out.println("Sorry! the file can't be renamed");
 					}
+				}
+
+				catch (FileNotFoundException ex) {
+					ex.printStackTrace();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+
+				try {
+
+					File file = new File("CharactersDB\\"
+							+ lblNickname.getText() + ".dat");
+
+					file.delete();
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+
+				}
 				btnWeaponPrev.setVisible(false);
 				btnWeaponNext.setVisible(false);
 				btnArmorPrev.setVisible(false);
@@ -841,8 +897,26 @@ public class Edit_Character_Panel extends Back_Panel {
 				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
 			}
 		});
-		btnDelete.setBounds(510, 506, 280, 36);
+
+		lblLoadTable.setIcon(new ImageIcon(Edit_Character_Panel.class
+				.getResource("/create/characters/img/Load_bg.png")));
+		lblLoadTable.setBounds(127, 97, 831, 1011);
+		add(lblLoadTable);
+
+		btnDelete.setBounds(920, 751, 280, 36);
 		add(btnDelete);
 		add(super.background_label);
+
+		lblTable2.setIcon(new ImageIcon(Edit_Character_Panel.class
+				.getResource("/create/characters/img/tabela.png")));
+		lblTable2.setBounds(9, 54, 400, 800);
+		add(lblTable2);
+
+		lblShowIcon.setIcon(null);
+		lblShowIcon.setBounds(37, 645, 356, 319);
+		add(lblShowIcon);
+
+		lblCharacter_Load.setBounds(0, 0, 1280, 1024);
+		add(lblCharacter_Load);
 	}
 }
