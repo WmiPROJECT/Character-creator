@@ -135,7 +135,7 @@ public class New_Human_Panel extends Back_Panel {
 								new_warrior = new FileWriter("characters.txt",
 										true);
 								new_warrior.write(test_Human.nickname);
-								new_warrior.write(" - Human ");
+								new_warrior.write(" - BloodElf ");
 								new_warrior.write(test_Human.race_class);
 								new_warrior.write("\n");
 								new_warrior.close();
@@ -166,7 +166,7 @@ public class New_Human_Panel extends Back_Panel {
 								new_mage = new FileWriter("characters.txt",
 										true);
 								new_mage.write(test_Human.nickname);
-								new_mage.write(" - Human ");
+								new_mage.write(" - BloodElf ");
 								new_mage.write(test_Human.race_class);
 								new_mage.write("\n");
 								new_mage.close();
@@ -196,7 +196,7 @@ public class New_Human_Panel extends Back_Panel {
 								new_ranger = new FileWriter("characters.txt",
 										true);
 								new_ranger.write(test_Human.nickname);
-								new_ranger.write(" - Human ");
+								new_ranger.write(" - BloodElf ");
 								new_ranger.write(test_Human.race_class);
 								new_ranger.write("\n");
 								new_ranger.close();

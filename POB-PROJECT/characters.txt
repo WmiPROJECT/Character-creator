@@ -1,2 +1,4 @@
 Test - Orc Warrior
 Semiix - Human Ranger
+TEST2 - Orc Ranger
+test33 - BloodElf Mage

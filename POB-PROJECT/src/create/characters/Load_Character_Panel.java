@@ -222,6 +222,10 @@ public class Load_Character_Panel extends Back_Panel {
 						firstspace = i;
 					}
 				}
+				if(selected_race.equals("BloodElf"))
+						{
+							selected_race="Human";
+						}
 				// --------------------------------------------------------
 				// Class
 				for (int i = selected.length() - 1; i > 0; i--) {
@@ -230,10 +234,14 @@ public class Load_Character_Panel extends Back_Panel {
 						for (int j = i + 1; j < selected.length(); j++) {
 							c = selected.charAt(j);
 							selected_class = selected_class + c;
+							
 						}
+						
 						break;
 					}
+					
 				}
+				
 				// --------------------------------------------------------
 				// Nick
 				String nick = "";

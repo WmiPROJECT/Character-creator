@@ -51,7 +51,8 @@ public class Edit_Character_Panel extends Back_Panel {
 		JLabel lblArmor_1 = new JLabel("Armor");
 		JLabel lblSkill_1 = new JLabel("Skill");
 		JButton btnWeaponPrev = new JButton("<");
-		JButton btnSelectedValueJList = new JButton("Select");
+		JButton btnSelectedValueJList = new JButton("");
+		btnSelectedValueJList.setIcon(new ImageIcon(Edit_Character_Panel.class.getResource("/create/characters/img/Buttons/SelectOFF.png")));
 		JButton btnWeaponNext = new JButton(">");
 		JButton btnArmorPrev = new JButton("<");
 		JButton btnArmorNext = new JButton(">");
@@ -61,8 +62,10 @@ public class Edit_Character_Panel extends Back_Panel {
 		lblRace.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		JLabel lblClass = new JLabel("");
 		lblClass.setFont(new Font("LifeCraft", Font.PLAIN, 25));
-		JButton btnSave = new JButton("SAVE");
-		JButton btnDelete = new JButton("Delete");
+		JButton btnSave = new JButton("");
+		btnSave.setIcon(new ImageIcon(Edit_Character_Panel.class.getResource("/create/characters/img/Buttons/Save_off.png")));
+		JButton btnDelete = new JButton("");
+		btnDelete.setIcon(new ImageIcon(Edit_Character_Panel.class.getResource("/create/characters/img/Buttons/Delete_off.png")));
 		JLabel lblLoadTable = new JLabel("");
 		lblLoadTable.setFont(new Font("LifeCraft", Font.PLAIN, 25));
 		JLabel lblTable2 = new JLabel("");
@@ -87,6 +90,8 @@ public class Edit_Character_Panel extends Back_Panel {
 		btnDelete.setVisible(false);
 		JLabel lblCharacter_Load = new JLabel("");
 		JLabel lblShowIcon = new JLabel("");
+		JButton Back_button = new JButton("");
+		Back_button.setIcon(new ImageIcon(Edit_Character_Panel.class.getResource("/create/characters/img/Buttons/Return_off.png")));
 
 		BufferedReader in = null;
 		String line;
@@ -113,7 +118,10 @@ public class Edit_Character_Panel extends Back_Panel {
 		list.setBounds(293, 135, 442, 672);
 
 		add(list);
-
+		btnSelectedValueJList.setBorderPainted(false); 
+		btnSelectedValueJList.setContentAreaFilled(false); 
+		btnSelectedValueJList.setFocusPainted(false); 
+		btnSelectedValueJList.setOpaque(false);
 		btnSelectedValueJList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String selected = (String) list.getSelectedValue();
@@ -159,6 +167,10 @@ public class Edit_Character_Panel extends Back_Panel {
 						check = true;
 						firstspace = i;
 					}
+				}
+				if(selected_race.equals("BloodElf"))
+				{
+					selected_race="Human";
 				}
 				// --------------------------------------------------------
 				// Class
@@ -358,7 +370,7 @@ public class Edit_Character_Panel extends Back_Panel {
 			}
 
 		});
-		btnSelectedValueJList.setBounds(920, 751, 277, 36);
+		btnSelectedValueJList.setBounds(846, 678, 434, 109);
 		add(btnSelectedValueJList);
 
 		lblNickname.setForeground(Color.WHITE);
@@ -396,7 +408,11 @@ public class Edit_Character_Panel extends Back_Panel {
 		lblSkill_1.setForeground(Color.WHITE);
 		lblSkill_1.setBounds(184, 577, 57, 31);
 		add(lblSkill_1);
-
+		
+		btnSave.setBorderPainted(false); 
+		btnSave.setContentAreaFilled(false); 
+		btnSave.setFocusPainted(false); 
+		btnSave.setOpaque(false);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				list.setVisible(false);
@@ -409,6 +425,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblWeapon_1.setVisible(false);
 				lblArmor_1.setVisible(false);
 				lblSkill_1.setVisible(false);
+				Back_button.setVisible(false);
 				btnWeaponPrev.setVisible(false);
 				
 				btnWeaponNext.setVisible(false);
@@ -418,7 +435,10 @@ public class Edit_Character_Panel extends Back_Panel {
 				btnSkillNext.setVisible(false);
 				btnSave.setVisible(false);
 				btnDelete.setVisible(false);
-			
+			if(lblRace.getText().equals("BloodElf"))
+			{
+				lblRace.setText("Human");
+			}
 				if (lblClass.getText().equals("Warrior")
 						&& lblRace.getText().equals("Orc")) {
 					Orc_Warrior test_orc = new Orc_Warrior(lblNickname
@@ -532,7 +552,7 @@ public class Edit_Character_Panel extends Back_Panel {
 
 			}			
 		});
-		btnSave.setBounds(920, 704, 277, 36);
+		btnSave.setBounds(880, 598, 356, 89);
 		add(btnSave);
 
 		btnWeaponPrev.addActionListener(new ActionListener() {
@@ -762,7 +782,10 @@ public class Edit_Character_Panel extends Back_Panel {
 		btnSkillNext.setBounds(329, 619, 56, 22);
 		add(btnSkillNext);
 
-		JButton Back_button = new JButton("Back to MENU");
+		Back_button.setBorderPainted(false); 
+		Back_button.setContentAreaFilled(false); 
+		Back_button.setFocusPainted(false); 
+		Back_button.setOpaque(false);
 		Back_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				btnWeaponPrev.setVisible(false);
@@ -790,7 +813,7 @@ public class Edit_Character_Panel extends Back_Panel {
 
 			}
 		});
-		Back_button.setBounds(920, 798, 277, 36);
+		Back_button.setBounds(846, 798, 434, 109);
 		add(Main_Menu_Penel_object);
 		add(Back_button);
 
@@ -799,12 +822,15 @@ public class Edit_Character_Panel extends Back_Panel {
 
 		lblClass.setBounds(814, 329, 144, 22);
 		add(lblClass);
-
+		btnDelete.setBorderPainted(false); 
+		btnDelete.setContentAreaFilled(false); 
+		btnDelete.setFocusPainted(false); 
+		btnDelete.setOpaque(false);
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				try {
-
+					
 					File inFile = new File("characters.txt");
 
 					if (!inFile.isFile()) {
@@ -826,8 +852,10 @@ public class Edit_Character_Panel extends Back_Panel {
 
 					// Read from the original file and write to the new
 					// unless content matches data to be removed.
+					
+					
 					while ((line = br.readLine()) != null) {
-
+						
 						if (!line.trim().equals(
 								lblNickname.getText() + " - "
 										+ lblRace.getText() + " "
@@ -894,7 +922,7 @@ public class Edit_Character_Panel extends Back_Panel {
 				lblArmor_1.setVisible(false);
 				lblSkill_1.setVisible(false);
 				btnDelete.setVisible(false);
-				Main_Menu_Penel_object.setBounds(0, 0, 800, 600);
+				Main_Menu_Penel_object.setBounds(0, 0, 1280, 1024);
 			}
 		});
 
@@ -903,7 +931,7 @@ public class Edit_Character_Panel extends Back_Panel {
 		lblLoadTable.setBounds(127, 97, 831, 1011);
 		add(lblLoadTable);
 
-		btnDelete.setBounds(920, 751, 280, 36);
+		btnDelete.setBounds(880, 698, 356, 89);
 		add(btnDelete);
 		add(super.background_label);
 

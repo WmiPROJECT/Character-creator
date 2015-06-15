@@ -1,0 +1,27 @@
+package create.characters;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Back_PanelTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	
+//	@Test
+//	public void ChangeNicknameTest(String change_name) {
+//	Orc_Warrior orc_warrior = new Orc_Warrior("Darek","Mace","Crystalline","Eternal Vitality");
+//	String name="Marek";
+//	orc_warrior.ChangeNickname("Marek");
+//     assertEquals(orc_warrior.nickname, name);
+//	
+//}
+	@Test
+	public void ChangeNicknameTest(String change_name) {
+
+	}
+
+}
